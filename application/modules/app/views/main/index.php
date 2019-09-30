@@ -153,11 +153,11 @@
 					</div>
 					<a class="carousel-control-prev" href="#carousel-works" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
+						<span class="sr-only">Предыдущая</span>
 					</a>
 					<a class="carousel-control-next" href="#carousel-works" role="button" data-slide="next">
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
+						<span class="sr-only">Следующая</span>
 					</a>
 				</div>
 			</div>
@@ -220,7 +220,7 @@
 	</div>
 </div>
 
-<div id="subscribe-block" class="page-block">
+<!-- <div id="subscribe-block" class="page-block">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -230,8 +230,6 @@
 					<form class="col-5 m-auto text-center">
 						<h5>Заполните форму ниже</h5>
 						<p>Вам на почту придет письмо с<br> дальнейшими инструкциями</p>
-						<!--
-						<div class="counter">Осталось свободных мест - 4</div>-->
 						<div class="form-check text-left">
 							<input type="checkbox" class="form-check-input" name="agree" value="1">
 							<span>Согласие на обработку <a href="#">персональных данных</a></span>
@@ -250,13 +248,45 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
-<div id="reviews-block" class="page-block">
+<div id="about" class="page-block">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<div class="block-title">Наши выпускники о школе</div>
+				<div class="block-title white">О школе</div>
+				<div class="text">
+					<div class="row img-row">
+						<div class="col-6">
+							<p>Мы - команда трёхмерщиков, которые моделили для Love, Death & Robots, World of Tanks, War thunder, и многих других проектов. Мы были не довольны тем контентом, который существовал в интернете, поэтому разработали свой подход — основанный на постоянной практике и прокачке художественных навыков</p>
+						</div>
+						<div class="col-6">
+							<img src="<?=TEMPLATE_DIR?>/main/img/about-img1.jpg">
+						</div>
+					</div>
+					<div class="row img-row">
+						<div class="col-6">
+							<img src="<?=TEMPLATE_DIR?>/main/img/about-img2.jpg">
+						</div>
+						<div class="col-6">
+							<p>Наша миссия - не учить тебя кнопкам (хотя это тоже есть в программе). У нас ты научишься качественно и выразительно моделить для игр и кино. С нами ты изучишь ААА-пайплайн на примере моделей с реальных проектов. Освоишь художественную составляющую, про которую так часто забывают в 3д сообществе. Узнаешь про технические лимиты проектов и научишься в них вписываться. Познакомишься с сотней трёхмерщиков со всей России в нашем закрытом Discord'е.</p>
+						</div>
+					</div>
+					<div class="text-center">
+						<p>Добро пожаловать в, наверное, самое дружное и ламповое сообщество по трёхмерке.</p>
+						<p>Твоё путешествие только начинается!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="reviews" class="page-block">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="block-title">Отзывы наших выпускников</div>
 
 				<div id="carousel-reviews" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">

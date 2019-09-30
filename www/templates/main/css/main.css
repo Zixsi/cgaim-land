@@ -124,7 +124,7 @@ padding-top: 150px; /*padding-bottom: 30px;*/ padding-bottom: 150px; position: r
 #subscribe-block .form-check, #subscribe-block .form-row{margin-bottom: 15px;}
 #subscribe-block .btn {font-size: 18px;}
 
-#reviews-block {}
+#reviews {}
 #carousel-reviews .carousel-indicators .active {background-color: #000;}
 #carousel-reviews .carousel-indicators li {background-color: rgba(0,0,0,.5);}
 #carousel-reviews .carousel-caption {position: relative; color: #000; min-height: 400px; left: auto; right: auto; top: auto; bottom: auto; 
@@ -142,6 +142,11 @@ height: 1px; background-color: #000; vertical-align: middle; margin-right: 5px; 
 background: transparent url('../img/arrow.png') no-repeat 0px 0px;}
 #carousel-reviews .carousel-control-prev-icon:before {content: ""; position: absolute; top: 0px; left: 0px; height: 38px; width: 20px; overflow: hidden;
 background: transparent url('../img/arrow.png') no-repeat -20px 0px;}
+
+#about {background-color: #4d67ac;}
+#about .text {color: #ffffff; font-size: 18px;}
+#about .img-row {margin-bottom: 25px; line-height: 30px;}
+#about .text img {width: 100%;}
 
 #faq-block {background-color: #424955; padding-left: }
 #faq-block {}
