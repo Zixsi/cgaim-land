@@ -74,7 +74,9 @@
 									<img src="<?=$course['img']?>" class="card-img-top" alt="<?=$course['name']?>">
 								</a>
 								<div class="card-body">
-									<h5 class="card-title"><?=$course['name']?></h5>
+									<h5 class="card-title">
+										<a href="/courses/<?=$course['code']?>"><?=$course['name']?></a>		
+									</h5>
 									<p class="card-text"><?=$course['description']?></p>
 									<div class="text-center">
 										<a href="/courses/<?=$course['code']?>" class="btn btn-blue">О курсе</a>

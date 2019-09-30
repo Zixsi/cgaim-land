@@ -48,7 +48,7 @@
 						<?foreach($lectures as $val):?>
 							<?if($lecturesNewMonth):?>
 								<div class="pb-4">
-									<div><b>Месяц <?=$monthNumber?>:</b></div>
+									<!-- <div><b>Месяц <?=$monthNumber?>:</b></div> -->
 								<?$lecturesNewMonth = false;?>
 							<?endif;?>
 
@@ -109,19 +109,23 @@
 			<div class="row">
 				<?if(empty($item['trailer_code']) === false):?>
 					<div class="col-8 mx-auto video">
-						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/<?=$item['trailer_code']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+						<h3 class="title">Трейлер курса</h3>
+						<iframe width="100%" height="90%" src="https://www.youtube.com/embed/<?=$item['trailer_code']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 					</div>
 				<?endif;?>
 				<div class="col-4 mx-auto">
+					<h3 class="title">Ваш преподаватель</h3>
 					<div class="course--teacher">
 						<div class="photo">
 							<img src="<?=$schoolUrl.'/'.$teacher['img']?>" alt="">
 						</div>
 						<h3 class="name"><?=$teacher['full_name']?></h3>
 						<div class="text"><?=$teacher['title']?></div>
-						<div class="text-center">
-							<a href="<?=($teacher['blog_url'] ?? '')?>" class="btn btn-orange">Читать статью</a>
-						</div>
+						<?if(empty($teacher['blog_url']) === false):?>
+							<div class="text-center">
+								<a href="<?=($teacher['blog_url'] ?? '')?>" class="btn btn-orange">Читать интервью</a>
+							</div>
+						<?endif;?>
 					</div>
 				</div>
 			</div>
@@ -196,7 +200,24 @@
 							<?if((float) $item['price']['standart']['full'] <= 0):?>
 								<div class="price">FREE</div>
 							<?else:?>
-								<div class="price">от <?=number_format($item['price']['standart']['full'], 2, '.', ' ')?> руб</div>
+								<div class="switcher">
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" data-toggle="tab" href="#price-standart-full" role="tab">Полная</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#price-standart-month" role="tab">Помесячная</a>
+										</li>
+									</ul>
+									<div class="tab-content">
+										<div class="tab-pane fade show active" id="price-standart-full" role="tabpanel">
+											<div class="price" data="">от <?=number_format($item['price']['standart']['full'], 2, '.', ' ')?> руб</div>
+										</div>
+										<div class="tab-pane fade" id="price-standart-month" role="tabpanel">
+											<div class="price" data="month">от <?=number_format($item['price']['standart']['month'], 2, '.', ' ')?> руб/мес</div>
+										</div>
+									</div>
+								</div>
 							<?endif;?>
 							<div class="description">
 								<ul class="list-unstyled plan-features">
@@ -224,7 +245,24 @@
 								<?if((float) $item['price']['advanced']['full'] <= 0):?>
 									<div class="price">FREE</div>
 								<?else:?>
-									<div class="price">от <?=number_format($item['price']['advanced']['full'], 2, '.', ' ')?> руб</div>
+									<div class="switcher">
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" data-toggle="tab" href="#price-advanced-full" role="tab">Полная</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" data-toggle="tab" href="#price-advanced-month" role="tab">Помесячная</a>
+											</li>
+										</ul>
+										<div class="tab-content">
+											<div class="tab-pane fade show active" id="price-advanced-full" role="tabpanel">
+												<div class="price" data="">от <?=number_format($item['price']['advanced']['full'], 2, '.', ' ')?> руб</div>
+											</div>
+											<div class="tab-pane fade" id="price-advanced-month" role="tabpanel">
+												<div class="price" data="month">от <?=number_format($item['price']['advanced']['month'], 2, '.', ' ')?> руб/мес</div>
+											</div>
+										</div>
+									</div>
 								<?endif;?>
 								<div class="description">
 									<ul class="list-unstyled plan-features">
@@ -249,7 +287,24 @@
 									<div class="icon">
 										<img src="<?=TEMPLATE_DIR?>/main/img/money.png">
 									</div>
-									<div class="price">от <?=number_format($item['price']['vip']['full'], 2, '.', ' ')?> руб</div>
+									<div class="switcher">
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" data-toggle="tab" href="#price-vip-full" role="tab">Полная</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" data-toggle="tab" href="#price-vip-month" role="tab">Помесячная</a>
+											</li>
+										</ul>
+										<div class="tab-content">
+											<div class="tab-pane fade show active" id="price-vip-full" role="tabpanel">
+												<div class="price" data="">от <?=number_format($item['price']['vip']['full'], 2, '.', ' ')?> руб</div>
+											</div>
+											<div class="tab-pane fade" id="price-vip-month" role="tabpanel">
+												<div class="price" data="month">от <?=number_format($item['price']['vip']['month'], 2, '.', ' ')?> руб/мес</div>
+											</div>
+										</div>
+									</div>
 									<div class="description">
 										<ul class="list-unstyled plan-features">
 											<li class="checked"><i class="fa fa-times"></i>Доступ ко всем лекциям курса</li>

@@ -25,6 +25,8 @@ a.btn-orange {color: #fff;}
 #header .panel-menu {background-color: #272b30; position: relative;}
 #header .panel-menu .main-menu {text-align: center; float: right;}
 #header .panel-menu .logo {height: 60px; width: 150px; margin: 5px 0px 5px 0px;}
+#header .panel-menu .btn--auth {margin-top: 18px;}
+#header .panel-menu .main-menu {margin-right: 20px;}
 
 #footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 128px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
 #footer .top .main-menu {text-align: center;}
@@ -93,6 +95,7 @@ padding-top: 150px; /*padding-bottom: 30px;*/ padding-bottom: 150px; position: r
 #courses-block .card {border: 0 none; border-radius: 0;}
 #courses-block .card .card-img-top {border-radius: 0;}
 #courses-block .card .card-title {color: #183981; font-weight: bold;}
+#courses-block .card-title a {color: #183981;}
 #courses-block .card .card-text {padding-bottom: 30px;}
 #courses-block .card .btn {padding: 7px 50px;}
 #courses-block .button-row .btn {padding: 7px 40px; font-size: 20px;}
@@ -176,6 +179,7 @@ background: transparent url('../img/arrow.png') no-repeat -20px 0px;}
 .course--teacher .name {font-size: 24px; font-weight: bold; margin-bottom: 15px;}
 .course--teacher .text {font-size: 18px; margin-bottom: 20px;}
 #course-item-details .video {padding-right: 40px;}
+#course-item-details .title {color: #ffffff; font-weight: bold; font-size: 27px; margin-bottom: 20px;}
 
 #course-item-invest {background: transparent url('../img/bg.jpg') center center repeat-y; background-size: cover; color: #fff; position: relative; background-attachment: fixed;}
 #course-item-invest:before {content: ""; position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 5; background-color: #000000; opacity: 0.6;}
@@ -211,7 +215,18 @@ background: transparent url('../img/arrow.png') no-repeat -20px 0px;}
 #course-item-price .card .plan-features li.checked i {color: #BADA55; border-color: #BADA55;}
 #course-item-price .card .plan-features li.checked i:before {content: "\f00c";}
 #course-item-price .card .btn-row {}
+#course-item-price .switcher {}
+#course-item-price .switcher .nav-tabs {border: 0 none; text-align: center; display: inline-block;}
+#course-item-price .switcher .nav-tabs .nav-item {float: left;}
+#course-item-price .switcher .nav-tabs a.nav-item {border: 0 none;}
+#course-item-price .switcher .nav-tabs .nav-link {display: inline-block; width: 110px; border: 1px solid #4D67AC; border-radius: 0px 5px 5px 0px; color: #4D67AC; padding: 5px; font-size: 12px;}
+#course-item-price .switcher .nav-tabs .nav-item:first-child .nav-link {border-radius: 5px 0px 0px 5px; border-right: 0 none;}
+#course-item-price .switcher .nav-tabs .nav-link.active {background-color: #4D67AC; color: #ffffff;}
+#course-item-price .switcher .nav-tabs .nav-link:focus, 
+#course-item-price .switcher .nav-tabs .nav-link:hover {}
+
 
 #courses-list {}
 #courses-list .item {}
 #courses-list .item .card {height: 100%;}
+#courses-list .item .card-title a {color: #183981;}

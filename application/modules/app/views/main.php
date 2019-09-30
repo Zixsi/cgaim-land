@@ -1,3 +1,6 @@
+<?php
+$urlSchool = $this->config->item('school_url');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,14 +27,16 @@
 					<a href="/">
 						<img src="<?=TEMPLATE_DIR?>/main/img/logo_white.png" class="logo">
 					</a>
+					<a href="<?=$urlSchool?>" class="btn btn-sm btn-orange float-right btn--auth">Авторизация / Регистрация</a>
 					<ul class="list-unstyled main-menu">
 						<li><span class="active">Главная</span></li>
-						<li><a href="#">Онлайн курсы</a></li>
 						<li><a href="http://blog.cgaim.ru/">Блог</a></li>
+						<li><a href="/courses/">Онлайн курсы</a></li>
 						<li><a href="#">Отзывы</a></li>
 						<li><a href="#">Контакты</a></li>
 						<li><a href="#">О школе</a></li>
 					</ul>
+
 				</div>
 			</div>
 		</div>
@@ -47,8 +52,8 @@
 				<div class="col-12">
 					<ul class="list-unstyled main-menu">
 						<li><span class="active">Главная</span></li>
-						<li><a href="#">Онлайн курсы</a></li>
 						<li><a href="http://blog.cgaim.ru/">Блог</a></li>
+						<li><a href="/courses/">Онлайн курсы</a></li>
 						<li><a href="#">Отзывы</a></li>
 						<li><a href="#">Контакты</a></li>
 						<li><a href="#">О школе</a></li>
