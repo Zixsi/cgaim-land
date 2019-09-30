@@ -70,9 +70,9 @@ class Course
 
 		if(isset($item['description']))
 		{
-			$item['description'] = strip_tags($item['description']);
 			if($short)
 			{
+				$item['description'] = strip_tags($item['description']);
 				$item['description'] = character_limiter($item['description'], 200);
 			}
 		}
