@@ -34,10 +34,12 @@
 						<span class="label">часов занятий</span>
 					</div>
 				</div>
+				<?/*
 				<h3 class="course-item--title"><?=$item['name']?></h3>
 				<?if(empty($item['preview_text']) === false):?>
 					<div class="course-item--subtitle"><?=$item['preview_text']?></div>
 				<?endif;?>
+				*/?>
 				<div class="course-item--description">
 					<?=$item['description']?>
 				</div>
