@@ -27,7 +27,7 @@ $urlSchool = $this->config->item('school_url');
 					<a href="/">
 						<img src="<?=TEMPLATE_DIR?>/main/img/logo_white.png" class="logo">
 					</a>
-					<a href="<?=$urlSchool?>" class="btn btn-sm btn-orange float-right btn--auth">Авторизация / Регистрация</a>
+					<a href="<?=$urlSchool?>" class="btn btn-sm btn-orange float-right btn--auth">Вход / Регистрация</a>
 					<ul class="list-unstyled main-menu">
 						<li><span class="active">Главная</span></li>
 						<li><a href="http://blog.cgaim.ru/">Блог</a></li>
