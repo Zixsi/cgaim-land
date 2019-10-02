@@ -17,6 +17,10 @@ a.btn-orange {color: #fff;}
 .btn-orange:not(:disabled):not(.disabled):active, 
 .show>.btn-orange.dropdown-toggle {background-color: #f15d0e; border-color: #f15d0e;}
 
+.color-c1 {color: #ffba4a;}
+.color-c2 {color: #42d79e;}
+.color-c3 {color: #fc507e;}
+.color-c4 {color: #4d67ac;}
 
 #background {position: fixed; z-index: 0; top: 0px; height: 100%; width: 100%;
 	/*background: transparent url('../img/bg.jpg') center center repeat-y; background-size: cover; opacity: 0.5;*/}
@@ -100,11 +104,23 @@ padding-top: 150px; /*padding-bottom: 30px;*/ padding-bottom: 150px; position: r
 #courses-block .card .btn {padding: 7px 50px;}
 #courses-block .button-row .btn {padding: 7px 40px; font-size: 20px;}
 
-#why-block .items-list {font-size: 18px; padding-bottom: 20px;}
-#why-block .items-list .img {height: 100px; margin-bottom: 25px;}
-#why-block .items-list .text {}
+#training {padding: 50px 0px; background: transparent url('../img/bg.jpg') center center repeat-y; background-size: cover; position: relative; background-attachment: fixed;}
+#training:before {content: ""; position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 5; background-color: #000000; opacity: 0.6;}
+#training .container {position: relative; z-index: 10;}
+#training .item {text-align: center; color: #ffffff;}
+#training .item .img {background-color: #ffffff; border-radius: 50%; font-size: 50px; height: 115px; width: 115px; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;}
+#training .item .title {font-weight: bold; margin-bottom: 25px; font-size: 18px; }
+#training .item .text {font-size: 16px;}
 
-#works-block {background-color: #424955;}
+
+#works-block {/*background-color: #424955;*/}
+
+#subscribe {background-color: #4d67ac;}
+#subscribe .items-list {margin-bottom: 25px;}
+#subscribe .item {text-align: center; color: #ffffff;}
+#subscribe .item .img {background-color: #ffffff; border-radius: 50%; font-size: 50px; height: 115px; width: 115px; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;}
+#subscribe .item .title {font-weight: bold; margin-bottom: 25px; font-size: 18px; }
+#subscribe .item .text {font-size: 16px;}
 
 #knowledge-block {}
 #knowledge-block .card-deck {padding-top: 30px; padding-bottom: 0px;}
@@ -114,37 +130,27 @@ padding-top: 150px; /*padding-bottom: 30px;*/ padding-bottom: 150px; position: r
 #knowledge-block .card .card-title {color: #183981; font-weight: bold;}
 #knowledge-block .card .card-text {padding-bottom: 30px;}
 
-#subscribe-block {background: transparent url('../img/bg.jpg') center center repeat-y; background-size: cover; position: relative;}
-#subscribe-block:before {content: ""; position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 5; background-color: #424955; opacity: 0.5;}
-#subscribe-block .container {position: relative; z-index: 10;}
-#subscribe-block form {background-color: #fff; box-sizing: border-box; padding: 30px; font-size: 16px;}
-#subscribe-block form h5 {text-transform: uppercase; font-weight: bold; font-size: 20px;}
-#subscribe-block .counter {background-color: #4d67ac; color: #fff; font-size: 18px; margin-left: -30px; 
-	margin-right: -30px; padding: 15px; margin-bottom: 15px;}
-#subscribe-block .form-check, #subscribe-block .form-row{margin-bottom: 15px;}
-#subscribe-block .btn {font-size: 18px;}
-
-#reviews {}
-#carousel-reviews .carousel-indicators .active {background-color: #000;}
+#reviews {background-color: #4d67ac;}
+#carousel-reviews .carousel-indicators .active {background-color: #ffffff;}
 #carousel-reviews .carousel-indicators li {background-color: rgba(0,0,0,.5);}
-#carousel-reviews .carousel-caption {position: relative; color: #000; min-height: 400px; left: auto; right: auto; top: auto; bottom: auto; 
+#carousel-reviews .carousel-caption {position: relative; color: #ffffff; min-height: 400px; left: auto; right: auto; top: auto; bottom: auto; 
 	margin: 0 15%;}
 #carousel-reviews .carousel-caption .title {font-weight: bold; font-size: 25px; position: relative; padding-bottom: 40px; margin-bottom: 30px;}
 #carousel-reviews .carousel-caption .title:before {content: ""; position: absolute; bottom: 0px; left: 50%; width: 80px; 
-margin-left: -40px; height: 2px; background-color: #000;}
+margin-left: -40px; height: 2px; background-color: #ffffff;}
 #carousel-reviews .carousel-caption .text {font-size: 18px; margin-bottom: 30px;}
 #carousel-reviews .carousel-caption .author {font-size: 18px;}
 #carousel-reviews .carousel-caption .author span {}
 #carousel-reviews .carousel-caption .author span:before {content: ""; display: inline-block; position: relative; width: 15px; 
-height: 1px; background-color: #000; vertical-align: middle; margin-right: 5px; margin-top: -2px;}
+height: 1px; background-color: #ffffff; vertical-align: middle; margin-right: 5px; margin-top: -2px;}
 #carousel-reviews .carousel-control-next-icon, #carousel-reviews .carousel-control-prev-icon {background: none; position: relative; height: 38px; width: 20px;}
 #carousel-reviews .carousel-control-next-icon:before {content: ""; position: absolute; top: 0px; left: 0px; height: 38px; width: 20px; overflow: hidden;
-background: transparent url('../img/arrow.png') no-repeat 0px 0px;}
+background: transparent url('../img/arrow_w.png') no-repeat 0px 0px;}
 #carousel-reviews .carousel-control-prev-icon:before {content: ""; position: absolute; top: 0px; left: 0px; height: 38px; width: 20px; overflow: hidden;
-background: transparent url('../img/arrow.png') no-repeat -20px 0px;}
+background: transparent url('../img/arrow_w.png') no-repeat -20px 0px;}
 
-#about {background-color: #4d67ac;}
-#about .text {color: #ffffff; font-size: 18px;}
+#about {background-color: #ffffff;}
+#about .text {font-size: 18px;}
 #about .img-row {margin-bottom: 25px; line-height: 30px;}
 #about .text img {width: 100%;}
 

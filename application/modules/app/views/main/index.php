@@ -1,3 +1,6 @@
+<?php
+$urlSchool = $this->config->item('school_url');
+?>
 <div class="row" id="first-block">
 	<div class="container">
 		<div class="row">
@@ -17,7 +20,72 @@
 		</div>
 	</div>
 </div>
-
+<div id="about" class="page-block">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="block-title">О школе</div>
+				<div class="block-sub-title">Добро пожаловать в  дружное и уютное сообщество!</div>
+				<div class="text">
+					<div class="row img-row">
+						<div class="col-6">
+							<p>Привет, онлайн школа CGAim помогает новичкам с нуля научиться работе с 2D-графикой, 3D-моделированием и анимацией, а опытным развить навыки и найти новую специализацию. Наша команда не довольна тем контентом который заполонил интернет, поэтому разработали подход основанный на постоянной практике.</p>
+						</div>
+						<div class="col-6">
+							<img src="<?=TEMPLATE_DIR?>/main/img/about-img1.jpg">
+						</div>
+					</div>
+					<div class="row img-row">
+						<div class="col-6">
+							<img src="<?=TEMPLATE_DIR?>/main/img/about-img2.jpg">
+						</div>
+						<div class="col-6">
+							<p>Задача курсов обучить не только какими кнопками пользоваться в программах, а научить качественно и выразительно создавать творческий замысел для игр и кино. Познакомишься с коллегами по цеху в закрытом Discord чате.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="courses-block" class="page-block">
+	<div class="container">
+		<div class="row">
+			<div class="col-10 offset-1">
+				<div class="block-title white">Выберите свой курс!</div>
+				<div class="block-sub-title white">Блок курсов для новичков и творческого развития, где познакомишься с принципами и необходимым инструментом для дальнейшего развития в компьютерной графике</div>
+				<div class="card-deck">
+					<?if($courses):?>
+						<?$i = 0;?>
+						<?foreach($courses as $course):?>
+							<?$i++;?>
+							<div class="card mb-4">
+								<a href="/courses/<?=$course['code']?>">
+									<img src="<?=$course['img']?>" class="card-img-top" alt="<?=$course['name']?>">
+								</a>
+								<div class="card-body">
+									<h5 class="card-title">
+										<a href="/courses/<?=$course['code']?>"><?=$course['name']?></a>		
+									</h5>
+									<p class="card-text"><?=$course['description']?></p>
+									<div class="text-center">
+										<a href="/courses/<?=$course['code']?>" class="btn btn-blue">О курсе</a>
+									</div>
+								</div>
+							</div>
+							<?if(($i % 2) === 0):?>
+								<div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
+							<?endif;?>
+						<?endforeach;?>
+					<?endif;?>
+				</div>
+				<div class="button-row text-center">
+					<a href="/courses/" class="btn btn-orange">Все курсы</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <div id="advantage-block" class="page-block">
 	<div class="container">
 		<div class="row">
@@ -58,46 +126,7 @@
 	</div>
 </div>
 
-<div id="courses-block" class="page-block">
-	<div class="container">
-		<div class="row">
-			<div class="col-10 offset-1">
-				<div class="block-title white">Выберите свой курс!</div>
-				<div class="block-sub-title white">Блок курсов для новичков и творческого развития, где познакомишься с принципами и необходимым инструментом для дальнейшего развития в компьютерной графике</div>
-				<div class="card-deck">
-					<?if($courses):?>
-						<?$i = 0;?>
-						<?foreach($courses as $course):?>
-							<?$i++;?>
-							<div class="card mb-4">
-								<a href="/courses/<?=$course['code']?>">
-									<img src="<?=$course['img']?>" class="card-img-top" alt="<?=$course['name']?>">
-								</a>
-								<div class="card-body">
-									<h5 class="card-title">
-										<a href="/courses/<?=$course['code']?>"><?=$course['name']?></a>		
-									</h5>
-									<p class="card-text"><?=$course['description']?></p>
-									<div class="text-center">
-										<a href="/courses/<?=$course['code']?>" class="btn btn-blue">О курсе</a>
-									</div>
-								</div>
-							</div>
-							<?if(($i % 2) === 0):?>
-								<div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-							<?endif;?>
-						<?endforeach;?>
-					<?endif;?>
-				</div>
-				<div class="button-row text-center">
-					<a href="/courses/" class="btn btn-orange">Все курсы</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-	
-<div id="why-block" class="page-block">
+<!-- <div id="why-block" class="page-block">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -126,13 +155,52 @@
 			</div>
 		</div>
 	</div>
+</div> -->
+<div id="training" class="page-block">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="block-title white">Как проходит обучение?</div>
+				<div class="row items-list">
+					<div class="col-3 text-center item">
+						<div class="img color-c1">
+							<i class="fas fa-file-video"></i>
+						</div>
+						<div class="title">Лекции</div>
+						<div class="text">После оплаты ты сразу получаешь доступ к своей группе, в ней тебя будет ждать вводная лекция с инструкциями по учебе. Каждую неделю в понедельник (в ночь с воскресенья на понедельник) откроется доступ к новым обучающим материалам.</div>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c2">
+							<i class="fas fa-file-alt"></i>
+						</div>
+						<div class="title">Проверка домашнего задания</div>
+						<div class="text">После каждого заняти тебе выдается домашнее задание, его нужно сдать до конца каждой недели (воскресенье до 23 часов 59 минут по Московскому времени). Для загрузки будет доступно специальное поле. Начиная с понедельника следущей недели после сдачи домашки , преподаватель запишет видео обзор на вашу работу.</div>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c3">
+							<i class="fas fa-graduation-cap"></i>
+						</div>
+						<div class="title">Онлайн встречи</div>
+						<div class="text">Ближе к концу каждой недели проходит онлайн встреча с преподавателем, день и время которой устанавливает по договоренности со студентами. Во время встречи вы можете обсудить возникшие по курсу вопросы и получить дополнительную информацию.</div>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c4">
+							<i class="fab fa-discord"></i>
+						</div>
+						<div class="title">Секретный чат</div>
+						<div class="text">Помимо общего чата, студенту курса выдается доступ в закрытый чат Discord, в котором много студентов прошедших курс. В нём помогут решить любые возникшие вопросы по программе и выполнению домашки.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div id="works-block" class="page-block">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<div class="block-title white">Работы наших студентов</div>
+				<div class="block-title whitee">Работы наших студентов</div>
 				
 				<div id="carousel-works" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
@@ -159,6 +227,49 @@
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						<span class="sr-only">Следующая</span>
 					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="subscribe" class="page-block">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="block-title white">Как подписаться на курс?</div>
+				<div class="row items-list">
+					<div class="col-3 text-center item">
+						<div class="img color-c1">
+							<i class="fas fa-address-card"></i>
+						</div>
+						<div class="title">Регистрация</div>
+						<div class="text">Регистрируемся на платформе и проходим авторизацию через почту.</div>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c2">
+							<i class="fas fa-address-book"></i>
+						</div>
+						<div class="title">Выбор курса</div>
+						<div class="text">У понравишегося курса выбираем тип подписки.</div>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c3">
+							<i class="fas fa-calculator"></i>
+						</div>
+						<div class="title">Оплата</div>
+						<div class="text">Выбираем наиболее подходящий способ оплаты.</div>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c4">
+							<i class="fas fa-check-circle"></i>
+						</div>
+						<div class="title">Доступ</div>
+						<div class="text">После оплаты вам сразу откроется доступ к вашей группе.</div>
+					</div>
+				</div>
+				<div class="text-center">
+					<a href="<?=$urlSchool?>/auth/register/" class="btn btn-orange">Регистрация</a>
 				</div>
 			</div>
 		</div>
@@ -220,73 +331,11 @@
 	</div>
 </div>
 
-<!-- <div id="subscribe-block" class="page-block">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<div class="block-title white">Успей записаться на пробный урок!</div>
-				<div class="block-sub-title white">Первый урок совершенно бесплатно на курс «Основы 3D анимации»</div>
-				<div class="row">
-					<form class="col-5 m-auto text-center">
-						<h5>Заполните форму ниже</h5>
-						<p>Вам на почту придет письмо с<br> дальнейшими инструкциями</p>
-						<div class="form-check text-left">
-							<input type="checkbox" class="form-check-input" name="agree" value="1">
-							<span>Согласие на обработку <a href="#">персональных данных</a></span>
-						</div>
-						<div class="form-row">
-							<input type="text" class="form-control" name="name" placeholder="Ваша фамилия и имя *">
-						</div>
-						<div class="form-row">
-							<input type="text" class="form-control" name="email" placeholder="Ваш Email *">
-						</div>
-						<div class="text-center">
-							<button type="submit" class="btn btn-orange">Записаться</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
-
-<div id="about" class="page-block">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<div class="block-title white">О школе</div>
-				<div class="text">
-					<div class="row img-row">
-						<div class="col-6">
-							<p>Мы - команда трёхмерщиков, которые моделили для Love, Death & Robots, World of Tanks, War thunder, и многих других проектов. Мы были не довольны тем контентом, который существовал в интернете, поэтому разработали свой подход — основанный на постоянной практике и прокачке художественных навыков</p>
-						</div>
-						<div class="col-6">
-							<img src="<?=TEMPLATE_DIR?>/main/img/about-img1.jpg">
-						</div>
-					</div>
-					<div class="row img-row">
-						<div class="col-6">
-							<img src="<?=TEMPLATE_DIR?>/main/img/about-img2.jpg">
-						</div>
-						<div class="col-6">
-							<p>Наша миссия - не учить тебя кнопкам (хотя это тоже есть в программе). У нас ты научишься качественно и выразительно моделить для игр и кино. С нами ты изучишь ААА-пайплайн на примере моделей с реальных проектов. Освоишь художественную составляющую, про которую так часто забывают в 3д сообществе. Узнаешь про технические лимиты проектов и научишься в них вписываться. Познакомишься с сотней трёхмерщиков со всей России в нашем закрытом Discord'е.</p>
-						</div>
-					</div>
-					<div class="text-center">
-						<p>Добро пожаловать в, наверное, самое дружное и ламповое сообщество по трёхмерке.</p>
-						<p>Твоё путешествие только начинается!</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
 <div id="reviews" class="page-block">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<div class="block-title">Отзывы наших выпускников</div>
+				<div class="block-title white">Отзывы наших выпускников</div>
 
 				<div id="carousel-reviews" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
