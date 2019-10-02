@@ -117,10 +117,11 @@ padding-top: 150px; /*padding-bottom: 30px;*/ padding-bottom: 150px; position: r
 
 #subscribe {/*background-color: #4d67ac;*/ background-color: #424955;}
 #subscribe .items-list {margin-bottom: 25px;}
-#subscribe .item {text-align: center; color: #ffffff;}
+#subscribe .item {text-align: center; color: #ffffff; position: relative;}
 #subscribe .item .img {background-color: #ffffff; border-radius: 50%; font-size: 50px; height: 115px; width: 115px; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;}
 #subscribe .item .title {font-weight: bold; margin-bottom: 25px; font-size: 18px; }
 #subscribe .item .text {font-size: 16px;}
+#subscribe .item .arrow {font-size: 30px; position: absolute; top: 50px; right: 0px;}
 
 #knowledge-block {}
 #knowledge-block .card-deck {padding-top: 30px; padding-bottom: 0px;}

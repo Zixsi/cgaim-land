@@ -245,6 +245,7 @@ $urlSchool = $this->config->item('school_url');
 						</div>
 						<div class="title">Регистрация</div>
 						<div class="text">Регистрируемся на платформе и проходим авторизацию через почту.</div>
+						<i class="fas fa-angle-double-right arrow"></i>
 					</div>
 					<div class="col-3 text-center item">
 						<div class="img color-c2">
@@ -252,6 +253,7 @@ $urlSchool = $this->config->item('school_url');
 						</div>
 						<div class="title">Выбор курса</div>
 						<div class="text">У понравишегося курса выбираем тип подписки.</div>
+						<i class="fas fa-angle-double-right arrow"></i>
 					</div>
 					<div class="col-3 text-center item">
 						<div class="img color-c3">
@@ -259,6 +261,7 @@ $urlSchool = $this->config->item('school_url');
 						</div>
 						<div class="title">Оплата</div>
 						<div class="text">Выбираем наиболее подходящий способ оплаты.</div>
+						<i class="fas fa-angle-double-right arrow"></i>
 					</div>
 					<div class="col-3 text-center item">
 						<div class="img color-c4">
