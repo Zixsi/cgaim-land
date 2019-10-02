@@ -381,6 +381,7 @@ $urlSchool = $this->config->item('school_url');
 	</div>
 </div>
 
+<?/*
 <div id="faq-block" class="page-block">
 	<div class="row">
 		<div class="col-11 m-auto">
@@ -426,3 +427,4 @@ $urlSchool = $this->config->item('school_url');
 		</div>
 	</div>
 </div>
+*/?>

@@ -94,7 +94,7 @@ padding-top: 150px; /*padding-bottom: 30px;*/ padding-bottom: 150px; position: r
 #advantage-block .items-list .title {font-weight: bold; margin-bottom: 25px;}
 #advantage-block .items-list .text {}
 
-#courses-block {background-color: #4d67ac;}
+#courses-block {background-color: #424955;}
 #courses-block .card-deck {padding-top: 30px; padding-bottom: 30px;}
 #courses-block .card {border: 0 none; border-radius: 0;}
 #courses-block .card .card-img-top {border-radius: 0;}
@@ -104,9 +104,9 @@ padding-top: 150px; /*padding-bottom: 30px;*/ padding-bottom: 150px; position: r
 #courses-block .card .btn {padding: 7px 50px;}
 #courses-block .button-row .btn {padding: 7px 40px; font-size: 20px;}
 
-#training {padding: 50px 0px; background: transparent url('../img/bg.jpg') center center repeat-y; background-size: cover; position: relative; background-attachment: fixed;}
-#training:before {content: ""; position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 5; background-color: #000000; opacity: 0.6;}
-#training .container {position: relative; z-index: 10;}
+#training {/*padding: 50px 0px; background: transparent url('../img/bg.jpg') center center repeat-y; background-size: cover; position: relative; background-attachment: fixed;*/ background-color: #424955;}
+/*#training:before {content: ""; position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 5; background-color: #000000; opacity: 0.6;}
+#training .container {position: relative; z-index: 10;}*/
 #training .item {text-align: center; color: #ffffff;}
 #training .item .img {background-color: #ffffff; border-radius: 50%; font-size: 50px; height: 115px; width: 115px; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;}
 #training .item .title {font-weight: bold; margin-bottom: 25px; font-size: 18px; }
@@ -115,7 +115,7 @@ padding-top: 150px; /*padding-bottom: 30px;*/ padding-bottom: 150px; position: r
 
 #works-block {/*background-color: #424955;*/}
 
-#subscribe {background-color: #4d67ac;}
+#subscribe {/*background-color: #4d67ac;*/ background-color: #424955;}
 #subscribe .items-list {margin-bottom: 25px;}
 #subscribe .item {text-align: center; color: #ffffff;}
 #subscribe .item .img {background-color: #ffffff; border-radius: 50%; font-size: 50px; height: 115px; width: 115px; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;}
@@ -130,7 +130,7 @@ padding-top: 150px; /*padding-bottom: 30px;*/ padding-bottom: 150px; position: r
 #knowledge-block .card .card-title {color: #183981; font-weight: bold;}
 #knowledge-block .card .card-text {padding-bottom: 30px;}
 
-#reviews {background-color: #4d67ac;}
+#reviews {background-color: #424955;}
 #carousel-reviews .carousel-indicators .active {background-color: #ffffff;}
 #carousel-reviews .carousel-indicators li {background-color: rgba(0,0,0,.5);}
 #carousel-reviews .carousel-caption {position: relative; color: #ffffff; min-height: 400px; left: auto; right: auto; top: auto; bottom: auto; 
