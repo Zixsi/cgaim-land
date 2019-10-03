@@ -21,7 +21,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<div class="block-title white">Выберите свой курс!</div>
+				<div class="block-title">Наши курсы</div>
 				<div class="card-deckk">
 					<?if($courses):?>
 						<?$i = 0;?>

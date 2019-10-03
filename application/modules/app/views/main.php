@@ -29,9 +29,21 @@ $urlSchool = $this->config->item('school_url');
 					</a>
 					<a href="<?=$urlSchool?>" class="btn btn-sm btn-orange float-right btn--auth">Вход / Регистрация</a>
 					<ul class="list-unstyled main-menu">
-						<li><span class="active">Главная</span></li>
+						<li>
+							<?if(isActiveMenuItem('maincontroller')):?>
+								<span class="active">Главная</span>
+							<?else:?>
+								<a href="/">Главная</a>
+							<?endif;?>
+						</li>
 						<li><a href="http://blog.cgaim.ru/">Блог</a></li>
-						<li><a href="/courses/">Онлайн курсы</a></li>
+						<li>
+							<?if(isActiveMenuItem('coursecontroller')):?>
+								<span class="active">Онлайн курсы</span>
+							<?else:?>
+								<a href="/courses/">Онлайн курсы</a>
+							<?endif;?>
+						</li>
 						<li><a href="/#about">О школе</a></li>
 						<li><a href="/#reviews">Отзывы</a></li>
 						<li><a href="/#contacts">Контакты</a></li>
@@ -51,9 +63,21 @@ $urlSchool = $this->config->item('school_url');
 			<div class="top row">
 				<div class="col-12">
 					<ul class="list-unstyled main-menu">
-						<li><span class="active">Главная</span></li>
+						<li>
+							<?if(isActiveMenuItem('maincontroller')):?>
+								<span class="active">Главная</span>
+							<?else:?>
+								<a href="/">Главная</a>
+							<?endif;?>
+						</li>
 						<li><a href="http://blog.cgaim.ru/">Блог</a></li>
-						<li><a href="/courses/">Онлайн курсы</a></li>
+						<li>
+							<?if(isActiveMenuItem('coursecontroller')):?>
+								<span class="active">Онлайн курсы</span>
+							<?else:?>
+								<a href="/courses/">Онлайн курсы</a>
+							<?endif;?>
+						</li>
 						<li><a href="/#about">О школе</a></li>
 						<li><a href="/#reviews">Отзывы</a></li>
 						<li><a href="/#contacts">Контакты</a></li>

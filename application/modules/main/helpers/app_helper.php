@@ -27,3 +27,14 @@ function getVideoId($url)
 
 	return $match[1] ?? '';
 }
+
+function isActiveMenuItem($c, $a = null)
+{
+	$CI =& get_instance();
+	$cr = strtolower($CI->router->fetch_class());		
+	$ar = strtolower($CI->router->fetch_method());
+	$c = strtolower($c);
+	$a = strtolower($a);
+	
+	return (($c === $cr) && (empty($a) || $a === null || $a === $ar))?true:false;
+}
