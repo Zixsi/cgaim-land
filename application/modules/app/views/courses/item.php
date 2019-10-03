@@ -1,3 +1,4 @@
+
 <div class="row" id="first-block">
 	<div class="container">
 		<div class="row">
@@ -139,7 +140,45 @@
 		</div>
 	</div>
 <?endif;?>
-
+<div id="training" class="page-block white">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="block-title white">Как проходит обучение?</div>
+				<div class="row items-list">
+					<div class="col-3 text-center item">
+						<div class="img color-c1">
+							<i class="fas fa-file-video"></i>
+						</div>
+						<div class="title">Лекции</div>
+						<div class="text">После оплаты получаете доступ к группе, внутри вас ждет вводная лекция с инструкциями.Каждый понедельник открывается новая лекция.</div>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c2">
+							<i class="fas fa-file-alt"></i>
+						</div>
+						<div class="title">Проверка домашнего задания</div>
+						<div class="text">Домашнее задание нужно сдать в конце каждой недели. В ближайший понедельник преподаватель делает видео обзор.</div>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c3">
+							<i class="fas fa-graduation-cap"></i>
+						</div>
+						<div class="title">Онлайн встречи</div>
+						<div class="text">В конце недели проходит онлайн встреча с преподавателем, на ней вы сможете задавать вопросы и получить дополнительную информацию.</div>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c4">
+							<i class="fab fa-discord"></i>
+						</div>
+						<div class="title">Секретный чат</div>
+						<div class="text">Помимо общего чата, студенту курса выдается доступ в закрытый чат Discord с выпускниками школы. В нем можно решать вопросы во время и после обучения.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="page-block" id="course-item-invest">
 	<div class="container">
 		<div class="row">
@@ -186,7 +225,51 @@
 		</div>
 	</div>
 <?endif;?>
-
+<div id="subscribe" class="page-block">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="block-title white">Как подписаться на курс?</div>
+				<div class="row items-list">
+					<div class="col-3 text-center item">
+						<div class="img color-c1">
+							<i class="fas fa-address-card"></i>
+						</div>
+						<div class="title">Регистрация</div>
+						<div class="text">Регистрируемся на платформе и проходим авторизацию через почту.</div>
+						<i class="fas fa-angle-double-right arrow"></i>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c2">
+							<i class="fas fa-address-book"></i>
+						</div>
+						<div class="title">Выбор курса</div>
+						<div class="text">У понравишегося курса выбираем тип подписки.</div>
+						<i class="fas fa-angle-double-right arrow"></i>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c3">
+							<i class="fas fa-calculator"></i>
+						</div>
+						<div class="title">Оплата</div>
+						<div class="text">Выбираем наиболее подходящий способ оплаты.</div>
+						<i class="fas fa-angle-double-right arrow"></i>
+					</div>
+					<div class="col-3 text-center item">
+						<div class="img color-c4">
+							<i class="fas fa-check-circle"></i>
+						</div>
+						<div class="title">Доступ</div>
+						<div class="text">После оплаты вам сразу откроется доступ к вашей группе.</div>
+					</div>
+				</div>
+				<div class="text-center">
+					<a href="<?=$schoolUrl?>/auth/register/" class="btn btn-orange">Регистрация</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="page-block" id="course-item-price">
 	<div class="container">
 		<div class="row">

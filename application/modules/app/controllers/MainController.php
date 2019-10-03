@@ -15,4 +15,18 @@ class MainController extends APP_Controller
 
 		$this->load->lview('main/index', $data);
 	}
+
+	public function terms()
+	{
+		$data = [];
+
+		$this->load->lview('main/terms', $data);
+	}
+
+	public function privacyPolicy()
+	{
+		$data = [];
+
+		$this->load->lview('main/privacy_policy', $data);
+	}
 }

@@ -1,3 +1,22 @@
+<div class="row" id="first-block">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<div class="big-title">Надоела скучная учеба или работа?</div>
+				<div class="sub-title">Обучайся компьютерной графике и стань нужным<br> в профессии за <b>9</b> месяцев</div>
+				<div class="small-sub-title">Курсы дистанционного обучения компьютерной графике и анимации в <span class="site-name">CG<b>Аim</b></span></div>
+				<?/*
+				<div class="bottom">
+					<div class="small-sub-title">Пройди бесплатный урок по курсу «Основы 3D анимации»</div>
+					<div class="button-row">
+						<button type="button" class="btn btn-orange">Записаться</button>
+					</div>
+					<!--<div class="counter-row">Осталось свободных мест: 4</div>-->
+				</div>*/?>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="page-block" id="courses-list">
 	<div class="container">
 		<div class="row">

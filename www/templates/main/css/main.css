@@ -9,7 +9,7 @@
 */
 
 html {position: relative; min-height: 100%;}
-body {font-size: 14px; font-family: 'Roboto',Tahoma; background-color: #fff; margin-bottom: 128px;}
+body {font-size: 14px; font-family: 'Roboto',Tahoma; background-color: #fff; margin-bottom: 180px;}
 .btn-orange {background-color: #FD610F; border-color: #FD610F;}
 a.btn-orange {color: #fff;}
 .btn-orange:hover {background-color: #f15d0e; border-color: #f15d0e;}
@@ -32,8 +32,7 @@ a.btn-orange {color: #fff;}
 #header .panel-menu .btn--auth {margin-top: 18px;}
 #header .panel-menu .main-menu {margin-right: 20px;}
 
-#footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 128px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
-#footer .top .main-menu {text-align: center;}
+
 
 .main-menu {margin-bottom: 0px; text-transform: uppercase; padding: 24px 0px 25px;}
 .main-menu li {display: inline-block; padding: 0px 10px;}
@@ -47,11 +46,17 @@ a.btn-orange {color: #fff;}
 #page .page-head {margin-top: 25px; font-size: 25px;}
 #page .page-head .page-title {color: #fff;}
 
+#footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 180px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
+#footer .top .main-menu {text-align: center;}
 #footer .block-contacts ul {font-size: 16px;}
 #footer .block-contacts ul a {color: #fff; text-decoration: none; transition: color 0.4s;}
 #footer .block-contacts ul a:hover  {color: #ccc; text-decoration: none; transition: color 0.4s;}
 #footer .block-owner-info {}
 #footer .block-owner-info > span {display: block;}
+#footer .links {}
+#footer .links a {margin-left: 10px; color: #999; text-decoration: underline;}
+#footer .links a:hover {text-decoration: none;}
+#footer .links a:first-child {margin-left: 0px;}
 
 @media (max-width: 990px) {
 	.container {max-width: 920px;}
@@ -111,6 +116,10 @@ padding-top: 150px; /*padding-bottom: 30px;*/ padding-bottom: 150px; position: r
 #training .item .img {background-color: #ffffff; border-radius: 50%; font-size: 50px; height: 115px; width: 115px; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;}
 #training .item .title {font-weight: bold; margin-bottom: 25px; font-size: 18px; }
 #training .item .text {font-size: 16px;}
+#training.white {background-color: #ffffff;}
+#training.white .item {color: #000;}
+#training.white .block-title {color: #000;}
+#training.white .img {font-size: 75px;}
 
 
 #works-block {/*background-color: #424955;*/}

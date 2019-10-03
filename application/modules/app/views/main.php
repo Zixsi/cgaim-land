@@ -75,19 +75,15 @@ $urlSchool = $this->config->item('school_url');
 				</div>
 			</div>-->
 			<div class="bottom row">
-				<div class="col-md-8 col-lg-4 block-owner-info">
+				<div class="col-7 block-owner-info">
 					<span>&copy; 2018, ИП Серебряков Александр Сергеевич</span>
-					<span>ИНН 1850210580185011</span>
-					<!-- <span>Счёт 40802 810 3015 0003 5607</span>
-					<span>Филиал Точка Публичного акционерного общества Банка «Финансовая Корпорация Открытие»</span>
-					<span>Город Москва</span>
-					<span>БИК 044525999</span>
-					<span>Корр. счёт 3010 1810 8452 5000 0999</span> -->
+					<span>ИНН 1850210580185011 Счёт 40802 810 3015 0003 5607 БИК 044525999 Корр. счёт 3010 1810 8452 5000 0999  Филиал Точка Публичного акционерного общества Банка «Финансовая Корпорация Открытие» город Москва </span>
 				</div>
-				<!--
-				<div class="col-4 offset-4 text-right">
-					<button type="button" class="btn btn-sm btn-primary">Подписаться на рассылку</button>
-				</div>-->
+				
+				<div class="col-5 text-right links">
+					<a href="/terms/">Правила и условия</a>
+					<a href="/policy/">Политика конфиденциальности</a>
+				</div>
 			</div>
 		</div>
 	</div>
