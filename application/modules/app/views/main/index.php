@@ -177,7 +177,7 @@ $urlSchool = $this->config->item('school_url');
 					</ol>
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="<?=TEMPLATE_DIR?>/assets/works/w1.jpg" class="d-block w-100" alt="">
+							<img src="<?=TEMPLATE_DIR?>/assets/works/w8.jpg" class="d-block w-100" alt="">
 						</div>
 						<div class="carousel-item">
 							<img src="<?=TEMPLATE_DIR?>/assets/works/w2.jpg" class="d-block w-100" alt="">
@@ -198,7 +198,7 @@ $urlSchool = $this->config->item('school_url');
 							<img src="<?=TEMPLATE_DIR?>/assets/works/w7.jpg" class="d-block w-100" alt="">
 						</div>
 						<div class="carousel-item">
-							<img src="<?=TEMPLATE_DIR?>/assets/works/w8.jpg" class="d-block w-100" alt="">
+							<img src="<?=TEMPLATE_DIR?>/assets/works/w1.jpg" class="d-block w-100" alt="">
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#carousel-works" role="button" data-slide="prev">
