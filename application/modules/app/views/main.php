@@ -51,6 +51,7 @@ $urlSchool = $this->config->item('school_url');
 						<li><a href="/#about">О школе</a></li>
 						<li><a href="/#reviews">Отзывы</a></li>
 						<li><a href="/#contacts">Контакты</a></li>
+						<li><a href="<?=$urlSchool?>" class="d-block d-lg-none">Вход / Регистрация</a></li>
 					</ul>
 
 				</div>
