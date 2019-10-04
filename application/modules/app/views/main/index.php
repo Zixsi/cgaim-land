@@ -169,16 +169,36 @@ $urlSchool = $this->config->item('school_url');
 						<li data-target="#carousel-works" data-slide-to="0" class="active"></li>
 						<li data-target="#carousel-works" data-slide-to="1"></li>
 						<li data-target="#carousel-works" data-slide-to="2"></li>
+						<li data-target="#carousel-works" data-slide-to="3"></li>
+						<li data-target="#carousel-works" data-slide-to="4"></li>
+						<li data-target="#carousel-works" data-slide-to="5"></li>
+						<li data-target="#carousel-works" data-slide-to="6"></li>
+						<li data-target="#carousel-works" data-slide-to="7"></li>
 					</ol>
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="<?=TEMPLATE_DIR?>/main/images/img1.jpg" class="d-block w-100" alt="">
+							<img src="<?=TEMPLATE_DIR?>/assets/works/w1.jpg" class="d-block w-100" alt="">
 						</div>
 						<div class="carousel-item">
-							<img src="<?=TEMPLATE_DIR?>/main/images/img1.jpg" class="d-block w-100" alt="">
+							<img src="<?=TEMPLATE_DIR?>/assets/works/w2.jpg" class="d-block w-100" alt="">
 						</div>
 						<div class="carousel-item">
-							<img src="<?=TEMPLATE_DIR?>/main/images/img1.jpg" class="d-block w-100" alt="">
+							<img src="<?=TEMPLATE_DIR?>/assets/works/w3.jpg" class="d-block w-100" alt="">
+						</div>
+						<div class="carousel-item">
+							<img src="<?=TEMPLATE_DIR?>/assets/works/w4.jpg" class="d-block w-100" alt="">
+						</div>
+						<div class="carousel-item">
+							<img src="<?=TEMPLATE_DIR?>/assets/works/w5.jpg" class="d-block w-100" alt="">
+						</div>
+						<div class="carousel-item">
+							<img src="<?=TEMPLATE_DIR?>/assets/works/w6.jpg" class="d-block w-100" alt="">
+						</div>
+						<div class="carousel-item">
+							<img src="<?=TEMPLATE_DIR?>/assets/works/w7.jpg" class="d-block w-100" alt="">
+						</div>
+						<div class="carousel-item">
+							<img src="<?=TEMPLATE_DIR?>/assets/works/w8.jpg" class="d-block w-100" alt="">
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#carousel-works" role="button" data-slide="prev">
