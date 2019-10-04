@@ -19,18 +19,18 @@
 <div class="page-block" id="course-item">
 	<div class="container">
 		<div class="row">
-			<div class="col-8">
-				<div class="course-item--about row mb-4 pb-4">
-					<div class="col-3 title">О курсе</div>
-					<div class="col-3 info">
+			<div class="col-12 col-lg-8">
+				<div class="course-item--about row mb-2 pb-2">
+					<div class="col-12 col-lg-3 title">О курсе</div>
+					<div class="col-6 col-md-4 col-lg-3 mb-2 mb-md-0 info">
 						<span class="number"><?=(int) $item['lectures_count']?></span>
 						<span class="label">недель обучения</span>
 					</div>
-					<div class="col-3 info">
+					<div class="col-6 col-md-4 col-lg-3 mb-2 mb-md-0 info">
 						<span class="number"><?=(int) $item['lectures_count']?></span>
 						<span class="label">насыщенных задания</span>
 					</div>
-					<div class="col-3 info">
+					<div class="col-6 col-md-4 col-lg-3 mb-2 mb-md-0 info">
 						<span class="number"><?=ceil((int) $item['lectures_count'] * 2)?></span>
 						<span class="label">часов занятий</span>
 					</div>
@@ -82,7 +82,7 @@
 				<?endif;?>
 				<?//debug($item);?>
 			</div>
-			<div class="col-4">
+			<div class="col-12 col-lg-4">
 				<?if($offers):?>
 					<div class="course-item-groups">
 						<h3 class="title">Ближайший набор</h3>
@@ -116,12 +116,12 @@
 		<div class="container">
 			<div class="row">
 				<?if(empty($item['trailer_code']) === false):?>
-					<div class="col-8 mx-auto video">
+					<div class="col-12 col-lg-8 mb-4 mb-lg-0 mx-auto video">
 						<h3 class="title">Трейлер курса</h3>
 						<iframe width="100%" height="90%" src="https://www.youtube.com/embed/<?=$item['trailer_code']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 					</div>
 				<?endif;?>
-				<div class="col-4 mx-auto">
+				<div class="col-12 col-lg-4 mx-auto">
 					<h3 class="title">Ваш преподаватель</h3>
 					<div class="course--teacher">
 						<div class="photo">
@@ -146,28 +146,28 @@
 			<div class="col-12">
 				<div class="block-title white">Как проходит обучение?</div>
 				<div class="row items-list">
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c1">
 							<i class="fas fa-file-video"></i>
 						</div>
 						<div class="title">Лекции</div>
 						<div class="text">После оплаты получаете доступ к группе, внутри вас ждет вводная лекция с инструкциями.Каждый понедельник открывается новая лекция.</div>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c2">
 							<i class="fas fa-file-alt"></i>
 						</div>
 						<div class="title">Проверка домашнего задания</div>
 						<div class="text">Домашнее задание нужно сдать в конце каждой недели. В ближайший понедельник преподаватель делает видео обзор.</div>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c3">
 							<i class="fas fa-graduation-cap"></i>
 						</div>
 						<div class="title">Онлайн встречи</div>
 						<div class="text">В конце недели проходит онлайн встреча с преподавателем, на ней вы сможете задавать вопросы и получить дополнительную информацию.</div>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c4">
 							<i class="fab fa-discord"></i>
 						</div>
@@ -183,24 +183,24 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 text-center">
-				<div class="big-title">Инвестируйте в ваше образование</div>
+				<div class="block-title white">Инвестируйте в ваше образование</div>
 				<div class="small-subtitle">С таким объёмом материалов, заданий, практики и помощи инструктора успех гарантирован!</div>
 			</div>
 		</div>
 		<div class="row course-item-invest--blocks">
-			<div class="col-3 text-center block">
+			<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center block">
 				<div class="head color-1">1/4</div>
 				<div class="text">вы получите подготовку к карьере в анимации за четверть времени, которые вы проведете в колледже или институте</div>
 			</div>
-			<div class="col-3 text-center block">
+			<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center block">
 				<div class="head color-2">50т.р.</div>
 				<div class="text">средняя зарплата по России, быстро растущая отрасль, студенты востребованы</div>
 			</div>
-			<div class="col-3 text-center block">
+			<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center block">
 				<div class="head color-3">2500+</div>
 				<div class="text">студий по всему миру. Работай в студии и дома.</div>
 			</div>
-			<div class="col-3 text-center block">
+			<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center block">
 				<div class="head color-4">70+</div>
 				<div class="text">часов увлекательных занятий</div>
 			</div>
@@ -213,12 +213,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12 text-center">
-					<div class="big-title">Работы студентов</div>
+					<div class="block-title">Работы студентов</div>
 					<div class="small-subtitle">Воплощайте творческие идеи, просто уделите этому время.</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-10 offset-1 video">
+				<div class="col-12 col-lg-10 offset-lg-1 video">
 					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/<?=$item['examples_code']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 				</div>
 			</div>
@@ -231,36 +231,40 @@
 			<div class="col-12">
 				<div class="block-title white">Как подписаться на курс?</div>
 				<div class="row items-list">
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c1">
 							<i class="fas fa-address-card"></i>
 						</div>
 						<div class="title">Регистрация</div>
 						<div class="text">Регистрируемся на платформе и проходим авторизацию через почту.</div>
-						<i class="fas fa-angle-double-right arrow"></i>
+						<i class="fas fa-angle-double-right arrow  d-none d-sm-block"></i>
+						<i class="fas fa-angle-double-down arrow-down  d-sm-none"></i>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c2">
 							<i class="fas fa-address-book"></i>
 						</div>
 						<div class="title">Выбор курса</div>
 						<div class="text">У понравишегося курса выбираем тип подписки.</div>
-						<i class="fas fa-angle-double-right arrow"></i>
+						<i class="fas fa-angle-double-right arrow  d-none d-lg-block"></i>
+						<i class="fas fa-angle-double-down arrow-down  d-lg-none"></i>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item order-sm-2 order-lg-1">
 						<div class="img color-c3">
 							<i class="fas fa-calculator"></i>
 						</div>
 						<div class="title">Оплата</div>
 						<div class="text">Выбираем наиболее подходящий способ оплаты.</div>
-						<i class="fas fa-angle-double-right arrow"></i>
+						<i class="fas fa-angle-double-right arrow  d-none d-lg-block"></i>
+						<i class="fas fa-angle-double-down arrow-down  d-sm-none"></i>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item order-sm-1 order-lg-2">
 						<div class="img color-c4">
 							<i class="fas fa-check-circle"></i>
 						</div>
 						<div class="title">Доступ</div>
 						<div class="text">После оплаты вам сразу откроется доступ к вашей группе.</div>
+						<i class="fas fa-angle-double-left arrow  d-none d-sm-block d-lg-none"></i>
 					</div>
 				</div>
 				<div class="text-center">
@@ -274,82 +278,38 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 text-center">
-				<div class="big-title">Стоимость обучения</div>
+				<div class="block-title white">Стоимость обучения</div>
 				<div class="small-subtitle">Выбери подходящий тип подписки</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<div class="card-deck justify-content-center">
-					<div class="card col-4">
-						<div class="card-body text-center">
-							<div class="title">Стандарт</div>
-							<div class="icon">
-								<img src="<?=TEMPLATE_DIR?>/main/img/money.png">
-							</div>
-							<?if((float) $item['price']['standart']['full'] <= 0):?>
-								<div class="price">FREE</div>
-							<?else:?>
-								<div class="switcher">
-									<ul class="nav nav-tabs" role="tablist">
-										<li class="nav-item">
-											<a class="nav-link active" data-toggle="tab" href="#price-standart-full" role="tab">Полная</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" data-toggle="tab" href="#price-standart-month" role="tab">Помесячная</a>
-										</li>
-									</ul>
-									<div class="tab-content">
-										<div class="tab-pane fade show active" id="price-standart-full" role="tabpanel">
-											<div class="price" data="">от <?=number_format($item['price']['standart']['full'], 2, '.', ' ')?> руб</div>
-										</div>
-										<div class="tab-pane fade" id="price-standart-month" role="tabpanel">
-											<div class="price" data="month">от <?=number_format($item['price']['standart']['month'], 2, '.', ' ')?> руб/мес</div>
-										</div>
-									</div>
-								</div>
-							<?endif;?>
-							<div class="description">
-								<ul class="list-unstyled plan-features">
-									<li class="checked"><i class="fa fa-times"></i>Доступ ко всем лекциям курса</li>
-									<li><i class="fa fa-times"></i>Проверка домашних работ</li>
-									<li><i class="fa fa-times"></i>Закрытый канал в дискорде</li>
-									<li><i class="fa fa-times"></i>Груповые онлайн встречи</li>
-									<li><i class="fa fa-times"></i>Личные онлайн встречи</li>
-									<li class="checked"><i class="fa fa-times"></i>Начало в назначенную дату</li>
-									<li><i class="fa fa-times"></i>Старт в ближайший понедельник</li>
-								</ul>
-							</div>
-							<div class="btn-row">
-								<a href="<?=$schoolUrl?>/courses/<?=$item['code']?>/" class="btn btn-orange">Записаться</a>
-							</div>
-						</div>
-					</div>
-					<?if($item['only_standart'] === false):?>
-						<div class="card col-4">
+				<div class="row justify-content-center pt-4">
+					<div class="col-12 col-md-6 col-lg-4 mb-4">
+						<div class="card">
 							<div class="card-body text-center">
-								<div class="title">Расширенный</div>
+								<div class="title">Стандарт</div>
 								<div class="icon">
 									<img src="<?=TEMPLATE_DIR?>/main/img/money.png">
 								</div>
-								<?if((float) $item['price']['advanced']['full'] <= 0):?>
+								<?if((float) $item['price']['standart']['full'] <= 0):?>
 									<div class="price">FREE</div>
 								<?else:?>
 									<div class="switcher">
 										<ul class="nav nav-tabs" role="tablist">
 											<li class="nav-item">
-												<a class="nav-link active" data-toggle="tab" href="#price-advanced-full" role="tab">Полная</a>
+												<a class="nav-link active" data-toggle="tab" href="#price-standart-full" role="tab">Полная</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" data-toggle="tab" href="#price-advanced-month" role="tab">Помесячная</a>
+												<a class="nav-link" data-toggle="tab" href="#price-standart-month" role="tab">Помесячная</a>
 											</li>
 										</ul>
 										<div class="tab-content">
-											<div class="tab-pane fade show active" id="price-advanced-full" role="tabpanel">
-												<div class="price" data="">от <?=number_format($item['price']['advanced']['full'], 2, '.', ' ')?> руб</div>
+											<div class="tab-pane fade show active" id="price-standart-full" role="tabpanel">
+												<div class="price" data="">от <?=number_format($item['price']['standart']['full'], 2, '.', ' ')?> руб</div>
 											</div>
-											<div class="tab-pane fade" id="price-advanced-month" role="tabpanel">
-												<div class="price" data="month">от <?=number_format($item['price']['advanced']['month'], 2, '.', ' ')?> руб/мес</div>
+											<div class="tab-pane fade" id="price-standart-month" role="tabpanel">
+												<div class="price" data="month">от <?=number_format($item['price']['standart']['month'], 2, '.', ' ')?> руб/мес</div>
 											</div>
 										</div>
 									</div>
@@ -357,9 +317,9 @@
 								<div class="description">
 									<ul class="list-unstyled plan-features">
 										<li class="checked"><i class="fa fa-times"></i>Доступ ко всем лекциям курса</li>
-										<li class="checked"><i class="fa fa-times"></i>Проверка домашних работ</li>
-										<li class="checked"><i class="fa fa-times"></i>Закрытый канал в дискорде</li>
-										<li class="checked"><i class="fa fa-times"></i>Груповые онлайн встречи</li>
+										<li><i class="fa fa-times"></i>Проверка домашних работ</li>
+										<li><i class="fa fa-times"></i>Закрытый канал в дискорде</li>
+										<li><i class="fa fa-times"></i>Груповые онлайн встречи</li>
 										<li><i class="fa fa-times"></i>Личные онлайн встречи</li>
 										<li class="checked"><i class="fa fa-times"></i>Начало в назначенную дату</li>
 										<li><i class="fa fa-times"></i>Старт в ближайший понедельник</li>
@@ -370,44 +330,94 @@
 								</div>
 							</div>
 						</div>
-						<?if((float) $item['price']['vip']['full'] > 0):?>
-							<div class="card col-4">
+					</div>
+					<?if($item['only_standart'] === false):?>
+						<div class="col-12 col-md-6 col-lg-4 mb-4">
+							<div class="card">
 								<div class="card-body text-center">
-									<div class="title">Премиум</div>
+									<div class="title">Расширенный</div>
 									<div class="icon">
 										<img src="<?=TEMPLATE_DIR?>/main/img/money.png">
 									</div>
-									<div class="switcher">
-										<ul class="nav nav-tabs" role="tablist">
-											<li class="nav-item">
-												<a class="nav-link active" data-toggle="tab" href="#price-vip-full" role="tab">Полная</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link" data-toggle="tab" href="#price-vip-month" role="tab">Помесячная</a>
-											</li>
-										</ul>
-										<div class="tab-content">
-											<div class="tab-pane fade show active" id="price-vip-full" role="tabpanel">
-												<div class="price" data="">от <?=number_format($item['price']['vip']['full'], 2, '.', ' ')?> руб</div>
-											</div>
-											<div class="tab-pane fade" id="price-vip-month" role="tabpanel">
-												<div class="price" data="month">от <?=number_format($item['price']['vip']['month'], 2, '.', ' ')?> руб/мес</div>
+									<?if((float) $item['price']['advanced']['full'] <= 0):?>
+										<div class="price">FREE</div>
+									<?else:?>
+										<div class="switcher">
+											<ul class="nav nav-tabs" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active" data-toggle="tab" href="#price-advanced-full" role="tab">Полная</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" data-toggle="tab" href="#price-advanced-month" role="tab">Помесячная</a>
+												</li>
+											</ul>
+											<div class="tab-content">
+												<div class="tab-pane fade show active" id="price-advanced-full" role="tabpanel">
+													<div class="price" data="">от <?=number_format($item['price']['advanced']['full'], 2, '.', ' ')?> руб</div>
+												</div>
+												<div class="tab-pane fade" id="price-advanced-month" role="tabpanel">
+													<div class="price" data="month">от <?=number_format($item['price']['advanced']['month'], 2, '.', ' ')?> руб/мес</div>
+												</div>
 											</div>
 										</div>
-									</div>
+									<?endif;?>
 									<div class="description">
 										<ul class="list-unstyled plan-features">
 											<li class="checked"><i class="fa fa-times"></i>Доступ ко всем лекциям курса</li>
 											<li class="checked"><i class="fa fa-times"></i>Проверка домашних работ</li>
 											<li class="checked"><i class="fa fa-times"></i>Закрытый канал в дискорде</li>
-											<li><i class="fa fa-times"></i>Груповые онлайн встречи</li>
-											<li class="checked"><i class="fa fa-times"></i>Личные онлайн встречи</li>
-											<li><i class="fa fa-times"></i>Начало в назначенную дату</li>
-											<li class="checked"><i class="fa fa-times"></i>Старт в ближайший понедельник</li>
+											<li class="checked"><i class="fa fa-times"></i>Груповые онлайн встречи</li>
+											<li><i class="fa fa-times"></i>Личные онлайн встречи</li>
+											<li class="checked"><i class="fa fa-times"></i>Начало в назначенную дату</li>
+											<li><i class="fa fa-times"></i>Старт в ближайший понедельник</li>
 										</ul>
 									</div>
 									<div class="btn-row">
 										<a href="<?=$schoolUrl?>/courses/<?=$item['code']?>/" class="btn btn-orange">Записаться</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<?if((float) $item['price']['vip']['full'] > 0):?>
+							<div class="col-12 col-md-6 col-lg-4 mb-4">
+								<div class="card">
+									<div class="card-body text-center">
+										<div class="title">Премиум</div>
+										<div class="icon">
+											<img src="<?=TEMPLATE_DIR?>/main/img/money.png">
+										</div>
+										<div class="switcher">
+											<ul class="nav nav-tabs" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active" data-toggle="tab" href="#price-vip-full" role="tab">Полная</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" data-toggle="tab" href="#price-vip-month" role="tab">Помесячная</a>
+												</li>
+											</ul>
+											<div class="tab-content">
+												<div class="tab-pane fade show active" id="price-vip-full" role="tabpanel">
+													<div class="price" data="">от <?=number_format($item['price']['vip']['full'], 2, '.', ' ')?> руб</div>
+												</div>
+												<div class="tab-pane fade" id="price-vip-month" role="tabpanel">
+													<div class="price" data="month">от <?=number_format($item['price']['vip']['month'], 2, '.', ' ')?> руб/мес</div>
+												</div>
+											</div>
+										</div>
+										<div class="description">
+											<ul class="list-unstyled plan-features">
+												<li class="checked"><i class="fa fa-times"></i>Доступ ко всем лекциям курса</li>
+												<li class="checked"><i class="fa fa-times"></i>Проверка домашних работ</li>
+												<li class="checked"><i class="fa fa-times"></i>Закрытый канал в дискорде</li>
+												<li><i class="fa fa-times"></i>Груповые онлайн встречи</li>
+												<li class="checked"><i class="fa fa-times"></i>Личные онлайн встречи</li>
+												<li><i class="fa fa-times"></i>Начало в назначенную дату</li>
+												<li class="checked"><i class="fa fa-times"></i>Старт в ближайший понедельник</li>
+											</ul>
+										</div>
+										<div class="btn-row">
+											<a href="<?=$schoolUrl?>/courses/<?=$item['code']?>/" class="btn btn-orange">Записаться</a>
+										</div>
 									</div>
 								</div>
 							</div>

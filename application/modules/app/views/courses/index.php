@@ -28,7 +28,7 @@
 						<div class="row">
 							<?foreach($courses as $course):?>
 								<?$i++;?>
-								<div class="item col-4 mb-4">
+								<div class="item col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
 									<div class="card">
 										<a href="/courses/<?=$course['code']?>">
 											<img src="<?=$course['img']?>" class="card-img-top" alt="<?=$course['name']?>">

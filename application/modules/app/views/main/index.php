@@ -8,14 +8,6 @@ $urlSchool = $this->config->item('school_url');
 				<div class="big-title">Надоела скучная учеба или работа?</div>
 				<div class="sub-title">Обучайся компьютерной графике и стань нужным<br> в профессии за <b>9</b> месяцев</div>
 				<div class="small-sub-title">Курсы дистанционного обучения компьютерной графике и анимации в <span class="site-name">CG<b>Аim</b></span></div>
-				<?/*
-				<div class="bottom">
-					<div class="small-sub-title">Пройди бесплатный урок по курсу «Основы 3D анимации»</div>
-					<div class="button-row">
-						<button type="button" class="btn btn-orange">Записаться</button>
-					</div>
-					<!--<div class="counter-row">Осталось свободных мест: 4</div>-->
-				</div>*/?>
 			</div>
 		</div>
 	</div>
@@ -27,20 +19,20 @@ $urlSchool = $this->config->item('school_url');
 				<div class="block-title">О школе</div>
 				<div class="block-sub-title">Добро пожаловать в  дружное и уютное сообщество!</div>
 				<div class="text">
-					<div class="row img-row">
-						<div class="col-6">
-							<p>Привет, онлайн школа CGAim помогает новичкам с нуля научиться работе с 2D-графикой, 3D-моделированием и анимацией, а опытным развить навыки и найти новую специализацию. Наша команда не довольна тем контентом который заполонил интернет, поэтому разработали подход основанный на постоянной практике.</p>
+					<div class="row img-row mb-4">
+						<div class="col-12 col-md-6 order-2 order-md-1">
+							<span>Привет, онлайн школа CGAim помогает новичкам с нуля научиться работе с 2D-графикой, 3D-моделированием и анимацией, а опытным развить навыки и найти новую специализацию. Наша команда не довольна тем контентом который заполонил интернет, поэтому разработали подход основанный на постоянной практике.</span>
 						</div>
-						<div class="col-6">
+						<div class="col-12 col-md-6 order-1 order-md-2 mb-4 mb-md-0">
 							<img src="<?=TEMPLATE_DIR?>/main/img/about-img1.jpg">
 						</div>
 					</div>
 					<div class="row img-row">
-						<div class="col-6">
+						<div class="col-12 col-md-6 mb-4 mb-md-0">
 							<img src="<?=TEMPLATE_DIR?>/main/img/about-img2.jpg">
 						</div>
-						<div class="col-6">
-							<p>Задача курсов обучить не только какими кнопками пользоваться в программах, а научить качественно и выразительно создавать творческий замысел для игр и кино. Познакомишься с коллегами по цеху в закрытом Discord чате.</p>
+						<div class="col-12 col-md-6">
+							<span>Задача курсов обучить не только какими кнопками пользоваться в программах, а научить качественно и выразительно создавать творческий замысел для игр и кино. Познакомишься с коллегами по цеху в закрытом Discord чате.</span>
 						</div>
 					</div>
 				</div>
@@ -74,8 +66,9 @@ $urlSchool = $this->config->item('school_url');
 								</div>
 							</div>
 							<?if(($i % 2) === 0):?>
-								<div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
+								<div class="w-100 d-none d-md-block"></div>
 							<?endif;?>
+							<div class="w-100 d-md-none d-block"></div>
 						<?endforeach;?>
 					<?endif;?>
 				</div>
@@ -92,28 +85,28 @@ $urlSchool = $this->config->item('school_url');
 			<div class="col-12">
 				<div class="block-title">Преимущества обучения</div>
 				<div class="row items-list">
-					<div class="col-3 text-center">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
 						<div class="img">
 							<img src="<?=TEMPLATE_DIR?>/main/img/9.png" alt="">
 						</div>
 						<div class="title">Свободный график</div>
 						<div class="text">Обучение онлайн доступно из любой точки мира, вам не нужно никуда ехать.</div>
 					</div>
-					<div class="col-3 text-center">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
 						<div class="img">
 							<img src="<?=TEMPLATE_DIR?>/main/img/7.png" alt="">
 						</div>
 						<div class="title">Курсы с инструктором</div>
 						<div class="text">Онлайн встречи каждую неделю, индивидуальная проверка работ и помощь инструктора.</div>
 					</div>
-					<div class="col-3 text-center">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
 						<div class="img">
 							<img src="<?=TEMPLATE_DIR?>/main/img/10.png" alt="">
 						</div>
 						<div class="title">Легкость обучения</div>
 						<div class="text">Лекции выстроены таким способом, что понятно будет новичку. Главное старание и труд, тогда у вас получится</div>
 					</div>
-					<div class="col-3 text-center">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
 						<div class="img">
 							<img src="<?=TEMPLATE_DIR?>/main/img/6.png" alt="">
 						</div>
@@ -125,65 +118,34 @@ $urlSchool = $this->config->item('school_url');
 		</div>
 	</div>
 </div>
-
-<!-- <div id="why-block" class="page-block">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<div class="block-title">Почему стоит выбрать нас?</div>
-				<div class="block-sub-title">Наш подход к преподаванию и принципы обучения компьютерной графики уже помогли раскрыть потенциал!</div>
-				<div class="row items-list">
-					<div class="col-4 text-center">
-						<div class="img">
-							<img src="<?=TEMPLATE_DIR?>/main/img/5.png" alt="">
-						</div>
-						<div class="text">Придерживаемся формата занятий в мини-группах по 5-10 человек. Преподаватель уделяет каждому ученику много времени.</div>
-					</div>
-					<div class="col-4 text-center">
-						<div class="img">
-							<img src="<?=TEMPLATE_DIR?>/main/img/5.png" alt="">
-						</div>
-						<div class="text">Наша школа работает круглосуточно и без выходных, подберёте для себя курс даже если заняты плотным графиком.</div>
-					</div>
-					<div class="col-4 text-center">
-						<div class="img">
-							<img src="<?=TEMPLATE_DIR?>/main/img/5.png" alt="">
-						</div>
-						<div class="text">Наши преподаватели помогут раскрыться даже стеснительному ученику</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
 <div id="training" class="page-block">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<div class="block-title white">Как проходит обучение?</div>
 				<div class="row items-list">
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c1">
 							<i class="fas fa-file-video"></i>
 						</div>
 						<div class="title">Лекции</div>
 						<div class="text">После оплаты получаете доступ к группе, внутри вас ждет вводная лекция с инструкциями.Каждый понедельник открывается новая лекция.</div>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c2">
 							<i class="fas fa-file-alt"></i>
 						</div>
 						<div class="title">Проверка домашнего задания</div>
 						<div class="text">Домашнее задание нужно сдать в конце каждой недели. В ближайший понедельник преподаватель делает видео обзор.</div>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c3">
 							<i class="fas fa-graduation-cap"></i>
 						</div>
 						<div class="title">Онлайн встречи</div>
 						<div class="text">В конце недели проходит онлайн встреча с преподавателем, на ней вы сможете задавать вопросы и получить дополнительную информацию.</div>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c4">
 							<i class="fab fa-discord"></i>
 						</div>
@@ -239,36 +201,40 @@ $urlSchool = $this->config->item('school_url');
 			<div class="col-12">
 				<div class="block-title white">Как подписаться на курс?</div>
 				<div class="row items-list">
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c1">
 							<i class="fas fa-address-card"></i>
 						</div>
 						<div class="title">Регистрация</div>
 						<div class="text">Регистрируемся на платформе и проходим авторизацию через почту.</div>
-						<i class="fas fa-angle-double-right arrow"></i>
+						<i class="fas fa-angle-double-right arrow  d-none d-sm-block"></i>
+						<i class="fas fa-angle-double-down arrow-down  d-sm-none"></i>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item">
 						<div class="img color-c2">
 							<i class="fas fa-address-book"></i>
 						</div>
 						<div class="title">Выбор курса</div>
 						<div class="text">У понравишегося курса выбираем тип подписки.</div>
-						<i class="fas fa-angle-double-right arrow"></i>
+						<i class="fas fa-angle-double-right arrow  d-none d-lg-block"></i>
+						<i class="fas fa-angle-double-down arrow-down  d-lg-none"></i>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item order-sm-2 order-lg-1">
 						<div class="img color-c3">
 							<i class="fas fa-calculator"></i>
 						</div>
 						<div class="title">Оплата</div>
 						<div class="text">Выбираем наиболее подходящий способ оплаты.</div>
-						<i class="fas fa-angle-double-right arrow"></i>
+						<i class="fas fa-angle-double-right arrow  d-none d-lg-block"></i>
+						<i class="fas fa-angle-double-down arrow-down  d-sm-none"></i>
 					</div>
-					<div class="col-3 text-center item">
+					<div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center item order-sm-1 order-lg-2">
 						<div class="img color-c4">
 							<i class="fas fa-check-circle"></i>
 						</div>
 						<div class="title">Доступ</div>
 						<div class="text">После оплаты вам сразу откроется доступ к вашей группе.</div>
+						<i class="fas fa-angle-double-left arrow  d-none d-sm-block d-lg-none"></i>
 					</div>
 				</div>
 				<div class="text-center">
@@ -299,6 +265,7 @@ $urlSchool = $this->config->item('school_url');
 							<p class="card-text">Используй навыки для создания дизайна канала, интегрируй 3D в видео и освежи взгляд на подачу материала.</p>
 						</div>
 					</div>
+					<div class="w-100 d-none d-sm-block d-lg-none"></div>
 					<div class="card mb-4">
 						<img src="<?=TEMPLATE_DIR?>/main/img/k3.jpg" class="card-img-top" alt="...">
 						<div class="card-body">
@@ -306,7 +273,7 @@ $urlSchool = $this->config->item('school_url');
 							<p class="card-text">Создавай персонажей и визуализируй собственные решения для рекламы продуктов и брендов.</p>
 						</div>
 					</div>
-					<div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
+					<div class="w-100 d-none d-lg-block"><!-- wrap every 5 on xl--></div>
 					<div class="card mb-4">
 						<img src="<?=TEMPLATE_DIR?>/main/img/k4.jpg" class="card-img-top" alt="...">
 						<div class="card-body">
@@ -314,6 +281,7 @@ $urlSchool = $this->config->item('school_url');
 							<p class="card-text">Придумывай макеты сайтов, не трать время на поиск и адаптацию чужой графики.</p>
 						</div>
 					</div>
+					<div class="w-100 d-none d-sm-block d-lg-none"></div>
 					<div class="card mb-4">
 						<img src="<?=TEMPLATE_DIR?>/main/img/k5.jpg" class="card-img-top" alt="...">
 						<div class="card-body">
