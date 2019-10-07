@@ -9,7 +9,7 @@
 */
 
 html {position: relative; min-height: 100%;}
-body {font-size: 14px; font-family: 'Roboto',Tahoma; background-color: #fff; margin-bottom: 180px;}
+body {font-size: 14px; font-family: 'Roboto',Tahoma; background-color: #fff; margin-bottom: 200px;}
 .btn-orange {background-color: #FD610F; border-color: #FD610F;}
 a.btn-orange {color: #fff;}
 .btn-orange:hover {background-color: #f15d0e; border-color: #f15d0e;}
@@ -49,7 +49,7 @@ a.btn-orange {color: #fff;}
 #page .page-head {margin-top: 25px; font-size: 25px;}
 #page .page-head .page-title {color: #fff;}
 
-#footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 180px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
+#footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 200px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
 #footer .top .main-menu {text-align: center;}
 #footer .block-contacts ul {font-size: 16px;}
 #footer .block-contacts ul a {color: #fff; text-decoration: none; transition: color 0.4s;}
@@ -60,6 +60,13 @@ a.btn-orange {color: #fff;}
 #footer .links a {margin-left: 10px; color: #999; text-decoration: underline;}
 #footer .links a:hover {text-decoration: none;}
 #footer .links a:first-child {margin-left: 0px;}
+
+#footer .soc-block {display: flex; justify-content: flex-end;}
+#footer .soc-block > span {margin-top: 4px;}
+#footer .soc-block a {color: #FD610F; font-size: 20px; display: inline-block; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border: 1px solid #FD610F; border-radius: 3px; margin-left: 5px;}
+#footer .soc-block a:hover {text-decoration: none;}
+
+#footer .contacts a {color: #FD610F;}
 
 /*@media (max-width: 992px) {
 	.container {max-width: 920px;}
@@ -299,10 +306,13 @@ background: transparent url('../img/arrow_w.png') no-repeat -20px 0px;}
 }
 
 @media (max-width: 767px) {
-	body {margin-bottom: 250px;}
-	#footer {height: 250px;}
+	body {margin-bottom: 300px;}
+	#footer {height: 300px;}
 	#footer .links {text-align: center !important;}
 	#footer .top .main-menu {padding-bottom: 10px;}
+
+	#footer .soc-block {justify-content: center;}
+	#footer .contacts {text-align: center;}
 }
 
 @media (max-width: 575px) {
@@ -361,6 +371,6 @@ background: transparent url('../img/arrow_w.png') no-repeat -20px 0px;}
 }
 
 @media (max-width: 400px) {
-	body {margin-bottom: 300px;}
-	#footer {height: 300px;}
+	body {margin-bottom: 380px;}
+	#footer {height: 380px;}
 }

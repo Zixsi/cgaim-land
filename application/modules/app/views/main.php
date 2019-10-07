@@ -89,28 +89,23 @@ $urlSchool = $this->config->item('school_url');
 					</ul>
 				</div>
 			</div>
-			<!--
-			<div class="middle row">
-				<div class="block-contacts col-4">
-					<div class="title">Свяжитесь с нами:</div>
-					<ul class="list-unstyled">
-						<li><a href="mail:info@kaanima.com">info@kaanima.com</a></li>
-						<li><a href="mail:job@kaanima.com">job@kaanima.com</a></li>
-						<li><a href="mail:game@kaanima.com">game@kaanima.com</a></li>
-					</ul>
-				</div>
-				<div class="block-soc col-3 offset-5">
-					<div class="title">Социальные сети:</div>
-				</div>
-			</div>-->
 			<div class="bottom row">
 				<div class="col-12 col-md-7 order-2 order-md-1 block-owner-info">
 					<span>&copy; 2018, ИП Серебряков Александр Сергеевич</span>
 					<span>ИНН 1850210580185011 Счёт 40802 810 3015 0003 5607 БИК 044525999 Корр. счёт 3010 1810 8452 5000 0999  Филиал Точка Публичного акционерного общества Банка «Финансовая Корпорация Открытие» город Москва </span>
 				</div>
-				<div class="col-12 col-md-5 order-1 order-md-2 mb-2 mb-md-0 text-right links">
-					<a href="/terms/">Правила и условия</a>
-					<a href="/policy/">Политика&nbsp;конфиденциальности</a>
+				<div class="col-12 col-md-5 order-1 order-md-2 mb-2 mb-md-0 text-right">
+					<div class="links">
+						<a href="/terms/">Правила и условия</a>
+						<a href="/policy/">Политика&nbsp;конфиденциальности</a>
+					</div>
+					<div class="contacts pt-2">По всем вопросам:&nbsp;<a href="mailto:info@cgaim.ru">info@cgaim.ru</a></div>
+					<div class="soc-block pt-2">
+						<span>Мы в соц. сетях:</span>
+						<a href="https://cutt.ly/ZeuSQfS" target="_blank"><i class="fab fa-youtube"></i></a>
+						<a href="https://vk.com/cgaim" target="_blank"><i class="fab fa-vk"></i></a>
+						<a href="https://www.instagram.com/cgaim_school/" target="_blank"><i class="fab fa-instagram"></i></a>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -27,11 +27,11 @@
 						<span class="label">недель обучения</span>
 					</div>
 					<div class="col-6 col-md-4 col-lg-3 mb-2 mb-md-0 info">
-						<span class="number"><?=(int) $item['lectures_count']?></span>
+						<span class="number"><?=(int) ($item['lectures_count'] * 2)?></span>
 						<span class="label">насыщенных задания</span>
 					</div>
 					<div class="col-6 col-md-4 col-lg-3 mb-2 mb-md-0 info">
-						<span class="number"><?=ceil((int) $item['lectures_count'] * 2)?></span>
+						<span class="number"><?=ceil((int) $item['lectures_count'] * 3.5)?></span>
 						<span class="label">часов занятий</span>
 					</div>
 				</div>
