@@ -353,10 +353,10 @@
 											</ul>
 											<div class="tab-content">
 												<div class="tab-pane fade show active" id="price-advanced-full" role="tabpanel">
-													<div class="price" data="">от <?=number_format($item['price']['advanced']['full'], 2, '.', ' ')?> руб</div>
+													<div class="price" data=""><?=number_format($item['price']['advanced']['full'], 2, '.', ' ')?> руб</div>
 												</div>
 												<div class="tab-pane fade" id="price-advanced-month" role="tabpanel">
-													<div class="price" data="month">от <?=number_format($item['price']['advanced']['month'], 2, '.', ' ')?> руб/мес</div>
+													<div class="price" data="month"><?=number_format($item['price']['advanced']['month'], 2, '.', ' ')?> руб/мес</div>
 												</div>
 											</div>
 										</div>
@@ -397,10 +397,10 @@
 											</ul>
 											<div class="tab-content">
 												<div class="tab-pane fade show active" id="price-vip-full" role="tabpanel">
-													<div class="price" data="">от <?=number_format($item['price']['vip']['full'], 2, '.', ' ')?> руб</div>
+													<div class="price" data=""><?=number_format($item['price']['vip']['full'], 2, '.', ' ')?> руб</div>
 												</div>
 												<div class="tab-pane fade" id="price-vip-month" role="tabpanel">
-													<div class="price" data="month">от <?=number_format($item['price']['vip']['month'], 2, '.', ' ')?> руб/мес</div>
+													<div class="price" data="month"><?=number_format($item['price']['vip']['month'], 2, '.', ' ')?> руб/мес</div>
 												</div>
 											</div>
 										</div>
