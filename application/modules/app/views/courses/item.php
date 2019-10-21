@@ -306,10 +306,10 @@
 										</ul>
 										<div class="tab-content">
 											<div class="tab-pane fade show active" id="price-standart-full" role="tabpanel">
-												<div class="price" data="">от <?=number_format($item['price']['standart']['full'], 2, '.', ' ')?> руб</div>
+												<div class="price" data=""><?=number_format($item['price']['standart']['full'], 2, '.', ' ')?> руб</div>
 											</div>
 											<div class="tab-pane fade" id="price-standart-month" role="tabpanel">
-												<div class="price" data="month">от <?=number_format($item['price']['standart']['month'], 2, '.', ' ')?> руб/мес</div>
+												<div class="price" data="month"><?=number_format($item['price']['standart']['month'], 2, '.', ' ')?> руб/мес</div>
 											</div>
 										</div>
 									</div>
