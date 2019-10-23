@@ -24,6 +24,8 @@ class CourseController extends APP_Controller
 		$data['offers'] = $this->CourseModel->listOffersForCourse($data['item']['id']);
 		$data['lectures'] = $this->CourseModel->getLectures($data['item']['id']);
 		$data['teacher'] = $this->UserModel->getByID($data['item']['teacher']);
+		$data['nextMonday'] = date(DATE_FORMAT_SHORT, nextMondayTs());
+
 		// debug($data['offers']); die();
 
 		$this->load->lview('courses/item', $data);

@@ -256,6 +256,8 @@ background: transparent url('../img/arrow_w.png') no-repeat -20px 0px;}
 #course-item-price .switcher .nav-tabs .nav-link.active {background-color: #4D67AC; color: #ffffff;}
 #course-item-price .switcher .nav-tabs .nav-link:focus, 
 #course-item-price .switcher .nav-tabs .nav-link:hover {}
+#course-item-price .list-date a {margin: 0px 5px 5px 5px;}
+#course-item-price .card .badge {font-size: 14px; position: absolute; top: -1px; left: 50%; margin-left: -60px; width: 120px;}
 
 
 #courses-list {}

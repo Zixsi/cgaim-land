@@ -83,7 +83,7 @@
 				<?//debug($item);?>
 			</div>
 			<div class="col-12 col-lg-4">
-				<?if($offers):?>
+				<?/*if($offers):?>
 					<div class="course-item-groups">
 						<h3 class="title">Ближайший набор</h3>
 						<div class="list">
@@ -92,7 +92,7 @@
 							<?endforeach;?>
 						</div>
 					</div>
-				<?endif;?>
+				<?endif;*/?>
 
 				<div class="course-item--info">
 					<h3 class="title">Данные курса</h3>
@@ -278,7 +278,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 text-center">
-				<div class="block-title white">Стоимость обучения</div>
+				<div class="block-title white pb-2">Стоимость обучения</div>
+				<?if($offers):?>
+					<h4 class="mb-4 text-white">Ближайший набор</h4>
+					<div class="list list-date mb-4">
+						<?foreach($offers as $val):?>
+							<a href="<?=$schoolUrl?>/courses/<?=$item['code']?>/?date=<?=$val['ts_f']?>" class="btn btn-outline-light"><?=$val['ts_f']?></a>
+						<?endforeach;?>
+					</div>
+				<?endif;?>
 				<div class="small-subtitle">Выбери подходящий тип подписки</div>
 			</div>
 		</div>
@@ -382,6 +390,7 @@
 							<div class="col-12 col-md-6 col-lg-4 mb-4">
 								<div class="card">
 									<div class="card-body text-center">
+										<span class="badge badge-danger"><?=$nextMonday?></span>
 										<div class="title">Премиум</div>
 										<div class="icon">
 											<img src="<?=TEMPLATE_DIR?>/main/img/money.png">

@@ -38,3 +38,10 @@ function isActiveMenuItem($c, $a = null)
 	
 	return (($c === $cr) && (empty($a) || $a === null || $a === $ar))?true:false;
 }
+
+
+function nextMondayTs()
+{
+	$date = new \DateTime('next monday');
+	return $date->getTimestamp();
+}
