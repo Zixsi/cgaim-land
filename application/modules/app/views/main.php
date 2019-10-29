@@ -27,7 +27,7 @@ $urlSchool = $this->config->item('school_url');
 					<a href="/">
 						<img src="<?=TEMPLATE_DIR?>/main/img/logo_white.png" class="logo">
 					</a>
-					<a href="<?=$urlSchool?>" class="btn btn-sm btn-orange float-right btn--auth d-none d-lg-block" onclick="ym(51851432, 'reachGoal', 60857359); return true;">Вход / Регистрация</a>
+					<a href="<?=$urlSchool?>" class="btn btn-sm btn-orange float-right btn--auth d-none d-lg-block" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Вход / Регистрация</a>
 					<label for="main-menu-trigger" id="main-menu-burger" class="d-block d-lg-none">
 						<i class="fas fa-bars"></i>
 					</label>
@@ -51,7 +51,7 @@ $urlSchool = $this->config->item('school_url');
 						<li><a href="/#about">О школе</a></li>
 						<li><a href="/#reviews">Отзывы</a></li>
 						<li><a href="/#contacts">Контакты</a></li>
-						<li><a href="<?=$urlSchool?>" class="d-block d-lg-none" onclick="ym(51851432, 'reachGoal', 60857359); return true;">Вход / Регистрация</a></li>
+						<li><a href="<?=$urlSchool?>" class="d-block d-lg-none" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Вход / Регистрация</a></li>
 					</ul>
 
 				</div>

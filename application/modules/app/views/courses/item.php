@@ -334,7 +334,7 @@
 									</ul>
 								</div>
 								<div class="btn-row">
-									<a href="<?=$schoolUrl?>/courses/<?=$item['code']?>/" class="btn btn-orange" onclick="ym(51851432, 'reachGoal', 60857359); return true;">Записаться</a>
+									<a href="<?=$schoolUrl?>/courses/<?=$item['code']?>/" class="btn btn-orange" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться</a>
 								</div>
 							</div>
 						</div>
@@ -381,7 +381,7 @@
 										</ul>
 									</div>
 									<div class="btn-row">
-										<a href="<?=$schoolUrl?>/courses/<?=$item['code']?>/" class="btn btn-orange" onclick="ym(51851432, 'reachGoal', 60857359); return true;">Записаться</a>
+										<a href="<?=$schoolUrl?>/courses/<?=$item['code']?>/" class="btn btn-orange" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться</a>
 									</div>
 								</div>
 							</div>
@@ -425,7 +425,7 @@
 											</ul>
 										</div>
 										<div class="btn-row">
-											<a href="<?=$schoolUrl?>/courses/<?=$item['code']?>/" class="btn btn-orange" onclick="ym(51851432, 'reachGoal', 60857359); return true;">Записаться</a>
+											<a href="<?=$schoolUrl?>/courses/<?=$item['code']?>/" class="btn btn-orange" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться</a>
 										</div>
 									</div>
 								</div>
