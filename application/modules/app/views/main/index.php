@@ -5,13 +5,14 @@ $urlSchool = $this->config->item('school_url');
 	<div class="container">
 		<div class="row">
 			<div class="col-12 text-center">
-				<div class="big-title">Надоела скучная учеба или работа?</div>
-				<div class="sub-title">Обучайся компьютерной графике и стань нужным<br> в профессии за <b>9</b> месяцев</div>
-				<div class="small-sub-title">Курсы дистанционного обучения компьютерной графике и анимации в <span class="site-name">CG<b>Аim</b></span></div>
+				<div class="big-title">Обучаем компьютерной графике и анимации</div>
+				<div class="sub-title">Получи новую профессию с зарплатой от <b>55 тыс. р.</b></div>
+				<div class="small-sub-title">Курсы онлайн обучения от школы <span class="site-name">CG<b>Аim</b></span></div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <div id="about" class="page-block">
 	<div class="container">
 		<div class="row">
