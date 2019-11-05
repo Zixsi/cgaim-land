@@ -21,9 +21,6 @@ $urlSchool = $this->config->item('school_url');
 <body>
 	<div id="background"></div>
 	<div id="content">
-		<?if(isset($_GET['debug'])):?>
-			<button type="button" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Тест</button>
-		<?endif;?>
 		<div id="header">
 			<div class="panel-menu">
 				<div class="container">

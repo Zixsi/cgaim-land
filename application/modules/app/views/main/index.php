@@ -259,7 +259,7 @@ $urlSchool = $this->config->item('school_url');
 					</div>
 				</div>
 				<div class="text-center">
-					<a href="<?=$urlSchool?>/auth/register/" class="btn btn-orange">Регистрация</a>
+					<a href="<?=$urlSchool?>/auth/register/" class="btn btn-orange" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Регистрация</a>
 				</div>
 			</div>
 		</div>
