@@ -73,7 +73,7 @@ class Course
 			if($short)
 			{
 				$item['description'] = strip_tags($item['description']);
-				$item['description'] = character_limiter($item['description'], 200);
+				$item['description'] = character_limiter($item['description'], 45);
 			}
 		}
 
@@ -97,5 +97,8 @@ class Course
 
 		if(isset($item['only_standart']))
 			$item['only_standart'] = ((int) $item['only_standart']?true:false);
+
+		if(array_key_exists('lectures_count', $item))
+			$item['lectures_count'] = (int) ($item['lectures_count'] ?? 0);
 	}
 }

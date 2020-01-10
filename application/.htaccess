@@ -4,3 +4,7 @@
 <IfModule !authz_core_module>
     Deny from all
 </IfModule>
+
+<FilesMatch ".(gif|jpg|jpeg|png|ico|js|css)$">
+  Header set Cache-Control "max-age=2592000"
+</FilesMatch>

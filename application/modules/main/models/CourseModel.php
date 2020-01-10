@@ -13,9 +13,11 @@ class CourseModel extends APP_Model
 
 		$binds = [];
 		$sql = 'SELECT 
-					c.id, c.code, c.name, c.description, c.img 
+					c.id, c.code, c.name, c.description, c.img, lect.cnt as lectures_count  
 				FROM 
 					'.self::TABLE.' as c 
+				LEFT JOIN 
+					(SELECT course_id, count(*) as cnt FROM '.self::TABLE_LECTURES.' WHERE type = 0 GROUP BY course_id ) as lect ON(lect.course_id = c.id) 
 				WHERE 
 					c.active = 1 
 				ORDER BY 
