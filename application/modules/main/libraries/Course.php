@@ -65,6 +65,11 @@ class Course
 		else
 			$item['img'] = getDefaultFileUrl();
 
+		if(isset($item['img_land_bg']) && empty($item['img_land_bg']) === false)
+			$item['img_land_bg'] = getSchoolFileUrl($item['img_land_bg']);
+		else
+			$item['img_land_bg'] = getDefaultFileUrl();
+
 		if(isset($item['name']))
 			$item['name'] = htmlspecialchars($item['name']);
 
@@ -73,7 +78,7 @@ class Course
 			if($short)
 			{
 				$item['description'] = strip_tags($item['description']);
-				$item['description'] = character_limiter($item['description'], 200);
+				$item['description'] = character_limiter($item['description'], 45);
 			}
 		}
 
@@ -97,5 +102,8 @@ class Course
 
 		if(isset($item['only_standart']))
 			$item['only_standart'] = ((int) $item['only_standart']?true:false);
+
+		if(array_key_exists('lectures_count', $item))
+			$item['lectures_count'] = (int) ($item['lectures_count'] ?? 0);
 	}
 }

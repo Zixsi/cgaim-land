@@ -62,7 +62,8 @@ $autoload['libraries'] = [
 	'database', 
 	'security', 
 	'uri', 
-	'main/course'
+	'main/course',
+	'main/workshop'
 ];
 
 /*
@@ -141,4 +142,7 @@ $autoload['model'] = [
 	'main/CourseModel',
 	'main/UserModel',
 	'main/FileModel',
+	'main/WorkshopModel',
+	'main/VideoModel',
+	'main/VideoHelper',
 ];

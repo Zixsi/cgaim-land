@@ -23,11 +23,14 @@ class CourseController extends APP_Controller
 		$data['schoolUrl'] = $this->config->item('school_url');
 		$data['offers'] = $this->CourseModel->listOffersForCourse($data['item']['id']);
 		$data['lectures'] = $this->CourseModel->getLectures($data['item']['id']);
+		$data['lectures'] = array_chunk($data['lectures'], ceil(count($data['lectures']) / 2));
+
 		$data['teacher'] = $this->UserModel->getByID($data['item']['teacher']);
 		$data['nextMonday'] = date(DATE_FORMAT_SHORT, nextMondayTs());
 
 		// debug($data['offers']); die();
 
+		$this->load->layout = 'item';
 		$this->load->lview('courses/item', $data);
 	}
 }
