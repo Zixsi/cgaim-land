@@ -90,6 +90,23 @@ function handleHeadMainMenu()
 	burgerMenuBtn.addEventListener("click", function(){
 		headMainMenu.classList.toggle('active');
 	});
+
+
+	checkHeaderNavpanel();
+	document.addEventListener("scroll", function(){
+		checkHeaderNavpanel();
+	});
+
+}
+
+function checkHeaderNavpanel()
+{
+	var headerNavpanel = document.getElementById("header-navpanel");
+
+	if(document.body.getBoundingClientRect().top < -100)
+		headerNavpanel.classList.add('fixed');
+	else
+		headerNavpanel.classList.remove('fixed');
 }
 
 function handleItemPrice()

@@ -3,7 +3,7 @@ $urlSchool = $this->config->item('school_url');
 ?>
 <?$this->load->view('inc_header.php');?>
 
-<div id="first-block" class="compact" <?if(strpos($item['img'], 'img_default') === false):?>style="background-image: url('<?=$item['img']?>');"<?endif;?>>
+<div id="first-block" class="compact" <?if(strpos($item['img_land_bg'], 'img_default') === false):?>style="background-image: url('<?=$item['img_land_bg']?>');"<?endif;?>>
 	<div class="content">
 		<?$this->load->view('inc_navpanel.php');?>
 		<div class="info">

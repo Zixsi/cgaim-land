@@ -1,7 +1,7 @@
 <?php
 $urlSchool = $this->config->item('school_url');
 ?>
-<div class="nav-panel">
+<div class="nav-panel" id="header-navpanel">
 	<a href="/"><img src="<?=TEMPLATE_DIR?>/main_v2/img/logo.png" alt="" class="logo"></a>
 	<div class="burger-menu" id="burger-menu-btn" data-target="head-main-menu">
 		<span></span>

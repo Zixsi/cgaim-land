@@ -209,6 +209,38 @@ body {
 	z-index: 1;
 }
 
+#first-block .nav-panel.fixed {
+	position: fixed;
+	top: 0px;
+	z-index: 5;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#first-block .nav-panel.fixed > * {
+	z-index: 5;
+}
+
+#first-block .nav-panel.fixed:before {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: -9999px;
+	right: -9999px;
+	height: 100%;
+	background: #1a0023;
+	opacity: 0.9;
+	z-index: 4;
+}
+
+#first-block .nav-panel.fixed .main-menu {
+	margin-top: 7px;
+}
+
+#first-block .nav-panel.fixed .btn {
+	margin-top: 13px;
+}
+
 .point-pulse-bg {
   background-color: #ec2492;
 }
@@ -1469,6 +1501,15 @@ body {
 		font-size: 0.7rem;
 		line-height: 0.9rem;
 		margin-top: 17px;
+	}
+
+	#first-block .nav-panel.fixed {
+		width: 300px;
+	}
+
+	#first-block .nav-panel.fixed .btn {
+		margin-top: 4px;
+		margin-right: 6px;
 	}
 
 	#about-block .content {

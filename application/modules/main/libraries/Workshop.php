@@ -62,8 +62,16 @@ class Workshop
 		else
 			$item['img'] = getDefaultFileUrl();
 
+		if(isset($item['img_land_bg']) && empty($item['img_land_bg']) === false)
+			$item['img_land_bg'] = getSchoolFileUrl($item['img_land_bg']);
+		else
+			$item['img_land_bg'] = getDefaultFileUrl();
+
 		if(isset($item['title']))
+		{
 			$item['title'] = htmlspecialchars($item['title']);
+			$item['name'] = $item['title'];
+		}
 
 		if(isset($item['description']))
 		{
