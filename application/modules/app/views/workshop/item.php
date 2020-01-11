@@ -91,7 +91,7 @@
 <div id="faq-block">
 	<div class="content">
 		<h3 class="title-block white">Появились вопросы по обучению?</h3>
-		<a href="#" class="btn btn-pink">Задать вопрос</a>
+		<a href="https://vk.com/im?media=&sel=-178242314" class="btn btn-pink" target="_blank">Задать вопрос</a>
 	</div>
 </div>
 

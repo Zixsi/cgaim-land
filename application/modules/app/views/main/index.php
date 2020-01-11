@@ -23,7 +23,7 @@ $urlSchool = $this->config->item('school_url');
 							<a href="/courses/<?=$course['code']?>"></a>
 							<div class="card-body" style="background-image: url('<?=$course['img']?>');">
 								<div class="info">
-									<div class="title"><?=$course['name']?></div>
+									<div class="title"><?=$course['name']?> <?=$course['name']?></div>
 									<div class="description"><?=$course['description']?></div>
 									<ul class="nav">
 										<li><span><?=(int) $course['lectures_count']?></span>Недель <br>обучения</li>
@@ -82,17 +82,17 @@ $urlSchool = $this->config->item('school_url');
 <div id="faq-block">
 	<div class="content">
 		<h3 class="title-block white">Появились вопросы по обучению?</h3>
-		<a href="#" class="btn btn-pink">Задать вопрос</a>
+		<a href="https://vk.com/im?media=&sel=-178242314" class="btn btn-pink" target="_blank">Задать вопрос</a>
 	</div>
 </div>
 
 <?$this->load->view('inc_training.php');?>
 
-<div id="workshop-block">
-	<div class="content">
-		<h3 class="title-block">Мастерская</h3>
-		<div class="card-list card-slider" id="workshop-slider">
-			<?if($workshop):?>
+<?if($workshop):?>
+	<div id="workshop-block">
+		<div class="content">
+			<h3 class="title-block">Мастерская</h3>
+			<div class="card-list card-slider" id="workshop-slider">
 				<?foreach($workshop as $row):?>
 					<div class="card-wrap">
 						<div class="card">
@@ -116,13 +116,13 @@ $urlSchool = $this->config->item('school_url');
 						</div>
 					</div>
 				<?endforeach;?>
-			<?endif;?>
-		</div>
-		<div class="text-center">
-			<a href="/workshop/" class="btn btn-pink text-pink">Все курсы</a>
+			</div>
+			<div class="text-center">
+				<a href="/workshop/" class="btn btn-pink text-pink">Все курсы</a>
+			</div>
 		</div>
 	</div>
-</div>
+<?endif;?>
 
 <div id="works-block">
 	<div class="content">

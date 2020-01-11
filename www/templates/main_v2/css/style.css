@@ -215,6 +215,7 @@ body {
 	z-index: 5;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	width: 1090px;
 }
 
 #first-block .nav-panel.fixed > * {
@@ -422,8 +423,9 @@ body {
 	font-size: 1.4rem;
 	letter-spacing: 0.2px;
 	font-weight: bold;
-	height: 65px;
+	height: 57px;
 	margin-bottom: 10px;
+	overflow: hidden;
 }
 
 .card-list .card .title:after {
@@ -507,8 +509,8 @@ body {
 	background: 0 none;
 	border: 0 none;
 	background-color: #ec2492;
-	width: 11px;
-	height: 11px;
+	width: 20px;
+	height: 20px;
 	margin: 0px 6px;
 }
 
@@ -562,8 +564,8 @@ body {
 	background: 0 none;
 	border: 0 none;
 	background-color: #ec2492;
-	width: 11px;
-	height: 11px;
+	width: 20px;
+	height: 20px;
 	margin: 0px 6px;
 }
 
@@ -731,8 +733,8 @@ body {
 	background: 0 none;
 	border: 0 none;
 	background-color: #ec2492;
-	width: 11px;
-	height: 11px;
+	width: 20px;
+	height: 20px;
 	margin: 0px 6px;
 }
 
@@ -808,8 +810,8 @@ body {
 	background: 0 none;
 	border: 0 none;
 	background-color: #ec2492;
-	width: 11px;
-	height: 11px;
+	width: 20px;
+	height: 20px;
 	margin: 0px 6px;
 }
 
@@ -1386,7 +1388,7 @@ body {
 
 	.card-list .card .title {
 		font-size: 1rem;
-		height: 49px;
+		height: 42px;
 		margin-bottom: 7px;
 	}
 
@@ -1426,12 +1428,14 @@ body {
 	#first-block .main-menu {
 		display: none;
 		position: absolute;
-		right: 95px;
+		/*right: 95px;*/
+		right: 85px;
 		top: 45px;
 		z-index: 2;
 		margin: 0px;
 		background-color: #ffffff;
-		width: 120px;
+		/*width: 120px;*/
+		width: 180px;
 		flex-wrap: wrap;
 		padding: 0px;
 	}
@@ -1446,7 +1450,8 @@ body {
 
 	#first-block .main-menu li {
 		width: 100%;
-		font-size: 0.8rem;
+		/*font-size: 0.8rem;*/
+		font-size: 1.0rem;
 		padding: 5px 10px;
 		box-sizing: border-box;
 	}
