@@ -72,6 +72,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 	}
 
+	
+	if(document.getElementById('works-block') !== null)
+	{
+		var lightboxDescription = GLightbox({
+            selector: 'works-lightbox',
+        });
+	}
+
 	handleHeadMainMenu();
 	handleItemPrice();
 });

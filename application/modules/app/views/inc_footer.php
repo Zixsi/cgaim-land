@@ -26,6 +26,7 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="<?=TEMPLATE_DIR?>/main_v2/vendor/tiny-slider/tiny-slider.js"></script>
+	<script type="text/javascript" src="<?=TEMPLATE_DIR?>/main_v2/vendor/glightbox/dist/js/glightbox.min.js"></script>
 	<script type="text/javascript" src="<?=TEMPLATE_DIR?>/main_v2/scripts/main.js?v=<?=VERSION?>"></script>
 </body>
 </html>

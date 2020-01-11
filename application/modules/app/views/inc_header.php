@@ -9,6 +9,7 @@
 	<title>CGAim - онлайн школа компьютерной графики и анимации</title>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/main_v2/vendor/tiny-slider/tiny-slider.css">
+	<link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/main_v2/vendor/glightbox/dist/css/glightbox.min.css">
 	<link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/main_v2/css/style.css?v=<?=VERSION?>">
 	<link href="https://fonts.googleapis.com/css?family=Oswald:400,600|Play:400,700&display=swap&subset=cyrillic" rel="stylesheet">
 
