@@ -54,7 +54,7 @@
 	<div id="item-video-trailer-block">
 		<div class="content">
 			<h3 class="title-block">Трейлер курса</h3>
-			<iframe width="700" height="375" src="https://www.youtube.com/embed/<?=$item['trailer_code']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="700" height="375" src="https://www.youtube.com/embed/<?=$item['trailer_code']?>?modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 	</div>
 <?endif;?>
