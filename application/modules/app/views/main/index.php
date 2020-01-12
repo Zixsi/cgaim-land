@@ -27,8 +27,8 @@ $urlSchool = $this->config->item('school_url');
 									<div class="description"><?=$course['description']?></div>
 									<ul class="nav">
 										<li><span><?=(int) $course['lectures_count']?></span>Недель <br>обучения</li>
-										<li><span><?=(int) ($course['lectures_count'] * 2)?></span>Часа <br>занятий</li>
-										<li><span><?=ceil((int) $course['lectures_count'] * 3.5)?></span>Насыщеных <br>задания</li>
+										<li><span><?=ceil((int) $course['lectures_count'] * 3.5)?></span>Часа <br>занятий</li>
+										<li><span><?=(int) ($course['lectures_count'] * 2)?></span>Насыщеных <br>задания</li>
 									</ul>
 								</div>
 							</div>
@@ -135,7 +135,7 @@ $urlSchool = $this->config->item('school_url');
 						<div class="info">
 							<div class="title">Максим Семёнов</div>
 							<div class="description">Arnold renderer<br>Базовый курс</div>
-							<a href="<?=TEMPLATE_DIR?>/assets/works/w8.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" target="_blank">Смотреть</a>
+							<a href="<?=TEMPLATE_DIR?>/assets/works/w8.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
 						</div>
 					</div>
 				</div>
@@ -146,7 +146,7 @@ $urlSchool = $this->config->item('school_url');
 						<div class="info">
 							<div class="title">Миша Бондарь</div>
 							<div class="description">Основы 3D анимации</div>
-							<a href="<?=TEMPLATE_DIR?>/assets/works/w2.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" target="_blank">Смотреть</a>
+							<a href="<?=TEMPLATE_DIR?>/assets/works/w2.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
 						</div>
 					</div>
 				</div>
@@ -157,7 +157,7 @@ $urlSchool = $this->config->item('school_url');
 						<div class="info">
 							<div class="title">Екатерина Измайлова</div>
 							<div class="description">Механика тела</div>
-							<a href="<?=TEMPLATE_DIR?>/assets/works/w3.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" target="_blank">Смотреть</a>
+							<a href="<?=TEMPLATE_DIR?>/assets/works/w3.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
 						</div>
 					</div>
 				</div>
@@ -168,7 +168,7 @@ $urlSchool = $this->config->item('school_url');
 						<div class="info">
 							<div class="title">Маша Чижова</div>
 							<div class="description">Arnold renderer<br>Базовый курс</div>
-							<a href="<?=TEMPLATE_DIR?>/assets/works/w4.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" target="_blank">Смотреть</a>
+							<a href="<?=TEMPLATE_DIR?>/assets/works/w4.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
 						</div>
 					</div>
 				</div>
@@ -179,7 +179,7 @@ $urlSchool = $this->config->item('school_url');
 						<div class="info">
 							<div class="title">Александр Петров</div>
 							<div class="description">Arnold renderer<br>Базовый курс</div>
-							<a href="<?=TEMPLATE_DIR?>/assets/works/w5.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" target="_blank">Смотреть</a>
+							<a href="<?=TEMPLATE_DIR?>/assets/works/w5.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
 						</div>
 					</div>
 				</div>
@@ -190,7 +190,7 @@ $urlSchool = $this->config->item('school_url');
 						<div class="info">
 							<div class="title">Александр Петров</div>
 							<div class="description">Arnold renderer<br>Базовый курс</div>
-							<a href="<?=TEMPLATE_DIR?>/assets/works/w6.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" target="_blank">Смотреть</a>
+							<a href="<?=TEMPLATE_DIR?>/assets/works/w6.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
 						</div>
 					</div>
 				</div>
@@ -201,7 +201,7 @@ $urlSchool = $this->config->item('school_url');
 						<div class="info">
 							<div class="title">Александр Самсонов</div>
 							<div class="description">Arnold renderer<br>Базовый курс</div>
-							<a href="<?=TEMPLATE_DIR?>/assets/works/w7.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" target="_blank">Смотреть</a>
+							<a href="<?=TEMPLATE_DIR?>/assets/works/w7.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
 						</div>
 					</div>
 				</div>
@@ -212,7 +212,7 @@ $urlSchool = $this->config->item('school_url');
 						<div class="info">
 							<div class="title">Дмитрий Серов</div>
 							<div class="description">Основы 3D анимации</div>
-							<a href="<?=TEMPLATE_DIR?>/assets/works/w1.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" target="_blank">Смотреть</a>
+							<a href="<?=TEMPLATE_DIR?>/assets/works/w1.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
 						</div>
 					</div>
 				</div>

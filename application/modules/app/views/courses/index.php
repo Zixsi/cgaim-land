@@ -15,8 +15,8 @@
 									<div class="description"><?=$course['description']?></div>
 									<ul class="nav">
 										<li><span><?=(int) $course['lectures_count']?></span>Недель <br>обучения</li>
-										<li><span><?=(int) ($course['lectures_count'] * 2)?></span>Часа <br>занятий</li>
-										<li><span><?=ceil((int) $course['lectures_count'] * 3.5)?></span>Насыщеных <br>задания</li>
+										<li><span><?=ceil((int) $course['lectures_count'] * 3.5)?></span>Часа <br>занятий</li>
+										<li><span><?=(int) ($course['lectures_count'] * 2)?></span>Насыщеных <br>задания</li>
 									</ul>
 								</div>
 							</div>
