@@ -1,4 +1,3 @@
-<?$urlSchool = $this->config->item('school_url');?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
