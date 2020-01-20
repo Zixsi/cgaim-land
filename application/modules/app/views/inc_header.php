@@ -15,7 +15,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Oswald:400,600|Play:400,700&display=swap&subset=cyrillic" rel="stylesheet">
 
 	<?if(empty($item) === false):?>
-		<?$meta_item_img = (strpos($meta_item_img, 'img_default') === false)?$item['img_land_bg']?($item['img'] ?? '');?>
+		<?$meta_item_img = (strpos($meta_item_img, 'img_default') === false)?$item['img_land_bg']:($item['img'] ?? '');?>
 		<meta property="og:title" content="<?=($item['name'] ?? '')?>">
 		<meta property="og:description" content="<?=($item['preview_text'] ?? '')?>">
 		<meta property="og:image" content="<?=$meta_item_img?>">
