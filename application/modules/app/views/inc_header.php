@@ -1,3 +1,4 @@
+<?$urlSchool = $this->config->item('school_url');?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -12,6 +13,13 @@
 	<link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/main_v2/vendor/glightbox/dist/css/glightbox.min.css">
 	<link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/main_v2/css/style.css?v=<?=VERSION?>">
 	<link href="https://fonts.googleapis.com/css?family=Oswald:400,600|Play:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+	<?if(empty($item) === false):?>
+		<?$meta_item_img = ($item['img_land_bg'] ?? $item['img'] ?? '');?>
+		<meta property="og:title" content="<?=($item['name'] ?? '')?>">
+		<meta property="og:description" content="<?=($item['preview_text'] ?? '')?>">
+		<meta property="og:image" content=" <?if(strpos($meta_item_img, 'img_default') === false) $meta_item_img;?>">
+	<?endif;?>
 
 	<?$this->load->view('inc_analytics.php');?>
 </head>
