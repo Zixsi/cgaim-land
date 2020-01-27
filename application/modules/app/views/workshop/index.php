@@ -1,8 +1,5 @@
 <div id="workshop-block" class="list">
 	<div class="content">
-		<h3 class="title-block">Выберите свой курс</h3>
-		<div class="sub-title">Блок курсов для начинающих и более опытных , где <br>познакомитесь с принципами и необходимым инструментом <br>для дальнейшего развития в компьютерной графике.</div>
-
 		<div class="card-list">
 			<?if($items):?>
 				<?foreach($items as $row):?>

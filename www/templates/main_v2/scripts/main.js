@@ -109,7 +109,7 @@ function handleHeadMainMenu()
 
 function checkHeaderNavpanel()
 {
-	var headerNavpanel = document.getElementById("header-navpanel");
+	var headerNavpanel = document.getElementById("first-block");
 
 	if(document.body.getBoundingClientRect().top < -100)
 		headerNavpanel.classList.add('fixed');

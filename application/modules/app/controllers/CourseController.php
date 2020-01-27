@@ -7,7 +7,10 @@ class CourseController extends APP_Controller
 	{
 		$data = [];
 		$data['courses'] = $this->course->getList();
+		$data['page_header_title'] = 'Выберите свой курс';
+		$data['page_header_text'] = 'Блок курсов для начинающих и более опытных , где познакомитесь с принципами и необходимым инструментом для дальнейшего развития в компьютерной графике.';
 
+		$this->load->layout = 'list';
 		$this->load->lview('courses/index', $data);
 	}
 
