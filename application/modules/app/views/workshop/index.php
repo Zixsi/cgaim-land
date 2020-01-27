@@ -1,7 +1,7 @@
 <div id="workshop-block" class="list">
 	<div class="content">
-		<div class="card-list">
-			<?if($items):?>
+		<?if($items):?>
+			<div class="card-list">
 				<?foreach($items as $row):?>
 					<div class="card-wrap">
 						<div class="card">
@@ -25,7 +25,9 @@
 						</div>
 					</div>
 				<?endforeach;?>
-			<?endif;?>
-		</div>
+			</div>
+		<?else:?>
+			<div class="text-center" style="padding: 50px 0px;">Список предложений пуст</div>
+		<?endif;?>
 	</div>
 </div>
