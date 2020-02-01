@@ -65,3 +65,28 @@ function getNumEnding($number, $endingArray)
     }
     return $ending;
 }
+
+function time2minutes($val)
+{
+	$val = (int) $val;
+	$m = floor($val / 60);
+	$s = $val - ($m * 60);
+	$m = str_pad($m, 2, '0', STR_PAD_LEFT);
+	$s = str_pad($s, 2, '0', STR_PAD_LEFT);
+
+	return $m.':'.$s;
+}
+
+function time2hours($val)
+{
+	$val = (int) $val;
+	$h = floor($val / 3600);
+	$val = $val - ($h * 3600);
+	$m = floor($val / 60);
+	$s = $val - ($m * 60);
+	$h = str_pad($h, 2, '0', STR_PAD_LEFT);
+	$m = str_pad($m, 2, '0', STR_PAD_LEFT);
+	$s = str_pad($s, 2, '0', STR_PAD_LEFT);
+
+	return $h.':'.$m.':'.$s;
+}

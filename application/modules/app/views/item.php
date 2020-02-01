@@ -17,6 +17,17 @@ $urlSchool = $this->config->item('school_url');
 				
 				<a href="<?=$schoolUrl?>/courses/<?=$item['code']?>/" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Мне интересно</a>
 			</div>
+
+			<?if($item['type'] === 'collection' || $item['type'] === 'webinar'):?>
+				<div class="info-text price">
+					<?if((float) $item['price'] <= 0):?>
+						<div class="title">FREE</div>
+					<?else:?>
+						<div class="title"><?=number_format($item['price'], 2, '.', ' ')?><span> руб</span></div>
+					<?endif;?>
+				</div>
+			<?endif;?>
+
 		</div>
 	</div>
 </div>
