@@ -39,6 +39,26 @@
 						</div>
 					</div>
 				<?endif;?>
+
+				<?if($item['type'] === 'collection'):?>
+					<h4 class="title">Процесс обучения</h4>
+					<div class="lectures">
+						<?if(count($videos)):?>
+							<?foreach($videos as $col):?>
+								<div class="lectures-col">
+									<?foreach($col as $val):?>
+										<?if((int) $val['type'] === 1):?>
+											Лекция - <?=$val['title']?><br>
+										<?else:?>
+											Лекция <?=(++$currentLecturesCnt)?> - <?=$val['title']?></br>
+										<?endif;?>
+									<?endforeach;?>
+								</div>
+							<?endforeach;?>
+						<?endif;?>
+					</div>
+				<?endif;?>
+
 				<div class="other-info">
 					<h4 class="title">Данные курса</h4>
 					<p><b>Требования к студенту:</b> Желание учиться. Все необходимые знания по используемым программам будут предоставлены на курсе.</p>
@@ -59,6 +79,7 @@
 	</div>
 <?endif;?>
 
+<?/*
 <div id="item-price-block">
 	<div class="content">
 		<h3 class="title-block">Стоимость обучения</h3>
@@ -87,6 +108,7 @@
 		</div>
 	</div>
 </div>
+*/?>
 
 <div id="faq-block">
 	<div class="content">
@@ -95,7 +117,7 @@
 	</div>
 </div>
 
-<?$this->load->view('inc_training.php');?>
+<?//$this->load->view('inc_training.php');?>
 
 <div id="review-block" class="review-item-block">
 	<div class="content">

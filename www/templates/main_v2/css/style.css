@@ -160,6 +160,7 @@ body {
 	width: 50%;
 	padding-top: 98px;
 }
+#first-block .info .info-text.price {text-align: right;}
 #first-block .info-text .title {
 	font-family: 'Oswald', sans-serif; 
 	font-size: 3rem; 
@@ -1483,7 +1484,10 @@ body {
 	#first-block .info {
 		position: relative;
 		padding: 0px;
+		flex-wrap: wrap;
 	}
+
+	#first-block .info .info-text.price {text-align: center;}
 
 	#first-block .info-img {
 		display: none;

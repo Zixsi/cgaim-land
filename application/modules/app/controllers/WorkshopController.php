@@ -25,8 +25,14 @@ class WorkshopController extends APP_Controller
 
 		$data['schoolUrl'] = $this->config->item('school_url');
 		$data['teacher'] = $this->UserModel->getByID($data['item']['teacher']);
-
-		// debug($data); die();
+		$data['videos'] = [];
+		if ($data['item']['type'] === 'collection') {
+			$data['videos'] = $this->VideoModel->getList(['source_id' => $data['item']['id'], 'source_type' => 'workshop']);
+			$this->VideoHelper->prepareVideoList($data['videos']);
+			$data['videos'] = array_chunk($data['videos'], ceil(count($data['videos']) / 2));
+		}
+		
+		// debug($data['videos']); die();
 		$this->load->layout = 'item';
 		$this->load->lview('workshop/item', $data);
 	}
