@@ -1248,6 +1248,14 @@ body {
 	margin-bottom: 34px;
 }
 
+#item-price-block .price-list .item .type .radio {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0.0;
+    visibility: hidden;
+}
+
 #item-price-block .price-list .item.big .type {
 	margin-bottom: 38px;
 }
