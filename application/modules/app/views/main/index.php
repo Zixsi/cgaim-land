@@ -11,7 +11,7 @@ $urlSchool = $this->config->item('school_url');
 </div>
 
 <div id="course-block">
-    <div class="content">
+    <div class="content" id="course">
         <h3 class="title-block">Выберите свой курс</h3>
         <div class="sub-title">Блок курсов для начинающих и более опытных , где <br>познакомитесь с принципами и необходимым инструментом <br>для дальнейшего развития в компьютерной графике.</div>
 
@@ -82,7 +82,7 @@ $urlSchool = $this->config->item('school_url');
 <div id="faq-block">
     <div class="content">
         <h3 class="title-block white">Появились вопросы по обучению?</h3>
-        <a href="https://vk.com/im?media=&sel=-178242314" class="btn btn-pink" target="_blank">Задать вопрос</a>
+        <a class="btn btn-pink" href="javascript: void(0);" onclick="jivo_api.open(); return false;">Задать вопрос</a>
     </div>
 </div>
 
@@ -276,7 +276,7 @@ $urlSchool = $this->config->item('school_url');
             </div>
         </div>
         <div class="text-center">
-            <a href="<?=$urlSchool?>/auth/register/" class="btn btn-pink text-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Регистрация</a>
+            <a href="javascript: void(0);" class="btn btn-pink text-pink" onclick="jivo_api.open(); return false;">Задать вопрос</a>
         </div>
     </div>
 </div>
