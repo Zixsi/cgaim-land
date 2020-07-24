@@ -89,7 +89,7 @@
 <?endif;?>
 
 <div id="item-price-block">
-    <div class="content">
+    <div class="content" id="price">
         <h3 class="title-block">Стоимость обучения</h3>
         <?php if($offers):?>
             <?php $offer = current($offers);?>
@@ -99,7 +99,7 @@
             <div class="item">
                 <div class="body">
                     <form action="<?= $schoolUrl ?>/external/pay/" method="get" target="_blank">
-                        <input type="hidden" name="course" value="<?= $item['code'] ?>">
+                        <input type="hidden" name="code" value="<?= $item['code'] ?>">
                         <input type="hidden" name="group" value="<?= $offer['ts_f'] ?>">
                         <input type="hidden" name="type" value="standart">
                         <div class="title">Стандарт</div>
@@ -122,7 +122,7 @@
                             <div class="price" id="price-standart-month"><?= number_format($item['price']['standart']['month'], 2, '.', ' ') ?><span>руб/мес</span></div>
                         <?php endif;?>
                         <?php /*<a href="<?= $schoolUrl ?>/courses/<?= $item['code'] ?>/" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться</a>*/?>
-                        <button type="submit" class="btn btn-pink">Купить</button>
+                        <button type="submit" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</button>
                     </form>
                 </div>
             </div>
@@ -130,7 +130,7 @@
             <div class="item big">
                 <div class="body">
                     <form action="<?= $schoolUrl ?>/external/pay/" method="get" target="_blank">
-                        <input type="hidden" name="course" value="<?= $item['code'] ?>">
+                        <input type="hidden" name="code" value="<?= $item['code'] ?>">
                         <input type="hidden" name="group" value="<?= $offer['ts_f'] ?>">
                         <input type="hidden" name="type" value="advanced">
                         <div class="title">Расширенный</div>
@@ -157,7 +157,7 @@
                                 <div class="price" id="price-advanced-month"><?= number_format($item['price']['advanced']['month'], 2, '.', ' ') ?><span>руб/мес</span></div>
                             <?php endif;?>
                             <?php /*<a href="<?= $schoolUrl ?>/courses/<?= $item['code'] ?>/" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться</a>*/?>
-                            <button type="submit" class="btn btn-pink">Купить</button>
+                            <button type="submit" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</button>
                         <?php endif;?>
                     </form>
                 </div>
@@ -167,7 +167,7 @@
             <div class="item">
                 <div class="body">
                     <form action="<?= $schoolUrl ?>/external/pay/" method="get" target="_blank">
-                        <input type="hidden" name="course" value="<?= $item['code'] ?>">
+                        <input type="hidden" name="code" value="<?= $item['code'] ?>">
                         <input type="hidden" name="group" value="<?= $offer['ts_f'] ?>">
                         <input type="hidden" name="type" value="vip">
                         <?php if($isEnabledVip):?>
@@ -194,7 +194,7 @@
                             <div class="price active" id="price-vip-full"><?= number_format($item['price']['vip']['full'], 2, '.', ' ') ?><span>руб</span></div>
                             <div class="price" id="price-vip-month"><?= number_format($item['price']['vip']['month'], 2, '.', ' ') ?><span>руб/мес</span></div>
                             <?php/*<a href="<?= $schoolUrl ?>/courses/<?= $item['code'] ?>/" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться</a>*/?>
-                            <button type="submit" class="btn btn-pink">Купить</button>
+                            <button type="submit" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</button>
                         <?php endif;?>
                     </form>
                 </div>
@@ -206,7 +206,7 @@
 <div id="faq-block">
     <div class="content">
         <h3 class="title-block white">Появились вопросы по обучению?</h3>
-        <a href="https://vk.com/im?media=&sel=-178242314" class="btn btn-pink" target="_blank">Задать вопрос</a>
+        <a href="javascript: void(0);" onclick="jivo_api.open(); return false;" class="btn btn-pink">Задать вопрос</a>
     </div>
 </div>
 

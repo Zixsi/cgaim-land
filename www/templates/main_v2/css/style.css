@@ -380,7 +380,7 @@ body {
 	background: linear-gradient(135deg, rgba(94,25,206,1) 0%, rgba(212,23,201,1) 100%);
 }
 
-.card-list .card a {
+.card-list .card > a {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -395,7 +395,7 @@ body {
 .card-list .card .card-body {
 	position: relative;
 	background-color: #fff;
-	height: 300px;
+	height: 350px;
 	overflow: hidden; 
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -416,6 +416,20 @@ body {
 
 .card-list .card:hover .card-body:before {
 	background-color: #8118cc;
+}
+
+.card-list .card:hover .more > a {
+    background-color: #ec2492;
+    color: #ffffff;
+}
+
+.card-list .card .more {
+    text-align: center;
+    padding-top: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    right: 0px;
 }
 
 .card-list .card .info {

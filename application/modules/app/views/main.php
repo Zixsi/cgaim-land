@@ -10,7 +10,7 @@ $urlSchool = $this->config->item('school_url');
 			<div class="info-text">
 				<div class="title">Обучаем компьютерной графике и анимации</div>
 				<div class="text">Жми кнопку ниже и получи новую <br>профессию с зарплатой от 55 тыс <br>рублей уже сейчас!</div>
-				<a href="<?=$urlSchool?>/auth/register/" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Мне интересно</a>
+				<a href="/#course" class="btn btn-pink">Мне интересно</a>
 			</div>
 			<div class="info-img">
 				<span class="point p1">
