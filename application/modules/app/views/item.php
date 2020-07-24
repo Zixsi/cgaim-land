@@ -15,14 +15,14 @@ $urlSchool = $this->config->item('school_url');
                     <div class="text"><?= $item['preview_text'] ?></div>
                 <?endif;?>
 
-                <?php if($item['type'] === 'webinar'):?>
+                <?php if($item['type'] === 'collection' || $item['type'] === 'webinar'):?>
                     <a href="<?= $schoolUrl ?>/external/pay/?code=<?= $item['code'] ?>&target=workshop" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</a>
                 <?php else:?>
                     <a href="#price" class="btn btn-pink">Мне интересно</a>
                 <?php endif;?>
             </div>
 
-            <?if($item['type'] === 'collection' || $item['type'] === 'webinar'):?>
+            <?php if($item['type'] === 'collection' || $item['type'] === 'webinar'):?>
             <div class="info-text price">
                 <?if((float) $item['price'] <= 0):?>
                 <div class="title">FREE</div>
@@ -30,7 +30,7 @@ $urlSchool = $this->config->item('school_url');
                 <div class="title"><?= number_format($item['price'], 2, '.', ' ') ?><span> руб</span></div>
                 <?endif;?>
             </div>
-            <?endif;?>
+            <?php endif;?>
 
         </div>
     </div>
