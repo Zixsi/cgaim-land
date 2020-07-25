@@ -473,7 +473,7 @@ body {
 
 .card-list .card .nav li {
 	position: relative;
-	padding-left: 43px;
+	padding-left: 65px;
 	font-size: 0.9rem;
 	line-height: 0.95rem;
 	margin-top: 20px;
@@ -1414,7 +1414,7 @@ body {
 	}
 
 	.card-list .card .card-body {
-		height: 240px;
+		height: 275px;
 	}
 
 	.card-list .card .title {
@@ -1429,7 +1429,7 @@ body {
 	}
 
 	.card-list .card .nav li {
-		padding-left: 35px;
+		padding-left: 50px;
 		font-size: 0.7rem;
 		line-height: 0.75rem;
 		margin-top: 15px;
