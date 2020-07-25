@@ -31,6 +31,9 @@ $urlSchool = $this->config->item('school_url');
                                         <li><span><?=(int) ($course['lectures_count'] * 2)?></span>Насыщеных <br>задания</li>
                                     </ul>
                                 </div>
+                                <div class="more">
+                                    <a href="/courses/<?=$course['code']?>" class="btn btn-pink">Подробнее</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -111,6 +114,9 @@ $urlSchool = $this->config->item('school_url');
                                             <li><span>2</span>Часа <br>занятий</li>
                                         </ul>
                                     <?php endif;?>
+                                </div>
+                                <div class="more">
+                                    <a href="/workshop/<?=$row['code']?>" class="btn btn-pink">Подробнее</a>
                                 </div>
                             </div>
                         </div>
