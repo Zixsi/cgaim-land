@@ -1,31 +1,78 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-class UserModel extends APP_Model
+namespace App\modules\main\models;
+
+class UserModel extends \APP_Model
 {
-	const TABLE = 'users';
+    const TABLE = 'users';
 
-	public function getByID($id)
-	{
-		return $this->getByField('id', (int) $id);
-	}
+    /**
+     * @param array $data
+     * @return boolean
+     */
+    public function add($data = [])
+    {
+        if ($this->db->insert(self::TABLE, $data)) {
+            return true;
+        }
 
-	public function getByField($field, $value)
-	{
-		$sql = 'SELECT *, CONCAT_WS(\' \', name, lastname) as full_name FROM '.self::TABLE.' WHERE '.$field.' = ?';
-		$res = $this->db->query($sql, [$value]);
-		if($row = $res->row_array())
-		{
-			$this->prepareUser($row);
-			return $row;
-		}
+        return false;
+    }
 
-		return false;
-	}
+    /**
+     * @param int $id
+     * @param array $data
+     * @return boolean
+     */
+    public function update($id, $data = [])
+    {
+        $this->db->where('id', $id);
+        
+        if ($this->db->update(self::TABLE, $data)) {
+            return true;
+        }
 
-	public function prepareUser(&$data)
-	{
-		if(empty($data['img']))
-			$data['img'] = 'templates/assets/profile_icon_male2.png';
-	}
+        return false;
+    }
+
+    /**
+     * @param int $id
+     * @return ?array
+     */
+    public function getById($id)
+    {
+        return $this->getByField('id', (int) $id);
+    }
+
+    /**
+     * 
+     * @param string $login
+     * @return ?array
+     */
+    public function getByLogin($login)
+    {
+        return $this->getByField('login', $login);
+    }
+
+    public function getByField($field, $value)
+    {
+        $sql = sprintf('SELECT * FROM %s WHERE %s = :value', self::TABLE, $field);
+        $res = $this->query($sql, [':value' => $value]);
+        
+        if (($row = $res->row_array())) {
+            return $row;
+        }
+
+        return null;
+    }
+
+    public function pwdHash($password, $salt = false)
+    {
+        return ($salt !== false) ? sha1($password . $salt) : sha1($password);
+    }
+
+    public function pwdSalt()
+    {
+        return sha1(microtime(true));
+    }
 }

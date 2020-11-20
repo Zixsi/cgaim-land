@@ -61,9 +61,7 @@ $autoload['packages'] = array();
 $autoload['libraries'] = [
 	'database', 
 	'security', 
-	'uri', 
-	'main/course',
-	'main/workshop'
+	'uri'
 ];
 
 /*
@@ -138,11 +136,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = [
-	'main/CourseModel',
-	'main/UserModel',
-	'main/FileModel',
-	'main/WorkshopModel',
-	'main/VideoModel',
-	'main/VideoHelper',
-];
+$autoload['model'] = ['APP_Model'];

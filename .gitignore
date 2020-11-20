@@ -10,7 +10,8 @@ application/logs/*
 !application/logs/index.html
 !application/*/.htaccess
 
-data/*
+www/uploads/*
+!www/uploads/index.html
 !data/index.html
 
 www/data/*
@@ -29,3 +30,4 @@ www/data/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+/www/templates/cgaim-land/nbproject/private/

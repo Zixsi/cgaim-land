@@ -1,288 +1,381 @@
-<?php
-$urlSchool = $this->config->item('school_url');
-?>
-<div id="about-block">
-    <div class="content" id="about">
-        <h3 class="title-block">О школе</h3>
-        <div class="sub-title">Добро пожаловать в онлайн-школу CGAim</div>
-        <p>Нашей главной целью явлется научить студентов работать с 2D-графикой, 3D-моделированием и анимацией, а более опытным развить навыки и найти новую специализацию. Наша команда не довольна тем контентом, который заполонил интернет, поэтому мы разработали подход, основанный на постоянной практике.</p>
-        <p>Задача курсов - обучить не только какими кнопками пользоваться в программах, а научить правильно и качественно создавать творческий замысел для игр, мультфильмов и кино. Помимо этого, познакомитесь с единомышленниками в закрытом Discord чате.</p>
+<div id="header" class="main">
+    <div class="content">
+        <div class="content-wrap">
+            <h1 class="title">Обучаем <br>компьютерной <br>графике и анимации</h1>
+            <div class="description">Жми кнопку ниже<br><span>и получи новую профессию</span><br>с зарплатой от 55 000 рублей уже сейчас</div>
+            <div class="buttons">
+                <a href="#courses" type="button" class="btn btn-pink btn-xl">Мне интересно</a>
+                <span class="change">Выбрать курс</span>
+            </div>
+        </div>
+        <img src="<?=TEMPLATE_DIR?>/land/images/course-img.png" class="img">
     </div>
 </div>
 
-<div id="course-block">
-    <div class="content" id="course">
-        <h3 class="title-block">Выберите свой курс</h3>
-        <div class="sub-title">Блок курсов для начинающих и более опытных , где <br>познакомитесь с принципами и необходимым инструментом <br>для дальнейшего развития в компьютерной графике.</div>
+<div id="about">
+    <div class="content">
+        <div class="block-title">О школе</div>
+        <span class="figure-rocket"></span>
+        <div class="description">
+            <p>Хотите освоить профессию 3D аниматора с нуля и научиться создавать классные ролики?</p>
+            <p>Мы обучим студента всем законам анимации и в каждом уроке закрепим их на практике. Каждое задание курса раскрывает через практику почти все элементы движения.</p>
+            <p>Самым важным процессом в обучении является конструктивная критика. Лучше взгляда профессионала с многолетним опытом работы быть не может. В процессе обучения преподаватель раз в неделю дает развернутый ответ на работу студента.</p>
+            <p>Пройдя первый класс, студент будет знать основную терминологию в анимации и все востребованные инструменты самой популярной программы Autodesk Maya.</p>
+            <p>Основная задача данного курса - усвоить базу и отточить навыки, чтобы легче и быстрее двигаться в дальнейшем обучении и карьерной лестнице.</p>
+        </div>
+    </div>
+</div>
 
-        <div class="card-list card-slider" id="course-slider">
-            <?php if ($courses) :?>
-                <?php foreach ($courses as $course) :?>
-                    <div class="card-wrap">
-                        <div class="card">
-                            <a href="/courses/<?=$course['code']?>"></a>
-                            <div class="card-body" style="background-image: url('<?=$course['img']?>');">
-                                <div class="info">
-                                    <div class="title"><?=$course['name']?></div>
-                                    <div class="description"><?=$course['description']?></div>
-                                    <ul class="nav">
-                                        <li><span><?=(int) $course['lectures_count']?></span>Недель <br>обучения</li>
-                                        <li><span><?=ceil((int) $course['lectures_count'] * 3.5)?></span>Часа <br>занятий</li>
-                                        <li><span><?=(int) ($course['lectures_count'] * 2)?></span>Насыщеных <br>задания</li>
-                                    </ul>
-                                </div>
-                                <div class="more">
-                                    <a href="/courses/<?=$course['code']?>" class="btn btn-pink">Подробнее</a>
-                                </div>
+<div id="courses" class="courses_main">
+    <div class="background"></div>
+    <div class="content">
+        <div class="block-title">Курсы</div>
+        <div class="course_cards mobile" id="courses-slider">
+            <?php foreach($courses as $row): ?>
+                <div class="card">
+                    <div class="card_head">
+                        <div class="header">Начало обучения</div>
+                        <div class="date"><?=$row['start_date_formated']?></div>
+                        <?php if($row['note']): ?>
+                            <span class="badge">
+                                <span class="badge_big_text"><?=$row['note'][0]?></span>
+                                <?php if(empty($row['note'][1]) === false): ?>
+                                    <span class="badge_small_text"><?=$row['note'][1]?></span>
+                                <?php endif;?>
+                            </span>
+                        <?php endif; ?>
+                    </div>
+                    <div class="card_content">
+                        <div class="img">
+                            <img src="<?=$row['img_big']?>" alt="<?=$row['title']?>" class="img_big">
+                            <img src="<?=$row['img_small']?>" alt="<?=$row['title']?>" class="img_small">
+                        </div>
+                        <div class="text_wrap">
+                            <div class="title"><?=$row['title']?></div>
+                            <div class="description"><?=$row['description']?></div>
+                        </div>
+                        <div class="info">
+                            <div class="start">
+                                <div class="header">Начало обучения</div>
+                                <div class="date"><?=$row['start_date_formated']?></div>
+                            </div>
+                            <div class="instructor">
+                                <img src="<?=$instructors[$row['instructor']]['photo_small']?>" alt="">
+                                <div class="header">Автор курса</div>
+                                <div class="fio"><?=$instructors[$row['instructor']]['first_name']?> <?=$instructors[$row['instructor']]['last_name']?></div>
                             </div>
                         </div>
                     </div>
-                <?php endforeach;?>
-            <?php endif;?>
+                    <div class="card_footer">
+                        <a href="/courses/<?=$row['code']?>/" class="btn btn-pink btn-md">Подробнее</a>
+                        <?php if($row['note']): ?>
+                            <span class="badge">
+                                <span class="badge_big_text"><?=$row['note'][0]?></span>
+                                <?php if(empty($row['note'][1]) === false): ?>
+                                    <span class="badge_small_text"><?=$row['note'][1]?></span>
+                                <?php endif;?>
+                            </span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
-        <div class="text-center">
-            <a href="/courses/" class="btn btn-pink text-pink">Все курсы</a>
+
+        <div class="courses-slider-controls">
+            <div id="courses-slider-nav" class="slider-dot-nav">
+                <?php foreach($courses as $row): ?>
+                    <button type="button" class="btn"></button>
+                <?php endforeach; ?>
+            </div>
+            <div id="courses-slider-btns">
+                <button class="btn btn-pink btn-round btn-slider-nav prev" id="courses-prev-btn" data-controls="prev"><span></span></button>
+                <button class="btn btn-pink btn-round btn-slider-nav next" id="courses-next-btn" data-controls="next"><span></span></button>
+            </div>
+        </div>
+        
+        <div class="page-center-btn">
+            <a href="/courses/" class="btn btn-pink btn-xl">Все курсы</a>
         </div>
     </div>
 </div>
 
-<div id="advantage-block">
+<div id="for-whom" class="main">
     <div class="content">
-        <h3 class="title-block">Преимущества обучения</h3>
-        <div class="items-list">
-            <div class="item">
-                <div class="icon">
-                    <img src="<?=TEMPLATE_DIR?>/main_v2/img/a1.png" alt="" width="81">
+        <span class="figure-cube"></span>
+        <div class="block-title">Преимущества обучения</div>
+        <div class="cards">
+            <div class="card" style="background-image: url('<?=TEMPLATE_DIR?>/land/img/block1.png');">
+                <div class="card-content">
+                    <div class="title">Новичкам</div>
+                    <div class="description">Пройдете весь цикл производство анимации и сделаете индивидуальный деморил,и начнете зарабатывать около 40 000 руб на продаже своих навыков.</div>
                 </div>
-                <div class="title">Свободный график</div>
-                <div class="text">Обучение онлайн доступно из любой точки мира, вам не нужно никуда ехать</div>
             </div>
-            <div class="item">
-                <div class="icon">
-                    <img src="<?=TEMPLATE_DIR?>/main_v2/img/a2.png" alt="" width="76">
+            <div class="card" style="background-image: url('<?=TEMPLATE_DIR?>/land/img/block2.png');">
+                <div class="card-content">
+                    <div class="title">Нравятся игры?</div>
+                    <div class="description">Сделайте первый шаг к оживлению персонажей. Путь аниматора всегда начинается с основ, вы вдохнете жизнь в свою игру.</div>
                 </div>
-                <div class="title">Курсы с инструктором</div>
-                <div class="text">Онлайн-встречи каждую неделю, индивидуальная проверка работ и помощь инструктора</div>
             </div>
-            <div class="item">
-                <div class="icon">
-                    <img src="<?=TEMPLATE_DIR?>/main_v2/img/a3.png" alt="" width="89">
+            <div class="card" style="background-image: url('<?=TEMPLATE_DIR?>/land/img/block3.png');">
+                <div class="card-content">
+                    <div class="title">3D моделлерам</div>
+                    <div class="description">Хотите освоить профессию 3D аниматора с нуля и научиться создавать классные ролики? Страх анимации персонажей уйдет в прошлое. Анимация будет динамичной и ритмичной.</div>
                 </div>
-                <div class="title">Легкость обучения</div>
-                <div class="text">Лекции выстроены таким способом, что понятно будет новичку. Главное - старание и труд, тогда у вас получится</div>
             </div>
-            <div class="item">
-                <div class="icon">
-                    <img src="<?=TEMPLATE_DIR?>/main_v2/img/a4.png" alt="" width="76">
+            <div class="card" style="background-image: url('<?=TEMPLATE_DIR?>/land/img/block4.png');">
+                <div class="card-content">
+                    <div class="title">С базовым опытом</div>
+                    <div class="description">Структурируете знания по основам анимации, придумаете уникальный сюжет и войдете в поток генерации идей.</div>
                 </div>
-                <div class="title">Мы всегда на связи</div>
-                <div class="text">Студенты в любое время могут просматривать видеолекции и обращаться к инструктору за советом</div>
             </div>
         </div>
     </div>
 </div>
 
-<div id="faq-block">
+<div id="questions">
     <div class="content">
-        <h3 class="title-block white">Появились вопросы по обучению?</h3>
-        <a class="btn btn-pink" href="javascript: void(0);" onclick="jivo_api.open(); return false;">Задать вопрос</a>
+        <div class="block-title">Появились вопросы<span class="symbol">?</span></div>
     </div>
 </div>
 
-<?php $this->load->view('inc_training.php');?>
-
-<?php if ($workshop) :?>
-    <div id="workshop-block">
-        <div class="content">
-            <h3 class="title-block">Мастерская</h3>
-            <div class="card-list card-slider" id="workshop-slider">
-                <?php foreach ($workshop as $row) :?>
-                    <div class="card-wrap">
-                        <div class="card">
-                            <a href="/workshop/<?=$row['code']?>"></a>
-                            <div class="card-body" style="background-image: url('<?=$row['img']?>');">
-                                <div class="info">
-                                    <div class="title"><?=$row['title']?></div>
-                                    <div class="description"><?=$row['description']?></div>
-                                    <?php if ($row['type'] === 'collection') :?>
-                                        <ul class="nav">
-                                            <li><span><?=$row['totalDurationHours']?></span>Час<?=getNumEnding($row['totalDurationHours'], ['', 'а', 'ов'])?> <br>занятий</li>
-                                            <li><span><?=$row['videosCount']?></span>Насыщен<?=getNumEnding($row['videosCount'], ['ая', 'ых', 'ых'])?> <br>лекци<?=getNumEnding($row['videosCount'], ['я', 'и', 'й'])?></li>
-                                        </ul>
-                                    <?php else :?>
-                                        <ul class="nav">
-                                            <li><span>2</span>Часа <br>занятий</li>
-                                        </ul>
-                                    <?php endif;?>
-                                </div>
-                                <div class="more">
-                                    <a href="/workshop/<?=$row['code']?>" class="btn btn-pink">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach;?>
-            </div>
-            <div class="text-center">
-                <a href="/workshop/" class="btn btn-pink text-pink">Все курсы</a>
-            </div>
-        </div>
-    </div>
-<?php endif;?>
-
-<div id="works-block">
+<div id="training" class="main">
     <div class="content">
-        <h3 class="title-block">Работы наших студентов</h3>
-
-        <div class="card-list card-slider" id="works-slider">
-            <div class="card-wrap">
-                <div class="card">
-                    <div class="card-body" style="background-image: url('<?=TEMPLATE_DIR?>/assets/works/w8.jpg?v=1');">
-                        <div class="info">
-                            <div class="title">Максим Семёнов</div>
-                            <div class="description">Arnold renderer<br>Базовый курс</div>
-                            <a href="<?=TEMPLATE_DIR?>/assets/works/w8.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
-                        </div>
-                    </div>
+        <div class="block-title">Как проходит обучение</div>
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div class="title">Первые задания</div>
+                    <div class="description">— Сразу после оплаты вы попадаете в закрытую группу, где лежат первые задания. Перед стартом курса вам будет чем заняться. Чем раньше впишетесь, тем тщательнее подготовитесь к курсу, и тем лучше результат получите.</div>
                 </div>
+                <div class="img-wrap"></div>
             </div>
-            <div class="card-wrap">
-                <div class="card">
-                    <div class="card-body" style="background-image: url('<?=TEMPLATE_DIR?>/assets/works/w2.jpg?v=1');">
-                        <div class="info">
-                            <div class="title">Миша Бондарь</div>
-                            <div class="description">Основы 3D анимации</div>
-                            <a href="<?=TEMPLATE_DIR?>/assets/works/w2.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
-                        </div>
-                    </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="title">Обучение в игровом формате</div>
+                    <div class="description">Это обучение с применением игровых механик, как в игре вы будете проходить занятия как уровни, зарабатывать очки за выполнение домашнего задания. И в итоге получите дополнительные бонусы!</div>
                 </div>
+                <div class="img-wrap"></div>
             </div>
-            <div class="card-wrap">
-                <div class="card">
-                    <div class="card-body" style="background-image: url('<?=TEMPLATE_DIR?>/assets/works/w3.jpg?v=1');">
-                        <div class="info">
-                            <div class="title">Екатерина Измайлова</div>
-                            <div class="description">Механика тела</div>
-                            <a href="<?=TEMPLATE_DIR?>/assets/works/w3.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
-                        </div>
-                    </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="title">Домашние задания</div>
+                    <div class="description">1. Основные - то задание, которое необходимо выполнить по пройденному материалу. 2. Бонусное - можно сказать, собственный проект. Он быстрее прокачает навыки и будет возможность получить дополнительные плюшки от школы. По каждой домашке будет сделан ролик с ее разбором. Вы получите подробный фидбек, узнаете на что необходимо обратить внимание, как можно улучшить работу на данном этапе и т.д.</div>
                 </div>
+                <div class="img-wrap"></div>
             </div>
-            <div class="card-wrap">
-                <div class="card">
-                    <div class="card-body" style="background-image: url('<?=TEMPLATE_DIR?>/assets/works/w4.jpg?v=1');">
-                        <div class="info">
-                            <div class="title">Маша Чижова</div>
-                            <div class="description">Arnold renderer<br>Базовый курс</div>
-                            <a href="<?=TEMPLATE_DIR?>/assets/works/w4.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
-                        </div>
-                    </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="title">Онлайн встречи</div>
+                    <div class="description">В конце недели будет проходить вебинар внутри платформы, на котором сможете задать вопросы, возникшие в процессе выполнения домашнего задания. Также можно пообщаться на отвлеченные темы.</div>
                 </div>
-            </div>
-            <div class="card-wrap">
-                <div class="card">
-                    <div class="card-body" style="background-image: url('<?=TEMPLATE_DIR?>/assets/works/w5.jpg?v=1');">
-                        <div class="info">
-                            <div class="title">Александр Петров</div>
-                            <div class="description">Arnold renderer<br>Базовый курс</div>
-                            <a href="<?=TEMPLATE_DIR?>/assets/works/w5.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-wrap">
-                <div class="card">
-                    <div class="card-body" style="background-image: url('<?=TEMPLATE_DIR?>/assets/works/w6.jpg?v=1');">
-                        <div class="info">
-                            <div class="title">Александр Петров</div>
-                            <div class="description">Arnold renderer<br>Базовый курс</div>
-                            <a href="<?=TEMPLATE_DIR?>/assets/works/w6.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-wrap">
-                <div class="card">
-                    <div class="card-body" style="background-image: url('<?=TEMPLATE_DIR?>/assets/works/w7.jpg?v=1');">
-                        <div class="info">
-                            <div class="title">Александр Самсонов</div>
-                            <div class="description">Arnold renderer<br>Базовый курс</div>
-                            <a href="<?=TEMPLATE_DIR?>/assets/works/w7.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-wrap">
-                <div class="card">
-                    <div class="card-body" style="background-image: url('<?=TEMPLATE_DIR?>/assets/works/w1.jpg?v=1');">
-                        <div class="info">
-                            <div class="title">Дмитрий Серов</div>
-                            <div class="description">Основы 3D анимации</div>
-                            <a href="<?=TEMPLATE_DIR?>/assets/works/w1.jpg?v=1" class="btn btn-pink btn-sm works-lightbox" data-type="image">Смотреть</a>
-                        </div>
-                    </div>
-                </div>
+                <div class="img-wrap"></div>
             </div>
         </div>
+        <span class="figure figure2-3"></span>
     </div>
 </div>
 
-<div id="review-block">
-    <div class="content" id="reviews">
-        <h3 class="title-block white">Отзывы наших выпускников</h3>
-        <?php $this->load->view('inc_reviews.php');?>
-    </div>
-</div>
-
-<div id="knowledge-block">
+<div id="workshop" class="courses_main">
+    <div class="background"></div>
     <div class="content">
-        <h3 class="title-block">Где можно применять знания после обучения</h3>
-        <div class="items-list">
-            <div class="item">
-                <div class="icon">
-                    <img src="<?=TEMPLATE_DIR?>/main_v2/img/k1.png" alt="" width="82">
+        <div class="block-title">Мастерская</div>
+        <div class="course_cards mobile" id="workshop-slider">
+
+            <div class="card">
+                <div class="card_head">
+                    <div class="header">Начало обучения</div>
+                    <div class="date">1 ноября</div>
+                    <span class="badge">
+                        <span class="badge_big_text">5</span>
+                        <span class="badge_small_text">класс</span>
+                    </span>
                 </div>
-                <div class="title">Мультипликация</div>
-                <div class="text">Разработай дизайн персонажа и создай 3D- анимацию для собственного ролика или работай в анимационной студии</div>
+                <div class="card_content">
+                    <div class="img">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/course-img.png" alt="" class="img_big">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/hero1.png" alt="" class="img_small">
+                    </div>
+                    <div class="text_wrap">
+                        <div class="title">Быстрый старт в 3D анимацию</div>
+                        <div class="description">Вы с нуля сделаете первые 30 000 рублей на анимации, уделяя работе всего 4 часа в день.</div>
+                    </div>
+                    <div class="info">
+                        <div class="start">
+                            <div class="header">Начало обучения</div>
+                            <div class="date">1 ноября</div>
+                        </div>
+                        <div class="instructor">
+                            <img src="<?=TEMPLATE_DIR?>/land/images/instructor.png" alt="">
+                            <div class="header">Автор курса</div>
+                            <div class="fio">Александр Серебряков</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_footer">
+                    <a href="" class="btn btn-pink btn-md">Подробнее</a>
+                    <span class="badge">
+                        <span class="badge_big_text">1</span>
+                        <span class="badge_small_text">класс</span>
+                    </span>
+                </div>
             </div>
-            <div class="item">
-                <div class="icon">
-                    <img src="<?=TEMPLATE_DIR?>/main_v2/img/k2.png" alt="" width="72">
+            <div class="card">
+                <div class="card_head">
+                    <div class="header">Начало обучения</div>
+                    <div class="date">1 ноября</div>
+                    <span class="badge">
+                        <span class="badge_big_text">5</span>
+                        <span class="badge_small_text">класс</span>
+                    </span>
                 </div>
-                <div class="title">YouTube</div>
-                <div class="text">Используй навыки для создания дизайна канала, интегрируй 3D в видео и освежи взгляд на подачу материала.</div>
+                <div class="card_content">
+                    <div class="img">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/course-img.png" alt="" class="img_big">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/hero1.png" alt="" class="img_small">
+                    </div>
+                    <div class="text_wrap">
+                        <div class="title">Быстрый старт в 3D анимацию</div>
+                        <div class="description">Вы с нуля сделаете первые 30 000 рублей на анимации, уделяя работе всего 4 часа в день.</div>
+                    </div>
+                    <div class="info">
+                        <div class="start">
+                            <div class="header">Начало обучения</div>
+                            <div class="date">1 ноября</div>
+                        </div>
+                        <div class="instructor">
+                            <img src="<?=TEMPLATE_DIR?>/land/images/instructor.png" alt="">
+                            <div class="header">Автор курса</div>
+                            <div class="fio">Александр Серебряков</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_footer">
+                    <a href="" class="btn btn-pink btn-md">Подробнее</a>
+                    <span class="badge">
+                        <span class="badge_big_text">1</span>
+                        <span class="badge_small_text">класс</span>
+                    </span>
+                </div>
             </div>
-            <div class="item">
-                <div class="icon">
-                    <img src="<?=TEMPLATE_DIR?>/main_v2/img/k3.png" alt="" width="74">
+            <div class="card">
+                <div class="card_head">
+                    <div class="header">Начало обучения</div>
+                    <div class="date">1 ноября</div>
+                    <span class="badge">
+                        <span class="badge_big_text">5</span>
+                        <span class="badge_small_text">класс</span>
+                    </span>
                 </div>
-                <div class="title">Реклама</div>
-                <div class="text">Создавай персонажей и визуализируй собственные решения для рекламы продуктов и брендов</div>
+                <div class="card_content">
+                    <div class="img">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/course-img.png" alt="" class="img_big">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/hero1.png" alt="" class="img_small">
+                    </div>
+                    <div class="text_wrap">
+                        <div class="title">Быстрый старт в 3D анимацию</div>
+                        <div class="description">Вы с нуля сделаете первые 30 000 рублей на анимации, уделяя работе всего 4 часа в день.</div>
+                    </div>
+                    <div class="info">
+                        <div class="start">
+                            <div class="header">Начало обучения</div>
+                            <div class="date">1 ноября</div>
+                        </div>
+                        <div class="instructor">
+                            <img src="<?=TEMPLATE_DIR?>/land/images/instructor.png" alt="">
+                            <div class="header">Автор курса</div>
+                            <div class="fio">Александр Серебряков</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_footer">
+                    <a href="" class="btn btn-pink btn-md">Подробнее</a>
+                    <span class="badge">
+                        <span class="badge_big_text">1</span>
+                        <span class="badge_small_text">класс</span>
+                    </span>
+                </div>
             </div>
-            <div class="item">
-                <div class="icon">
-                    <img src="<?=TEMPLATE_DIR?>/main_v2/img/k4.png" alt="" width="82">
-                </div>
-                <div class="title">Веб-дизайн</div>
-                <div class="text">Придумывай макеты сайтов, не трать время на поиск и адаптацию чужой графики</div>
+
+        </div>
+        <div class="workshop-slider-controls">
+            <div id="workshop-slider-nav" class="slider-dot-nav">
+                <button type="button" class="btn"></button>
+                <button type="button" class="btn"></button>
+                <button type="button" class="btn"></button>
             </div>
-            <div class="item">
-                <div class="icon">
-                    <img src="<?=TEMPLATE_DIR?>/main_v2/img/k5.png" alt="" width="66">
-                </div>
-                <div class="title">Кинематограф</div>
-                <div class="text">Работайте со спецэффектами и сложными 3D- визуализациями, которые станут частью видеоролика или фильма</div>
-            </div>
-            <div class="item">
-                <div class="icon">
-                    <img src="<?=TEMPLATE_DIR?>/main_v2/img/k6.png" alt="" width="78">
-                </div>
-                <div class="title">Разработка игр</div>
-                <div class="text">Создавай окружение, персонажей и анимацию для игр от минималистичных до гиперреалистичных RPG</div>
+            <div id="workshop-slider-btns">
+                <button class="btn btn-pink btn-round btn-slider-nav prev" id="workshop-prev-btn" data-controls="prev"><span></span></button>
+                <button class="btn btn-pink btn-round btn-slider-nav next" id="workshop-next-btn" data-controls="next"><span></span></button>
             </div>
         </div>
-        <div class="text-center">
-            <a href="javascript: void(0);" class="btn btn-pink text-pink" onclick="jivo_api.open(); return false;">Задать вопрос</a>
+
+        <div class="page-center-btn">
+            <a href="#" class="btn btn-pink btn-xl">Все курсы</a>
+        </div>
+    </div>
+</div>
+
+<div id="examples">
+    <div class="content">
+        <div class="block-title">Работы студентов</div>
+    </div>
+</div>
+
+<div id="reviews">
+    <div class="content">
+        <div class="block-title">Отзывы</div>
+        <div class="slider">
+            <div class="item">
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="knowledge">
+    <div class="content">
+        <div class="block-title">Где применять знания<span class="symbol">?</span></div>
+        <div class="skills">
+            <div class="cards">
+                <div class="card">
+                    <div class="img-wrap">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/s1.png" alt="">
+                    </div>
+                    <div class="description-wrap">
+                        <div class="description">— с помощью системы «НАСТРОЙКА ИНТЕРФЕЙСА» создадите удобную и эффективную среду для работы внутри Autodesk Maya</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-wrap">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/s2.png" alt="">
+                    </div>
+                    <div class="description-wrap">
+                        <div class="description">— с помощью пошаговой инструкции «ТВОРЕЦ» ты за 20 минут сделаете первую анимацию</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-wrap">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/s3.png" alt="">
+                    </div>
+                    <div class="description-wrap">
+                        <div class="description">— С помощью моей авторской техники из 3х шагов, вы увеличите свою скорость работы в 10 раз</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="img-wrap">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/s4.png" alt="">
+                    </div>
+                    <div class="description-wrap">
+                        <div class="description">— С помощью простой и эффективной техники: «УПРАВЛЕНИЕ ПЕРСОНАЖЕМ», вы всего за 1 день создадите плавную анимацию, которая приведёт вас и зрителя в восторг</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
