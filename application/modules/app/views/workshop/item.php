@@ -1,127 +1,226 @@
-<div id="item-block">
+<div id="header" class="workshop">
     <div class="content">
-        <h3 class="title-block">О курсе</h3>
-        <?/*if($item['type'] === 'collection'):?>
-        <div class="info-stat" style="justify-content: center;">
-            <div class="stat" style="margin: 0 20px;">
-                <div class="stat-value"><?= $item['totalDurationHours'] ?></div>
-                <div class="stat-label">Час<?= getNumEnding($item['totalDurationHours'], ['', 'а', 'ов']) ?> занятий</div>
-            </div>
-            <div class="stat" style="margin: 0 20px;">
-                <div class="stat-value"><?= $item['videosCount'] ?></div>
-                <div class="stat-label">Насыщен<?= getNumEnding($item['videosCount'], ['ая', 'ых', 'ых']) ?> <br>лекци<?= getNumEnding($item['videosCount'], ['я', 'и', 'й']) ?></div>
-            </div>
-        </div>
-        <?endif;*/?>
-    </div>
-</div>
-
-<div id="item-detail-block">
-    <div class="content">
-        <div class="row">
-            <div class="col">
-                <h4 class="title">Цель курса</h4>
-                <?= $item['description'] ?>
-            </div>
-            <div class="col">
-                <?if($teacher['id'] > 0):?>
-                <div class="teacher">
-                    <div class="teacher-img">
-                        <img src="<?= $schoolUrl . '/' . $teacher['img'] ?>" alt="">
-                    </div>
-                    <div class="teacher-info">
-                        <div class="name"><?= $teacher['full_name'] ?></div>
-                        <div class="subname">Ваш преподаватель</div>
-                        <div class="text"><?= $teacher['title'] ?></div>
-                        <?if(empty($teacher['blog_url']) === false):?>
-                        <a href="<?= ($teacher['blog_url'] ?? '') ?>" class="btn btn-pink text-pink" target="_blank">Читать интервью</a>
-                        <?endif;?>
-                    </div>
-                </div>
-                <?endif;?>
-
-                <?if($item['type'] === 'collection'):?>
-                <h4 class="title">Процесс обучения</h4>
-                <div class="lectures">
-                    <?if(count($videos)):?>
-                    <?foreach($videos as $col):?>
-                    <div class="lectures-col">
-                        <?foreach($col as $val):?>
-                        <?if((int) $val['type'] === 1):?>
-                        Лекция - <?= $val['title'] ?><br>
-                        <?else:?>
-                        Лекция <?= (++$currentLecturesCnt) ?> - <?= $val['title'] ?></br>
-                        <?endif;?>
-                        <?endforeach;?>
-                    </div>
-                    <?endforeach;?>
-                    <?endif;?>
-                </div>
-                <?endif;?>
-
-                <div class="other-info">
-                    <h4 class="title">Данные курса</h4>
-                    <p><b>Требования к студенту:</b> Желание учиться. Все необходимые знания по используемым программам будут предоставлены на курсе.</p>
-                    <p><b>Требования к компьютеру:</b> Процессор Intel i3 или AMD А6, оперативная память 8гб, видеокарта GeForce или Radeon с памятью 2гб и более.</p>
-                    <p><b>Другие требования:</b> От 5 до 12 часов в неделю, на просмотр материалов и выполнения заданий.</p>
-                </div>
+        <div class="content-wrap">
+            <h1 class="title"><?=$item['title']?></h1>
+            <div class="description"><?=$item['description']?></div>
+            
+            <div class="buttons">
+                <a href="#" class="btn btn-pink btn-xl">Купить</a>
+                <?php if(empty($item['note']) === false): ?>
+                    <span id="header-classroom">
+                        <?= var_dump($item['note'])?>
+                        <span class="number"><?=$item['note'][0]?></span>
+                        <?php if(empty($item['note'][1]) === false): ?>
+                            <span class="text"><?=$item['note'][1]?></span>
+                        <?php endif;?>
+                    </span>
+                <?php endif; ?>
             </div>
         </div>
+        <img src="<?=$item['img_big']?>" class="img">
     </div>
 </div>
 
-<?if(empty($item['trailer_code']) === false && $item['type'] === 'collection'):?>
-<div id="item-video-trailer-block">
+<div id="purpose">
     <div class="content">
-        <h3 class="title-block">Трейлер курса</h3>
-        <iframe width="700" height="375" src="https://www.youtube.com/embed/<?= $item['trailer_code'] ?>?modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <span class="figure figure1-4"></span>
+        <div class="block-title">Цель лекций</div>
+        <span class="figure-rocket"></span>
+        <div class="description"><?= htmlspecialchars_decode($item['purpose'])?></div>
     </div>
 </div>
-<?endif;?>
-
-<?php /*
-<div id="item-price-block">
-<div class="content">
-<h3 class="title-block">Стоимость обучения</h3>
-<?if($offers):?>
-<?$offer = current($offers);?>
-<div class="subtitle text-center">Ближайший набор <?= $offer['ts_f'] ?></div>
-<?endif;?>
-<div class="price-list">
-    <?for($i = 0; $i < 3; $i++):?>
-    <div class="item <?= ($i == 1) ? 'big' : '' ?>">
-        <div class="body">
-            <div class="title">Стандарт</div>
-            <div class="type">
-                <div class="btn btn-pink active">Полная</div>
+<div id="instructor">
+    <div class="content">
+        <div class="block-title">Инструктор курса</div>
+        <div id="curse-instructor">
+            <img src="<?=$instructor['photo_big']?>" alt="" class="photo">
+            <div class="cards">
+                <div class="card card-1">
+                    <span class="number-img number-img-1"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][0]?></div>
+                    </div>
+                </div>
+                <div class="card card-2">
+                    <span class="number-img number-img-2"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][1]?></div>
+                    </div>
+                </div>
+                <div class="card card-3">
+                    <span class="number-img number-img-3"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][2]?></div>
+                    </div>
+                </div>
+                <div class="card card-4">
+                    <span class="number-img number-img-4"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][3]?></div>
+                    </div>
+                </div>
+                <div class="card card-5">
+                    <span class="number-img number-img-5"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][4]?></div>
+                    </div>
+                </div>
+                <div class="card card-6">
+                    <span class="number-img number-img-6"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][5]?></div>
+                    </div>
+                </div>
             </div>
-            <div class="text"></div>
-            <?if((float) $item['price'] <= 0):?>
-            <div class="price active">FREE</div>
-            <?else:?>
-            <div class="price active"><?= number_format($item['price'], 2, '.', ' ') ?><span>руб</span></div>
-            <?endif;?>
-            <a href="<?= $schoolUrl ?>/external/pay/?code=<?= $item['code'] ?>&target=workshop" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</a>
+            <div class="interactive">
+                <?php if(empty($instructor['video_link'])): ?>
+                    <div class="demo">
+                        <button type="button" class="btn btn-pink btn-round btn-play">
+                            <span></span>
+                        </button>
+                        <span class="arrow"></span>
+                        <span class="text">Деморил<br>преподавателя</span>
+                        <a href="<?=$instructor['video_link']?>" target="_blank"></a>
+                    </div>
+                <?php endif;?>
+                <div class="fio"><?=$instructor['first_name']?> <br><?=$instructor['last_name']?></div>
+            </div>
+            <div class="quote"><?= htmlspecialchars_decode($instructor['quote'])?></div>
+            <div class="text-center">
+                <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>
+            </div>
         </div>
     </div>
-    <?endfor;?>
 </div>
-</div>
-</div>
-*/?>
-
-<div id="faq-block">
+<div id="program">
     <div class="content">
-        <h3 class="title-block white">Появились вопросы по обучению?</h3>
-        <a href="javascript: void(0);" onclick="jivo_api.open(); return false;" class="btn btn-pink">Задать вопрос</a>
+        <div class="block-title">Практическая часть</div>
+        <div class="module-block module4">
+            <div class="background"></div>
+            <span class="figure figure2-6"></span>
+            <div class="box">
+                <div class="box-content">
+                    <div class="buttons" id="lectures-slider-nav">
+                        <?php foreach($lectures as $row): ?>
+                        <button type="button" class="btn btn-pink btn-md btn-exo"><?= getStringNumber($row['month'])?> блок</button>   
+                        <?php endforeach;?>
+                    </div>
+                    <div class="lectures-block" id="lectures-slider">
+                        <?php foreach($lectures as $row): ?>
+                            <div class="item">
+                                <div class="img-wrap">
+                                    <img src="<?=$row['img']?>" alt="" class="img">
+                                </div>
+                                <div class="list">
+                                    <?php foreach($row['items'] as $lectureKey => $lectureRow):?>
+                                        <div class="row">
+                                            <div class="title">Лекция <?= makeLectureNumber($row['month'], $lectureKey)?>: <span><?=$lectureRow['title']?></span></div> 
+                                            <div class="text"><?=$lectureRow['description']?></div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endforeach;?>
+                    </div>
+                    <div id="lectures-slider-btn">
+                        <button class="btn btn-pink btn-round" id="lectures-prev-btn" data-controls="prev"><span></span></button>
+                        <button class="btn btn-pink btn-round" id="lectures-next-btn" data-controls="next"><span></span></button>
+                    </div>
+                </div>
+                <div class="apps">
+                    <div class="list">
+                        <div class="title">Используемые программы на курсе:</div>
+                        <?php
+                        $appsName = [];
+                        
+                        foreach($item['program']['module_4_apps'] as $appId) {
+                            $appsName[] = $apps[$appId]['title'];
+                        }
+                        ?>
+                        <div class="names"><?= implode(', ', $appsName)?></div>
+                    </div>
+                    <div class="icons">
+                        <?php foreach($item['program']['module_4_apps'] as $appId): ?>
+                        <img src="<?=$apps[$appId]['img']?>" alt="<?=$apps[$appId]['title']?>">
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
-<?//$this->load->view('inc_training.php');?>
-
-<div id="review-block" class="review-item-block">
+<div id="courses" class="courses_main other">
+    <div class="background"></div>
     <div class="content">
-        <h3 class="title-block">Отзывы наших выпускников</h3>
-        <?$this->load->view('inc_reviews.php');?>
+        <div class="block-title">Другие наши курсы</div>
+        <div class="course_cards mobile" id="courses-slider">
+            <?php foreach($courses as $row): ?>
+                <div class="card">
+                    <div class="card_head">
+                        <div class="header">Начало обучения</div>
+                        <div class="date"><?=$row['start_date_formated']?></div>
+                        <?php if($row['note']): ?>
+                            <span class="badge">
+                                <span class="badge_big_text"><?=$row['note'][0]?></span>
+                                <?php if(empty($row['note'][1]) === false): ?>
+                                    <span class="badge_small_text"><?=$row['note'][1]?></span>
+                                <?php endif;?>
+                            </span>
+                        <?php endif; ?>
+                    </div>
+                    <div class="card_content">
+                        <div class="img">
+                            <img src="<?=$row['img_big']?>" alt="<?=$row['title']?>" class="img_big">
+                            <img src="<?=$row['img_small']?>" alt="<?=$row['title']?>" class="img_small">
+                        </div>
+                        <div class="text_wrap">
+                            <div class="title"><?=$row['title']?></div>
+                            <div class="description"><?=$row['description']?></div>
+                        </div>
+                        <div class="info">
+                            <div class="start">
+                                <div class="header">Начало обучения</div>
+                                <div class="date"><?=$row['start_date_formated']?></div>
+                            </div>
+                            <div class="instructor">
+                                <img src="<?=$instructors[$row['instructor']]['photo_small']?>" alt="">
+                                <div class="header">Автор курса</div>
+                                <div class="fio"><?=$instructors[$row['instructor']]['first_name']?> <?=$instructors[$row['instructor']]['last_name']?></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_footer">
+                        <a href="/courses/<?=$row['code']?>/" class="btn btn-pink btn-md">Подробнее</a>
+                        <?php if($row['note']): ?>
+                            <span class="badge">
+                                <span class="badge_big_text"><?=$row['note'][0]?></span>
+                                <?php if(empty($row['note'][1]) === false): ?>
+                                    <span class="badge_small_text"><?=$row['note'][1]?></span>
+                                <?php endif;?>
+                            </span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="courses-slider-controls">
+            <div id="courses-slider-nav" class="slider-dot-nav">
+                <?php foreach($courses as $row): ?>
+                    <button type="button" class="btn"></button>
+                <?php endforeach; ?>
+            </div>
+            <div id="courses-slider-btns">
+                <button class="btn btn-pink btn-round btn-slider-nav prev" id="courses-prev-btn" data-controls="prev"><span></span></button>
+                <button class="btn btn-pink btn-round btn-slider-nav next" id="courses-next-btn" data-controls="next"><span></span></button>
+            </div>
+        </div>
+        
+        <div class="page-center-btn">
+            <a href="/courses/" class="btn btn-pink btn-xl">Все курсы</a>
+        </div>
+        
     </div>
 </div>

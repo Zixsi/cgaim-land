@@ -1,232 +1,627 @@
-<div id="item-block">
+<div id="header">
     <div class="content">
-        <h3 class="title-block">О курсе</h3>
-        <?if(empty($item['preview_text']) === false):?>
-        <div class="sub-title"><?= $item['preview_text'] ?></div>
-        <?endif;?>
-        <div class="info-stat">
-            <div class="stat">
-                <div class="stat-value"><?= (int) $item['lectures_count'] ?></div>
-                <div class="stat-label">Недель обучения</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value"><?= (int) ($item['lectures_count'] * 2) ?></div>
-                <div class="stat-label">Насыщеных задания</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value"><?= ceil((int) $item['lectures_count'] * 3.5) ?></div>
-                <div class="stat-label">Часа занятий</div>
+        <div class="content-wrap">
+            <h1 class="title"><?=$item['title']?></h1>
+            <div class="description"><?=$item['description']?></div>
+            
+            <?php if(empty($item['video']) === false): ?>
+                <div class="interactive">
+                    <span class="round"></span>
+                    <span class="round"></span>
+                    <a href="<?=$item['video']?>" target="_blank">
+                        <button type="button" class="btn btn-pink btn-round btn-play">
+                            <span></span>
+                        </button>
+                    </a>
+                    <span class="text">Просмотрите <br>Промо - видео</span>
+                </div>
+            <?php endif; ?>
+            
+            <div class="buttons">
+                <a href="#packages" class="btn btn-pink btn-xl">Записаться</a>
+                <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>
+                <?php if(empty($item['start_date']) === false): ?>
+                    <span class="date">Старт <?=$item['start_date_formated']?></span>
+                <?php endif; ?>
+                    
+                <?php if($item['note']): ?>
+                    <span id="header-classroom">
+                        <span class="number"><?=$item['note'][0]?></span>
+                        <?php if(empty($item['note'][1]) === false): ?>
+                            <span class="text"><?=$item['note'][1]?></span>
+                        <?php endif;?>
+                    </span>
+                <?php endif; ?>
             </div>
         </div>
-        <h3 class="title-block">Для кого этот курс</h3>
-        <div class="sub-title">Для тех, кто решил стать профессионалом своего дела, кто хочет совместить свое хобби с дальнейшей профессиональной деятельностью, хочет погрузиться в творческую атмосферу.</div>
+        <img src="<?=$item['img_big']?>" class="img">
     </div>
 </div>
 
-<div id="item-detail-block">
-    <div class="content">
-        <div class="row">
-            <div class="col">
-                <h4 class="title">Цель курса</h4>
-                <?= $item['description'] ?>
-            </div>
-            <div class="col">
-                <div class="teacher">
-                    <div class="teacher-img">
-                        <img src="<?= $schoolUrl . '/' . $teacher['img'] ?>" alt="">
+<?php if(isset($item['for_whom'])): ?>
+    <div id="for-whom">
+        <div class="content">
+            <span class="figure-sphere"></span>
+            <span class="figure-cube"></span>
+            <div class="block-title">Кому подойдет курс<span class="symbol">?</span></div>
+            <div class="cards">
+                <?php foreach($item['for_whom'] as $row): ?>
+                <div class="card" style="background-image: url('<?=$row['img']?>');">
+                        <div class="card-content">
+                            <div class="title"><?=$row['title']?></div>
+                            <div class="description"><?=$row['description']?></div>
+                        </div>
                     </div>
-                    <div class="teacher-info">
-                        <div class="name"><?= $teacher['full_name'] ?></div>
-                        <div class="subname">Ваш преподаватель</div>
-                        <div class="text"><?= $teacher['title'] ?></div>
-                        <?if(empty($teacher['blog_url']) === false):?>
-                        <a href="<?= ($teacher['blog_url'] ?? '') ?>" class="btn btn-pink text-pink" target="_blank">Читать интервью</a>
-                        <?endif;?>
-                    </div>
-                </div>
-                <h4 class="title">Особенности</h4>
-                <p>Преподаватель подробно разбирает работу каждого ученика и дает развернутый комментарий.</p>
-                <h4 class="title">Процесс обучения</h4>
-                <div class="lectures">
-                    <?if(count($lectures)):?>
-                    <?foreach($lectures as $col):?>
-                    <div class="lectures-col">
-                        <?foreach($col as $val):?>
-                        <?if((int) $val['type'] === 1):?>
-                        Лекция - <?= $val['name'] ?><br>
-                        <?else:?>
-                        Лекция <?= (++$currentLecturesCnt) ?> - <?= $val['name'] ?></br>
-                        <?endif;?>
-                        <?endforeach;?>
-                    </div>
-                    <?endforeach;?>
-                    <?endif;?>
-                </div>
-                <div class="other-info">
-                    <h4 class="title">Данные курса</h4>
-                    <?if(empty($item['text_app_main']) === false):?>
-                    <p><b>Основные программы:</b> <?= $item['text_app_main'] ?></p>
-                    <?endif;?>
-                    <?if(empty($item['text_app_other']) === false):?>
-                    <p><b>Дополнительные программы:</b> <?= $item['text_app_other'] ?></p>
-                    <?endif;?>
-                    <p><b>Требования к студенту:</b> Желание учиться. Все необходимые знания по используемым программам будут предоставлены на курсе.</p>
-                    <p><b>Требования к компьютеру:</b> Процессор Intel i3 или AMD А6, оперативная память 8гб, видеокарта GeForce или Radeon с памятью 2гб и более.</p>
-                    <p><b>Другие требования:</b> От 5 до 12 часов в неделю, на просмотр материалов и выполнения заданий.</p>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
-</div>
+<?php endif; ?>
 
-<?if(empty($item['trailer_code']) === false):?>
-<div id="item-video-trailer-block">
+<div id="purpose">
     <div class="content">
-        <h3 class="title-block">Трейлер курса</h3>
-        <iframe width="700" height="375" src="https://www.youtube.com/embed/<?= $item['trailer_code'] ?>?modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <span class="figure figure1-4"></span>
+        <div class="block-title">Цель курса</div>
+        <span class="figure-rocket"></span>
+        <div class="description"><?= htmlspecialchars_decode($item['purpose'])?></div>
     </div>
 </div>
-<?endif;?>
-
-<div id="item-price-block">
-    <div class="content" id="price">
-        <h3 class="title-block">Стоимость обучения</h3>
-        <?php if($offers):?>
-            <?php $offer = current($offers);?>
-            <div class="subtitle text-center">Ближайший набор <?= $offer['ts_f'] ?></div>
-        <?php endif;?>
-        <div class="price-list">
-            <div class="item">
-                <div class="body">
-                    <form action="<?= $schoolUrl ?>/external/pay/" method="get" target="_blank">
-                        <input type="hidden" name="code" value="<?= $item['code'] ?>">
-                        <input type="hidden" name="group" value="<?= $offer['ts_f'] ?>">
-                        <input type="hidden" name="type" value="standart">
-                        <div class="title">Стандарт</div>
-                        <div class="type">
-                            <div class="btn btn-pink active" data-target="price-standart-full">Полная</div>
-                            <div class="btn btn-pink" data-target="price-standart-month">Помесячная</div>
-                            <div class="radio">
-                                <input type="radio" name="period" id="price-standart-full--period" value="full" checked="true">
-                                <input type="radio" name="period" id="price-standart-month--period" value="month">
+<div id="instructor">
+    <div class="content">
+        <div class="block-title">Инструктор курса</div>
+        <div id="curse-instructor">
+            <img src="<?=$instructor['photo_big']?>" alt="" class="photo">
+            <div class="cards">
+                <div class="card card-1">
+                    <span class="number-img number-img-1"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][0]?></div>
+                    </div>
+                </div>
+                <div class="card card-2">
+                    <span class="number-img number-img-2"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][1]?></div>
+                    </div>
+                </div>
+                <div class="card card-3">
+                    <span class="number-img number-img-3"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][2]?></div>
+                    </div>
+                </div>
+                <div class="card card-4">
+                    <span class="number-img number-img-4"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][3]?></div>
+                    </div>
+                </div>
+                <div class="card card-5">
+                    <span class="number-img number-img-5"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][4]?></div>
+                    </div>
+                </div>
+                <div class="card card-6">
+                    <span class="number-img number-img-6"></span>
+                    <div class="description-wrap">
+                        <div class="description"><?=$instructor['blocks'][5]?></div>
+                    </div>
+                </div>
+            </div>
+            <div class="interactive">
+                <?php if(empty($instructor['video_link'])): ?>
+                    <div class="demo">
+                        <button type="button" class="btn btn-pink btn-round btn-play">
+                            <span></span>
+                        </button>
+                        <span class="arrow"></span>
+                        <span class="text">Деморил<br>преподавателя</span>
+                        <a href="<?=$instructor['video_link']?>" target="_blank"></a>
+                    </div>
+                <?php endif;?>
+                <div class="fio"><?=$instructor['first_name']?> <br><?=$instructor['last_name']?></div>
+            </div>
+            <div class="quote"><?= htmlspecialchars_decode($instructor['quote'])?></div>
+            <div class="text-center">
+                <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="program">
+    <div class="content">
+        <span class="figure figure1-2"></span>
+        <div class="block-title">Программа курса</div>
+        <div class="module-block module1">
+            <div class="block-title-2">Модуль 1: <?=$item['program']['module_1_title']?></div>
+            
+            <?php if(empty($item['program']['module_1_short_description']) === false): ?>
+                <div class="description"><?=$item['program']['module_1_short_description']?></div>
+            <?php endif; ?>
+                
+            <div class="animation-law">
+                <?php if($moduleInfoBlock): ?>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="title"><?=$moduleInfoBlock['title']?></div>
+                        <?php
+                        $moduleInfoBlock['data'] = json_decode($moduleInfoBlock['data'], true);
+                        ?>
+                        <?php if($moduleInfoBlock['type'] === 'TEXT'): ?>
+                            <div class="text">
+                                <?= htmlspecialchars_decode($moduleInfoBlock['data']['text'])?>
+                                <?= htmlspecialchars_decode($moduleInfoBlock['data']['text'])?>
                             </div>
-                        </div>
-                        <div class="text">
-                            Доступ к лекциям сразу после оплаты<br>
-                            Самостоятельное изучение
-                        </div>
-                        <?php if((float) $item['price']['standart']['full'] <= 0):?>
-                            <div class="price active">FREE</div>
                         <?php else:?>
-                            <div class="price active" id="price-standart-full"><?= number_format($item['price']['standart']['full'], 2, '.', ' ') ?><span>руб</span></div>
-                            <div class="price" id="price-standart-month"><?= number_format($item['price']['standart']['month'], 2, '.', ' ') ?><span>руб/мес</span></div>
-                        <?php endif;?>
-                        <?php /*<a href="<?= $schoolUrl ?>/courses/<?= $item['code'] ?>/" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться</a>*/?>
-                        <button type="submit" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</button>
-                    </form>
+                            <?php 
+                                $chunks = array_chunk($moduleInfoBlock['data']['list'], ceil(count($moduleInfoBlock['data']['list']) / 2));
+                                $number = 1;
+                            ?>
+                            <div class="list">
+                                <?php foreach($chunks as $rows): ?>
+                                    <div class="col">
+                                        <?php foreach($rows as $row): ?>
+                                            <span><?=($number++)?>. <?=$row?></span>
+                                        <?php endforeach;?>
+                                    </div>
+                                <?php endforeach;?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <span class="figure-man" style="background-image: url('<?=$moduleInfoBlock['img']?>');"></span>
                 </div>
+                <?php endif; ?>
+                <div class="description"><?=$item['program']['module_1_description']?></div>
+                <span class="figure-mouse"></span>
             </div>
-
-            <div class="item big">
-                <div class="body">
-                    <form action="<?= $schoolUrl ?>/external/pay/" method="get" target="_blank">
-                        <input type="hidden" name="code" value="<?= $item['code'] ?>">
-                        <input type="hidden" name="group" value="<?= $offer['ts_f'] ?>">
-                        <input type="hidden" name="type" value="advanced">
-                        <div class="title">Расширенный</div>
-                        <div class="type">
-                            <div class="btn btn-pink active" data-target="price-advanced-full">Полная</div>
-                            <div class="btn btn-pink" data-target="price-advanced-month">Помесячная</div>
-                            <div class="radio">
-                                <input type="radio" name="period" id="price-advanced-full--period" value="full" checked="true">
-                                <input type="radio" name="period" id="price-advanced-month--period" value="month">
+            <div class="skills">
+                <div class="title">В этой части вы научитесь:</div>
+                <div class="cards">
+                    <?php foreach($item['program']['module_1_skills'] as $skillId): ?>
+                        <div class="card">
+                            <div class="img-wrap">
+                                <img src="<?=$skills[$skillId]['img']?>" alt="">
+                            </div>
+                            <div class="description-wrap">
+                                <div class="description">— <?=$skills[$skillId]['description']?></div>
                             </div>
                         </div>
-                        <div class="text">
-                            Доступ к лекции каждую неделю<br>
-                            Проверка домашних работ<br>
-                            Закрытый канал в дискорде<br>
-                            Групповые онлайн встречи<br>
-                            Начало в назначенную дату<br>
-                            Сертификат об окончании курса
-                        </div>
-                        <?php if($item['only_standart'] === false):?>
-                            <?php if((float) $item['price']['advanced']['full'] <= 0):?>
-                                <div class="price active">FREE</div>
-                            <?php else:?>
-                                <div class="price active" id="price-advanced-full"><?= number_format($item['price']['advanced']['full'], 2, '.', ' ') ?><span>руб</span></div>
-                                <div class="price" id="price-advanced-month"><?= number_format($item['price']['advanced']['month'], 2, '.', ' ') ?><span>руб/мес</span></div>
-                            <?php endif;?>
-                            <?php /*<a href="<?= $schoolUrl ?>/courses/<?= $item['code'] ?>/" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться</a>*/?>
-                            <button type="submit" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</button>
-                        <?php endif;?>
-                    </form>
+                    <?php endforeach; ?>
                 </div>
+                <div class="afterword"><?=$item['program']['module_1_skills_description']?></div>
             </div>
+        </div>
 
-            <?php $isEnabledVip = ($item['only_standart'] === false && ((float) $item['price']['vip']['full'] > 0));?>
-            <div class="item">
-                <div class="body">
-                    <form action="<?= $schoolUrl ?>/external/pay/" method="get" target="_blank">
-                        <input type="hidden" name="code" value="<?= $item['code'] ?>">
-                        <input type="hidden" name="group" value="<?= $offer['ts_f'] ?>">
-                        <input type="hidden" name="type" value="vip">
-                        <?php if($isEnabledVip):?>
-                        <div class="label"><?= $nextMonday ?></div>
-                        <?php endif;?>
-                        <div class="title">Премиум</div>
-                        <div class="type">
-                            <div class="btn btn-pink active" data-target="price-vip-full">Полная</div>
-                            <div class="btn btn-pink" data-target="price-vip-month">Помесячная</div>
-                            <div class="radio">
-                                <input type="radio" name="period" id="price-vip-full--period" value="full" checked="true">
-                                <input type="radio" name="period" id="price-vip-month--period" value="month">
+        <div class="module-block module2">
+            <div class="background"></div>
+            <span class="figure figure1-6"></span>
+            <div class="block-title-2">Модуль 2: <?=$item['program']['module_2_title']?></div>
+            <div class="description">
+                <div class="text-wrap"><?=$item['program']['module_2_description']?></div>
+                <span class="figure-sculpture"></span>
+            </div>
+            <div class="skills">
+                <div class="title">В этой части вы научитесь:</div>
+                <div class="cards">
+                    <?php foreach($item['program']['module_2_skills'] as $skillId): ?>
+                        <div class="card">
+                            <div class="img-wrap">
+                                <img src="<?=$skills[$skillId]['img']?>" alt="">
+                            </div>
+                            <div class="description-wrap">
+                                <div class="description">— <?=$skills[$skillId]['description']?></div>
                             </div>
                         </div>
-                        <div class="text">
-                            Доступ к лекции каждую неделю<br>
-                            Проверка домашних работ<br>
-                            Закрытый канал в дискорде<br>
-                            Личные онлайн встречи<br>
-                            Старт в ближайший понедельник<br>
-                            Гарантируем результат<br>
-                            Сертификат об окончании курса
-                        </div>
-
-                        <?php if($isEnabledVip):?>
-                            <div class="price active" id="price-vip-full"><?= number_format($item['price']['vip']['full'], 2, '.', ' ') ?><span>руб</span></div>
-                            <div class="price" id="price-vip-month"><?= number_format($item['price']['vip']['month'], 2, '.', ' ') ?><span>руб/мес</span></div>
-                            <?php/*<a href="<?= $schoolUrl ?>/courses/<?= $item['code'] ?>/" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться</a>*/?>
-                            <button type="submit" class="btn btn-pink" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</button>
-                        <?php endif;?>
-                    </form>
+                    <?php endforeach; ?>
                 </div>
+                <div class="afterword"><?=$item['program']['module_2_skills_description']?></div>
+            </div>
+        </div>
+
+        <div class="module-block module3">
+            <span class="figure figure2-1"></span>
+            <span class="figure figure1-3"></span>
+            <div class="block-title-2">Модуль 3: <?=$item['program']['module_3_title']?></div>
+            <div class="description">
+                <div class="text-wrap"><?=$item['program']['module_3_description']?></div>
+                <span class="figure-box"></span>
+            </div>
+            <div class="skills">
+                <div class="title">В этой части вы научитесь:</div>
+                <div class="cards">
+                    <?php foreach($item['program']['module_3_skills'] as $skillId): ?>
+                        <div class="card">
+                            <div class="img-wrap">
+                                <img src="<?=$skills[$skillId]['img']?>" alt="">
+                            </div>
+                            <div class="description-wrap">
+                                <div class="description">— <?=$skills[$skillId]['description']?></div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="afterword"><?=$item['program']['module_3_skills_description']?></div>
+            </div>
+        </div>
+
+        <div class="module-block module4">
+            <div class="background"></div>
+            <span class="figure figure2-6"></span>
+            <div class="block-title-2">Практическая часть</div>
+            <div class="box">
+                <div class="box-content">
+                    <div class="buttons" id="lectures-slider-nav">
+                        <?php foreach($lectures as $row): ?>
+                        <button type="button" class="btn btn-pink btn-md btn-exo"><?= getStringNumber($row['month'])?> месяц</button>   
+                        <?php endforeach;?>
+                    </div>
+                    <div class="lectures-block" id="lectures-slider">
+                        <?php foreach($lectures as $row): ?>
+                            <div class="item">
+                                <div class="img-wrap">
+                                    <img src="<?=$row['img']?>" alt="" class="img">
+                                </div>
+                                <div class="list">
+                                    <?php foreach($row['items'] as $lectureKey => $lectureRow):?>
+                                        <div class="row">
+                                            <div class="title">Лекция <?= makeLectureNumber($row['month'], $lectureKey)?>: <span><?=$lectureRow['title']?></span></div> 
+                                            <div class="text"><?=$lectureRow['description']?></div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endforeach;?>
+                    </div>
+                    <div id="lectures-slider-btn">
+                        <button class="btn btn-pink btn-round" id="lectures-prev-btn" data-controls="prev"><span></span></button>
+                        <button class="btn btn-pink btn-round" id="lectures-next-btn" data-controls="next"><span></span></button>
+                    </div>
+                </div>
+                <div class="apps">
+                    <div class="list">
+                        <div class="title">Используемые программы на курсе:</div>
+                        <?php
+                        $appsName = [];
+                        
+                        foreach($item['program']['module_4_apps'] as $appId) {
+                            $appsName[] = $apps[$appId]['title'];
+                        }
+                        ?>
+                        <div class="names"><?= implode(', ', $appsName)?></div>
+                    </div>
+                    <div class="icons">
+                        <?php foreach($item['program']['module_4_apps'] as $appId): ?>
+                        <img src="<?=$apps[$appId]['img']?>" alt="<?=$apps[$appId]['title']?>">
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="training">
+    <div class="content">
+        <div class="block-title">Как проходит обучение</div>
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div class="title">Первые задания</div>
+                    <div class="description">— Сразу после оплаты вы попадаете в закрытую группу, где лежат первые задания. Перед стартом курса вам будет чем заняться. Чем раньше впишетесь, тем тщательнее подготовитесь к курсу, и тем лучше результат получите.</div>
+                </div>
+                <div class="img-wrap"></div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="title">Обучение в игровом формате</div>
+                    <div class="description">Это обучение с применением игровых механик, как в игре вы будете проходить занятия как уровни, зарабатывать очки за выполнение домашнего задания. И в итоге получите дополнительные бонусы!</div>
+                </div>
+                <div class="img-wrap"></div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="title">Домашние задания</div>
+                    <div class="description">1. Основные - то задание, которое необходимо выполнить по пройденному материалу. 2. Бонусное - можно сказать, собственный проект. Он быстрее прокачает навыки и будет возможность получить дополнительные плюшки от школы. По каждой домашке будет сделан ролик с ее разбором. Вы получите подробный фидбек, узнаете на что необходимо обратить внимание, как можно улучшить работу на данном этапе и т.д.</div>
+                </div>
+                <div class="img-wrap"></div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="title">Онлайн встречи</div>
+                    <div class="description">В конце недели будет проходить вебинар внутри платформы, на котором сможете задать вопросы, возникшие в процессе выполнения домашнего задания. Также можно пообщаться на отвлеченные темы.</div>
+                </div>
+                <div class="img-wrap"></div>
+            </div>
+        </div>
+        <span class="figure figure2-3"></span>
+    </div>
+</div>
+
+<div id="packages">
+    <div class="background"></div>
+    <div class="content">
+        <div class="block-title">Пакеты</div>
+        <div class="cards" id="package-slider">
+            <div class="card">
+                <div class="card-head">
+                    <div class="title">Старт</div>
+                    <div class="date">Сразу после покупки</div>
+                </div>
+                <div class="card-content">
+                    <div class="title">Стандарт</div>
+                    <ul class="list">
+                        <li>Доступ к лекциям сразу после оплаты</li>
+                        <li>Самостоятельное изучение</li>
+                    </ul>
+                    <div class="price"><?=number_format($item['packages']['standart']['price'], 0, '.', ' ')?> Р</div>
+                    <?php if((int) $item['packages']['standart']['available'] === 1): ?>
+                        <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
+                    <?php endif;?>
+                </div>
+            </div>
+            <div class="card selected">
+                <div class="card-head">
+                    <div class="title">Старт</div>
+                    <div class="date"><?=$item['start_date_formated']?></div>
+                </div>
+                <div class="card-content">
+                    <div class="title">Расширеный</div>
+                    <ul class="list">
+                        <li>Доступ к лекции каждую неделю</li>
+                        <li>Проверка домашних работ</li>
+                        <li>Закрытый канал в дискорде</li>
+                        <li>Групповые онлайн встречи</li>
+                        <li>Начало в назначенную дату</li>
+                        <li>Сертификат об окончании курса</li>  
+                    </ul>
+                    <div class="price"><?=number_format($item['packages']['advanced']['price'], 0, '.', ' ')?> Р</div>
+                    <?php if((int) $item['packages']['advanced']['available'] === 1): ?>
+                        <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
+                    <?php endif;?>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div class="title">Старт</div>
+                    <div class="date">Ближайший понедельник</div>
+                </div>
+                <div class="card-content">
+                    <div class="title">Премиум</div>
+                    <ul class="list">
+                        <li>Доступ к лекции каждую неделю</li>
+                        <li>Проверка домашних работ</li>
+                        <li>Закрытый канал в дискорде</li>
+                        <li>Личные онлайн встречи</li>
+                        <li>Старт в ближайший понедельник</li>
+                        <li>Гарантируем результат</li>
+                        <li>Сертификат об окончании курса</li>
+                    </ul>
+                    <div class="price"><?=number_format($item['packages']['vip']['price'], 0, '.', ' ')?> Р</div>
+                    <?php if((int) $item['packages']['vip']['available'] === 1): ?>
+                        <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
+                    <?php endif;?>
+                </div>
+            </div>
+        </div>
+        <div class="packages-controls">
+            <div id="packages-slider-nav" class="slider-dot-nav">
+                <button type="button" class="btn"></button>
+                <button type="button" class="btn"></button>
+                <button type="button" class="btn"></button>
+            </div>
+            <div id="packages-slider-btns">
+                <button class="btn btn-pink btn-round btn-slider-nav prev" id="packages-prev-btn" data-controls="prev"><span></span></button>
+                <button class="btn btn-pink btn-round btn-slider-nav next" id="packages-next-btn" data-controls="next"><span></span></button>
             </div>
         </div>
     </div>
 </div>
 
-<div id="faq-block">
+<div id="installment-plan">
     <div class="content">
-        <h3 class="title-block white">Появились вопросы по обучению?</h3>
-        <a href="javascript: void(0);" onclick="jivo_api.open(); return false;" class="btn btn-pink">Задать вопрос</a>
+        <div class="block-title">Действует рассрочка</div>
+        <div class="cards" id="installment-plan-slider">
+            <div class="card">
+                <div class="card-content">
+                    <div class="title">Стандарт</div>
+                    <div class="price"><?=number_format($item['packages']['standart']['partial_price'], 0, '.', ' ')?> Р</div>
+                    <div class="period">помесячно <br><?=count($lectures)?> месяца</div>
+                    <?php if((int) $item['packages']['standart']['available'] === 1): ?>
+                        <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
+                    <?php endif;?>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="title">Расширеный</div>
+                    <div class="price"><?=number_format($item['packages']['advanced']['partial_price'], 0, '.', ' ')?> Р</div>
+                    <div class="period">помесячно <br><?=count($lectures)?> месяца</div>
+                    <?php if((int) $item['packages']['advanced']['available'] === 1): ?>
+                        <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
+                    <?php endif;?>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="title">Премиум</div>
+                    <div class="price"><?=number_format($item['packages']['vip']['partial_price'], 0, '.', ' ')?> Р</div>
+                    <div class="period">помесячно <br><?=count($lectures)?> месяца</div>
+                    <?php if((int) $item['packages']['vip']['available'] === 1): ?>
+                        <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
+                    <?php endif;?>
+                </div>
+            </div>
+        </div>
+        <div class="installment-controls">
+            <div id="installment-slider-nav" class="slider-dot-nav">
+                <button type="button" class="btn"></button>
+                <button type="button" class="btn"></button>
+                <button type="button" class="btn"></button>
+            </div>
+            <div id="installment-slider-btns">
+                <button class="btn btn-pink btn-round btn-slider-nav prev" id="installment-prev-btn" data-controls="prev"><span></span></button>
+                <button class="btn btn-pink btn-round btn-slider-nav next" id="installment-next-btn" data-controls="next"><span></span></button>
+            </div>
+        </div>
     </div>
 </div>
 
-<?$this->load->view('inc_training.php');?>
+<?php if (empty($item['bonuses']) === false): ?>
+    <div id="bonuses">
+        <div class="content">
+            <div class="block-title">Бонусы</div>
+            <div class="slider-wrap">
+                <div class="slider" id="bonus-slider">
+                    <?php 
+                        if (count($item['bonuses']) === 1) {
+                            $item['bonuses'] = array_merge($item['bonuses'], $item['bonuses']);
+                        }
+                    ?>
+                    <?php foreach($item['bonuses'] as $bonusId): ?>
+                        <div class="item">
+                            <div class="item-content-wrap">
+                                <div class="img">
+                                    <img src="<?=$bonuses[$bonusId]['img']?>" alt="<?=$bonuses[$bonusId]['title']?>">
+                                </div>
+                                <div class="item-content">
+                                    <div class="title"><?=$bonuses[$bonusId]['title']?></div>
+                                    <div class="description"><?=$bonuses[$bonusId]['description']?></div>
+                                    <div class="price">Стоимость: <?= number_format($bonuses[$bonusId]['price'], 0, '.', ' ')?> рублей.</div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div id="bonus-slider-nav" class="slider-dot-nav">
+                    <?php foreach($item['bonuses'] as $bonusId): ?>
+                        <button type="button" class="btn"></button>
+                    <?php endforeach; ?>
+                </div>
+                <button class="btn btn-pink btn-round" id="bonus-prev-btn" data-controls="prev"><span></span></button>
+                <button class="btn btn-pink btn-round" id="bonus-next-btn" data-controls="next"><span></span></button>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
 
-<?if(empty($item['examples_code']) === false):?>
-<div id="item-video-works-block">
+<div id="reviews">
     <div class="content">
-        <h3 class="title-block">Работы наших студентов</h3>
-        <iframe width="700" height="375" src="https://www.youtube.com/embed/<?= $item['examples_code'] ?>?modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="block-title">Отзывы</div>
+        <?php if(count($reviews)): ?>
+            <div class="slider-wrap">
+                <div class="slider" id="review-slider">
+                    <?php for($i = 0; $i < 2; $i++): ?>
+                        <?php foreach ($reviews as $row): ?>
+                            <div class="item">
+                                <div class="item-content">
+                                    <?php if($row['type'] === 'IMG'): ?>
+                                        <img src="<?=$row['source']?>" alt="">
+                                    <?php else: ?>
+                                        <iframe width="350" height="600" src="<?=$row['source']?>?enablejsapi=1&version=3" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <?php endif;?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endfor; ?>
+                </div>
+                <div class="slider-btns">
+                    <button class="btn btn-pink btn-round btn-slider-nav prev" id="review-prev-btn" data-controls="prev"><span></span></button>
+                    <button class="btn btn-pink btn-round btn-slider-nav next" id="review-next-btn" data-controls="next"><span></span></button>
+                </div>
+            </div>
+        <?php endif;?>
     </div>
 </div>
-<?endif;?>
 
-<div id="review-block" class="review-item-block">
+<div id="faq">
+    <div class="background"></div>
+    <div class="content"> 
+        <div class="block-title">Ответы на вопросы</div>
+        <div class="accordion" id="faq-accordion">
+            <?php foreach($faq as $row): ?>
+                <div class="item">
+                    <span class="trigger"></span>
+                    <div class="title"><?=$row['title']?></div>
+                    <div class="description"><?= htmlspecialchars_decode($row['description'])?></div>
+                </div>
+            <?php endforeach;?>
+        </div>
+        <span class="figure figure2-4"></span>
+        <span class="figure figure2-5"></span>
+    </div>
+</div>
+
+<div id="courses" class="courses_main other">
+    <div class="background"></div>
     <div class="content">
-        <h3 class="title-block">Отзывы наших выпускников</h3>
-        <?$this->load->view('inc_reviews.php');?>
+        <div class="block-title">Другие наши курсы</div>
+        <div class="course_cards mobile" id="courses-slider">
+            <?php foreach($courses as $row): ?>
+                <div class="card">
+                    <div class="card_head">
+                        <div class="header">Начало обучения</div>
+                        <div class="date"><?=$row['start_date_formated']?></div>
+                        <?php if($row['note']): ?>
+                            <span class="badge">
+                                <span class="badge_big_text"><?=$row['note'][0]?></span>
+                                <?php if(empty($row['note'][1]) === false): ?>
+                                    <span class="badge_small_text"><?=$row['note'][1]?></span>
+                                <?php endif;?>
+                            </span>
+                        <?php endif; ?>
+                    </div>
+                    <div class="card_content">
+                        <div class="img">
+                            <img src="<?=$row['img_big']?>" alt="<?=$row['title']?>" class="img_big">
+                            <img src="<?=$row['img_small']?>" alt="<?=$row['title']?>" class="img_small">
+                        </div>
+                        <div class="text_wrap">
+                            <div class="title"><?=$row['title']?></div>
+                            <div class="description"><?=$row['description']?></div>
+                        </div>
+                        <div class="info">
+                            <div class="start">
+                                <div class="header">Начало обучения</div>
+                                <div class="date"><?=$row['start_date_formated']?></div>
+                            </div>
+                            <div class="instructor">
+                                <img src="<?=$instructors[$row['instructor']]['photo_small']?>" alt="">
+                                <div class="header">Автор курса</div>
+                                <div class="fio"><?=$instructors[$row['instructor']]['first_name']?> <?=$instructors[$row['instructor']]['last_name']?></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card_footer">
+                        <a href="/courses/<?=$row['code']?>/" class="btn btn-pink btn-md">Подробнее</a>
+                        <?php if($row['note']): ?>
+                            <span class="badge">
+                                <span class="badge_big_text"><?=$row['note'][0]?></span>
+                                <?php if(empty($row['note'][1]) === false): ?>
+                                    <span class="badge_small_text"><?=$row['note'][1]?></span>
+                                <?php endif;?>
+                            </span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="courses-slider-controls">
+            <div id="courses-slider-nav" class="slider-dot-nav">
+                <?php foreach($courses as $row): ?>
+                    <button type="button" class="btn"></button>
+                <?php endforeach; ?>
+            </div>
+            <div id="courses-slider-btns">
+                <button class="btn btn-pink btn-round btn-slider-nav prev" id="courses-prev-btn" data-controls="prev"><span></span></button>
+                <button class="btn btn-pink btn-round btn-slider-nav next" id="courses-next-btn" data-controls="next"><span></span></button>
+            </div>
+        </div>
+        
+        <div class="page-center-btn">
+            <a href="/courses/" class="btn btn-pink btn-xl">Все курсы</a>
+        </div>
+        
     </div>
 </div>
