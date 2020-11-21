@@ -13,10 +13,10 @@ $config['instructor_photo_big'] = [
 
 $config['instructor_photo_small'] = [
     'upload_path' => UPLOADS_PATH,
-    'allowed_types' => 'png',
-    'max_size' => 1024,
-    'max_width' => 425,
-    'max_height' => 615,
+    'allowed_types' => 'png|jpg|jpeg',
+    'max_size' => 256,
+    'max_width' => 128,
+    'max_height' => 128,
     'encrypt_name' => true,
     'remove_spaces' => true
 ];
@@ -82,10 +82,30 @@ $config['course_module_img_3'] = [
     'remove_spaces' => true
 ];
 
+$config['workshop_img_big'] = [
+    'upload_path' => UPLOADS_PATH,
+    'allowed_types' => 'png',
+    'max_size' => 1024,
+    'max_width' => 630,
+    'max_height' => 805,
+    'encrypt_name' => true,
+    'remove_spaces' => true
+];
+
+$config['workshop_img_small'] = [
+    'upload_path' => UPLOADS_PATH,
+    'allowed_types' => 'png',
+    'max_size' => 512,
+    'max_width' => 350,
+    'max_height' => 350,
+    'encrypt_name' => true,
+    'remove_spaces' => true
+];
+
 $config['skill_img'] = [
     'upload_path' => UPLOADS_PATH,
     'allowed_types' => 'png',
-    'max_size' => 100,
+    'max_size' => 128,
     'max_width' => 220,
     'max_height' => 220,
     'encrypt_name' => true,
@@ -95,7 +115,7 @@ $config['skill_img'] = [
 $config['apps_img'] = [
     'upload_path' => UPLOADS_PATH,
     'allowed_types' => 'png',
-    'max_size' => 100,
+    'max_size' => 128,
     'max_width' => 120,
     'max_height' => 120,
     'encrypt_name' => true,
@@ -115,7 +135,7 @@ $config['bonus_img'] = [
 $config['lecture_img'] = [
     'upload_path' => UPLOADS_PATH,
     'allowed_types' => 'png',
-    'max_size' => 500,
+    'max_size' => 512,
     'max_width' => 450,
     'max_height' => 450,
     'encrypt_name' => true,
@@ -128,6 +148,16 @@ $config['block_img'] = [
     'max_size' => 300,
     'max_width' => 350,
     'max_height' => 350,
+    'encrypt_name' => true,
+    'remove_spaces' => true
+];
+
+$config['review_img'] = [
+    'upload_path' => UPLOADS_PATH,
+    'allowed_types' => 'jpg|jpeg',
+    'max_size' => 1024,
+    'max_width' => 1052,
+    'max_height' => 2160,
     'encrypt_name' => true,
     'remove_spaces' => true
 ];

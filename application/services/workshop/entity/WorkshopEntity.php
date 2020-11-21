@@ -1,6 +1,6 @@
 <?php
 
-namespace App\services\course\entity;
+namespace App\services\workshop\entity;
 
 use App\libraries\Entity;
 
@@ -17,11 +17,11 @@ use App\libraries\Entity;
  * @property string $description
  * @property string $purpose
  * @property array $packages
- * @property array $forWhom
+ * @property string $forWhom
  * @property array $program
- * @property array $bonuses
+ * @property string $bonuses
  */
-class CourseEntity extends Entity
+class WorkshopEntity extends Entity
 {
     /**
      * @var array 
@@ -41,9 +41,9 @@ class CourseEntity extends Entity
         'packages' => null,
         'imgBig' => null,
         'imgSmall' => null,
-        'forWhom' => null,
+        'forWhom' => '',
         'program' => null,
-        'bonuses' => null
+        'bonuses' => ''
     ];
     
     /**
@@ -64,9 +64,9 @@ class CourseEntity extends Entity
         'packages' => 'json-array',
         'imgBig' => 'string',
         'imgSmall' => 'string',
-        'forWhom' => 'json-array',
+        'forWhom' => 'string',
         'program' => 'json-array',
-        'bonuses' => 'json-array'
+        'bonuses' => 'string'
     ];
     
     
@@ -79,15 +79,6 @@ class CourseEntity extends Entity
         'img_big' => 'imgBig',
         'img_small' => 'imgSmall',
         'for_whom' => 'forWhom'
-    ];
-    
-    /**
-     * @var array 
-     */
-    private $packagesMap = [
-        'standart' => ['name' => 'Стандарт', 'code' => 'standart'],
-        'advanced' => ['name' => 'Расширеный', 'code' => 'advanced'],
-        'vip' => ['name' => 'Премиум', 'code' => 'vip']
     ];
     
     /**
@@ -125,61 +116,11 @@ class CourseEntity extends Entity
      * @param mixed $value
      * @return $this
      */
-    public function setForWhom($value)
-    {
-        $this->attributes['forWhom'] = ForWhomCollection::create($this->convertValueToArray($value))->toJson();
-        
-        return $this;
-    }
-    
-    /**
-     * @return ForWhomCollection
-     */
-    public function getForWhomRaw()
-    {
-        return ForWhomCollection::create(json_decode($this->attributes['forWhom'], true));
-    }
-    
-    /**
-     * @param mixed $value
-     * @return $this
-     */
     public function setProgram($value)
     {
         $this->attributes['program'] = Program::create($this->convertValueToArray($value))->toJson();
         
         return $this;
-    }
-    
-    /**
-     * @param mixed $value
-     * @return $this
-     */
-    public function setBonuses($value)
-    {
-        if (is_array($value)) {
-            $value = clear_array($value);
-        }
-        
-        $this->attributes['bonuses'] = $this->convertValueToJsonArray($value);
-        
-        return $this;
-    }
-    
-    /**
-     * @return Program
-     */
-    public function getProgramRaw()
-    {
-        return Program::create(json_decode($this->attributes['program'], true));
-    }
-    
-    /**
-     * @return array
-     */
-    public function getPackagesMap()
-    {
-        return $this->packagesMap;
     }
     
     /**
@@ -218,7 +159,5 @@ class CourseEntity extends Entity
     private function setDefault()
     {
         $this->attributes['packages'] = '{"standart":{"available":"1","price":"0","partial_price":"0"},"advanced":{"available":"1","price":"0","partial_price":"0"},"vip":{"available":"1","price":"0","partial_price":"0"}}';
-         
-        $this->attributes['forWhom'] = ForWhomCollection::create()->toJson();
     }
 }

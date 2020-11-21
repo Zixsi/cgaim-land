@@ -21,6 +21,11 @@ $route['admin/instructor'] = 'admin/InstructorController/index';
 $route['admin/instructor/add'] = 'admin/InstructorController/add';
 $route['admin/instructor/edit/(:num)'] = 'admin/InstructorController/edit/$1';
 
+$route['admin/workshop'] = 'admin/WorkshopController/index';
+$route['admin/workshop/add'] = 'admin/WorkshopController/add';
+$route['admin/workshop/edit/(:num)'] = 'admin/WorkshopController/edit/$1';
+$route['admin/workshop/publish/(:num)/(:num)'] = 'admin/WorkshopController/publish/$1/$2';
+
 $route['admin/course'] = 'admin/CourseController/index';
 $route['admin/course/add'] = 'admin/CourseController/add';
 $route['admin/course/edit/(:num)'] = 'admin/CourseController/edit/$1';
@@ -49,3 +54,9 @@ $route['admin/faq/edit/(:num)'] = 'admin/FaqController/edit/$1';
 $route['admin/block'] = 'admin/BlockController/index';
 $route['admin/block/add'] = 'admin/BlockController/add';
 $route['admin/block/edit/(:num)'] = 'admin/BlockController/edit/$1';
+
+$route['admin/review'] = 'admin/ReviewController/index';
+$route['admin/review/(:num)'] = 'admin/ReviewController/index/$1';
+$route['admin/review/add'] = 'admin/ReviewController/add';
+$route['admin/review/add/(:num)'] = 'admin/ReviewController/add/$1';
+$route['admin/review/edit/(:num)'] = 'admin/ReviewController/edit/$1';

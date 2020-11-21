@@ -2,6 +2,8 @@
 
 use App\services\course\Course;
 use App\services\instructor\Instructor;
+use App\services\review\Review;
+use App\services\workshop\Workshop;
 
 class MainController extends APP_Controller
 {
@@ -9,7 +11,9 @@ class MainController extends APP_Controller
     {
         $data = [
             'courses' => Course::get()->getListPublished(3),
-            'instructors' => Instructor::get()->getModel()->getListMap()
+            'workshop' => Workshop::get()->getListPublished(3),
+            'instructors' => Instructor::get()->getModel()->getListMap(),
+            'reviews' => Review::get()->getModel()->getListByCourse(0)
         ];
         
         $this->load->lview('main/index', $data);
@@ -17,18 +21,12 @@ class MainController extends APP_Controller
 
     public function terms()
     {
-        $data = [];
-        
-        $this->load->layout = 'compact';
-        $this->load->lview('main/terms', $data);
+        $this->load->lview('main/terms', []);
     }
 
     public function privacyPolicy()
     {
-        $data = [];
-        
-        $this->load->layout = 'compact';
-        $this->load->lview('main/privacy_policy', $data);
+        $this->load->lview('main/privacy_policy', []);
     }
 
 }

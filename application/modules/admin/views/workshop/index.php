@@ -1,88 +1,66 @@
 <div class="row mb-4">
-	<div class="col-12">
-		<div class="float-right">
-			<a href="/admin/workshop/add/" class="btn btn-outline-primary">Добавить</a>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<?//debug($items);?>
-<div class="row">
-	<div class="col-12">
-		<div class="card">
-			<div class="card-body">
-				<table class="table table-condensed">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Дата</th>
-							<th>Статус</th>
-							<th>Тип</th>
-							<th>Название</th>
-							<th>Куплено</th>
-							<th class="text-right">Действие</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?foreach($items as $row):?>
-							<tr>
-								<td><?=$row['id']?></td>
-								<td><?=$row['date']?></td>
-								<td>
-									<?if((int) $row['status'] === 1):?>
-										<span class="badge badge-success">enabled</span>		
-									<?else:?>
-										<span class="badge badge-secondary">disabled</span>
-									<?endif;?>
-								</td>
-								<td><?=$row['type']?></td>
-								<td><?=$row['title']?></td>
-								<td><?=($subscribeCount[$row['id']] ?? 0)?></td>
-								<td class="text-right">
-									<div class="btn-group">
-										<a href="javascript:void(0);" class="btn btn-primary btn-sm add-user-workshop" data-id="<?=$row['id']?>" data-target="#add-user-workshop-modal" title="Добавить пользователя">
-											<i class="fa fa-user-plus"></i>
-										</a>
-										<a href="/admin/workshop/view/<?=$row['id']?>/" class="btn btn-primary btn-sm" title="Просмотр">
-											<i class="fa fa-eye"></i>
-										</a>
-										<a href="/admin/workshop/item/<?=$row['id']?>/" class="btn btn-primary btn-sm" title="Редактирование">
-											<i class="fa fa-edit"></i>
-										</a>
-										<!-- <a href="javascript:void(0);" class="btn btn-danger btn-sm">
-											<i class="fa fa-trash"></i>
-										</a> -->
-									</div>
-								</td>
-							</tr>
-						<?endforeach;?>
-					</tbody>
-				</table>	
-			</div>
-		</div>
-	</div>
+    <div class="col-6">
+        <h3>Мастерская</h3>
+    </div>
+    <div class="col-6 text-right">
+        <a href="./add/" class="btn btn-primary">Добавить</a>
+    </div>
 </div>
 
-<div class="modal fade" id="add-user-workshop-modal" role="dialog" aria-labelledby="" aria-hidden="true">
-	<div class="modal-dialog modal-md">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title">Добавить ученика</h4>
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			</div>
-			<div class="modal-body">
-				<form action="" method="post">
-					<input type="hidden" name="id" value="">
-					<div class="form-group users-block">
-						<div>
-							<select name="user" class="form-controll" id="select2-users" style="width: 100%;"></select>
-						</div>
-					</div>
-					<div class="form-group text-right">
-						<button type="submit" class="btn btn-primary">Добавить</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="70">Id</th>
+                                <th>Название</th>
+                                <th width="70">Статус</th>
+                                <th width="70" class="text-right">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if($items): ?>
+                                <?php foreach($items as $item):?>
+                                <tr>
+                                    <td><?=$item['id']?></td>
+                                    <td>
+                                        <a href="./edit/<?= $item['id'] ?>"><?=$item['title']?></a>
+                                    </td>
+                                    <td>
+                                        <?php if((int) $item['published'] === 0): ?>
+                                            <a href="./publish/<?= $item['id'] ?>/1" class="badge badge-danger">Неопубликован</a>
+                                        <?php else: ?>
+                                            <a href="./publish/<?= $item['id'] ?>/0" class="badge badge-success">Опубликован</a>
+                                        <?php endif;?>
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-light" data-toggle="dropdown">
+                                                <i class="mdi mdi-dots-horizontal"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right navbar-dropdown">
+                                                <li class="dropdown-item">
+                                                    <a href="/workshop/<?= $item['code'] ?>/" target="_blank">Просмотр</a>
+                                                </li>
+                                                <li class="dropdown-item">
+                                                    <a href="./edit/<?= $item['id'] ?>">Редактировать</a>
+                                                </li>
+                                                <li class="dropdown-item">
+                                                    <a href="/admin/lecture/<?= $item['id'] ?>">Лекции</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php endforeach;?>
+                            <?php endif;?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

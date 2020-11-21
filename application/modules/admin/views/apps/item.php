@@ -26,7 +26,8 @@
                                 <span class="mdi mdi-information-outline" title="" style="font-size: 16px; cursor: pointer;"
                                     data-toggle="tooltip" 
                                     data-placement="bottom" 
-                                    data-original-title=""></span>
+                                    data-original-title="Расширение png. Разрешение 120x120. Размер не более 128кб."
+                                ></span>
                             </label>
                             <input type="file" name="img" class="file-upload-default">
                             <div class="input-group">

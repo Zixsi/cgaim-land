@@ -7,6 +7,7 @@ use App\services\course\Course;
 use App\services\faq\Faq;
 use App\services\instructor\Instructor;
 use App\services\lecture\Lecture;
+use App\services\review\Review;
 use App\services\skill\Skill;
 
 class CourseController extends APP_Controller
@@ -15,7 +16,8 @@ class CourseController extends APP_Controller
     public function index()
     {
         $data = [
-            'items' => Course::get()->getListPublished(1000)
+            'items' => Course::get()->getListPublished(1000),
+            'instructors' => Instructor::get()->getModel()->getListMap()
         ];
         
         $this->load->lview('courses/index', $data);
@@ -39,7 +41,8 @@ class CourseController extends APP_Controller
             'faq' => Faq::get()->getModel()->getListPublished(10),
             'moduleInfoBlock' => Block::get()->getModel()->getById(($item['program']['module_1_info'] ?? 0)),
             'courses' => Course::get()->getOther(3, $item['id']),
-            'instructors' => Instructor::get()->getModel()->getListMap()
+            'instructors' => Instructor::get()->getModel()->getListMap(),
+            'reviews' => Review::get()->getModel()->getListByCourse($item['id'])
         ];
         
 //        debug($data['moduleInfoBlock']); die();

@@ -2,7 +2,7 @@
     <div class="background"></div>
     <div class="content">
 
-        <div class="block-title-course">Курсы</div>
+        <div class="block-title-course">Мастерская</div>
 
         <div class="course_cards">
             <?php foreach($items as $item): ?>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="card_footer">
-                        <a href="/courses/<?=$item['code']?>/" class="btn btn-pink btn-md">Подробнее</a>
+                        <a href="/workshop/<?=$item['code']?>/" class="btn btn-pink btn-md">Подробнее</a>
                         <?php if($item['note']): ?>
                             <span class="badge">
                                 <span class="badge_big_text"><?=$item['note'][0]?></span>

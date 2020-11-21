@@ -1,8 +1,8 @@
 <?php
 
-namespace App\services\course\models;
+namespace App\services\workshop\models;
 
-class CourseModel extends \APP_Model
+class WorkshopModel extends \APP_Model
 {
     const TABLE = 'courses';
 
@@ -43,7 +43,7 @@ class CourseModel extends \APP_Model
      */
     public function getById($id)
     {
-        $sql = sprintf("SELECT * FROM %s WHERE id = :id AND type = 'COURSE'", self::TABLE);
+        $sql = sprintf("SELECT * FROM %s WHERE id = :id AND type = 'WORKSHOP'", self::TABLE);
         $res = $this->query($sql, [':id' => $id]);
         
         if (($row = $res->row_array())) {
@@ -59,7 +59,7 @@ class CourseModel extends \APP_Model
      */
     public function getByCode($code)
     {
-        $sql = sprintf("SELECT * FROM %s WHERE code = :code AND type = 'COURSE'", self::TABLE);
+        $sql = sprintf("SELECT * FROM %s WHERE code = :code AND type = 'WORKSHOP'", self::TABLE);
         $res = $this->query($sql, [':code' => $code]);
         
         if (($row = $res->row_array())) {
@@ -74,7 +74,7 @@ class CourseModel extends \APP_Model
      */
     public function getList()
     {
-        if (($res = $this->db->where(['type' => 'COURSE'])->get(self::TABLE))) {
+        if (($res = $this->db->where(['type' => 'WORKSHOP'])->get(self::TABLE))) {
             return $res->result_array();
         }
 
@@ -102,7 +102,7 @@ class CourseModel extends \APP_Model
             FROM 
                 %s 
             WHERE 
-                type = 'COURSE'
+                type = 'WORKSHOP'
                 AND published = 1
             ORDER BY 
                 id DESC
@@ -141,7 +141,7 @@ class CourseModel extends \APP_Model
             FROM 
                 %s 
             WHERE 
-                type = 'COURSE'
+                type = 'WORKSHOP'
                 AND published = 1
                 AND id != %d 
             ORDER BY 

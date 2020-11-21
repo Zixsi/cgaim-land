@@ -349,7 +349,7 @@ body {
     position: relative;
     font-family: 'Pepsi Cyr-Lat';
     font-size: 2.9rem;
-    margin-top: 17px;
+    margin-top: 90px;
     letter-spacing: 2.2px;
     padding-left: 2px;
 }
@@ -410,7 +410,8 @@ body {
     text-decoration: none;
 }
 
-#main-menu li > a:hover {
+#main-menu li > a:hover,
+#main-menu li.active > a {
     color: #ee2d7f;
 }
 
@@ -456,6 +457,10 @@ body {
 #header {
     background: url('../img/block1-bg.jpg') no-repeat top center;
     padding-bottom: 340px;
+}
+
+#header.workshop {
+    padding-bottom: 80px; 
 }
 
 #header .content {
@@ -1806,7 +1811,86 @@ body {
 #reviews .slider {
     margin-top: 82px;
     height: 770px;
-    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+}
+
+#reviews .slider-wrap {
+    position: relative;
+}
+
+#reviews .slider-btns {
+    position: absolute;
+    top: 380px;
+    left: 0px;
+    right: 0px;
+}
+
+#reviews .btn-slider-nav {
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+}
+
+#reviews .btn.btn-slider-nav.prev {
+    left: 345px;
+}
+
+#reviews .btn.btn-slider-nav.next {
+    right: 345px;
+}
+
+#reviews .btn.btn-slider-nav.prev:before, 
+#reviews  .btn.btn-slider-nav.next:before {
+    width: 14px;
+    height: 14px;
+    border: 4px solid #ffffff;
+    border-right: none;
+    border-bottom: none;
+    top: 17px;
+}
+
+#reviews .btn.btn-slider-nav.prev:before {
+    left: 20px;
+}
+
+#reviews .btn.btn-slider-nav.next:before {
+    left: 16px;
+}
+
+#reviews .slider .item {
+    width: 355px;
+    height: 730px;
+    overflow: hidden;
+}
+
+#reviews .slider .item {
+    opacity: 0.5;
+    padding: 30px;
+    padding-top: 60px;
+    transition: all 0.4s ease-out;
+}
+
+#reviews .slider .item.tns-slide-active.center {
+    opacity: 1.0;
+    padding: 0px;
+    padding-top: 0px;
+    transition: opacity 0.4, padding 0.4;
+}
+
+#reviews .slider .item img {
+    width: 100%;
+    height: auto;
+}
+
+#reviews .slider .item iframe {
+    width: 100%;
+    height: 600px;
+}
+
+#reviews .slider .item.tns-slide-active.center iframe {
+    width: 100%;
+    height: 730px;
 }
 
 #faq {
@@ -1920,6 +2004,7 @@ body {
     background-position: -995px -295px;
     width: 255px;
     height: 260px;
+    z-index: 2;
 }
 
 #faq .figure2-5 {
@@ -1928,6 +2013,30 @@ body {
     background-position: -1367px -287px;
     width: 160px;
     height: 235px;
+}
+
+#courses.other {
+    position: relative;
+}
+
+#courses.other .background {
+    position: absolute;
+    width: 1920px;
+    top: 0px;
+    bottom: 103px;
+    min-height: 300px;
+    background: #16142a;
+}
+
+#courses.other .background:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 104px;
+    bottom: -103px;
+    left: 0px;
+    right: 0px;
+    background: url("../img/block7-bottom.png") no-repeat top center;
 }
 
 /*============================================================================*/
@@ -2072,14 +2181,146 @@ body {
     margin-top: 40px;
 }
 
+#footer {
+    color: #ffffff;
+    margin-top: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#footer .nav-panel {
+    display: flex; 
+    justify-content: space-between;
+}
+
+#footer .nav-panel .logo {
+    margin-top: 2px;
+    margin-left: 26px;
+    display: inline-block;
+    background: url(../img/logo.png) no-repeat center center;
+    width: 146px;
+    height: 49px;
+}
+
+#footer .nav-panel .main-menu {
+    margin-top: 15px;
+    margin-left: -25px;
+    font-size: 1.2333rem;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+
+}
+
+#footer .soc {
+    margin-top: 19px;
+}
+
+#footer .soc .icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-left: 12px;
+}
+
+#footer .soc .icon:first-child {
+    margin-left: 0px;
+}
+
+#footer .soc .icon:before {
+    content: "";
+    position: absolute;
+    background: transparent url("../img/soc.png") top left no-repeat;
+}
+
+#footer .soc .icon.vk:before {
+    width: 27px;
+    height: 21px;
+    background-position: -50px 0px;
+    top: 4px;
+    left: 1px;
+}
+
+#footer .soc .icon.inst:before {
+    width: 21px;
+    height: 21px;
+    background-position: -28px 0px;
+    top: 4px;
+    left: 4px;
+}
+
+#footer .soc .icon.yt:before {
+    width: 27px;
+    height: 21px;
+    background-position: 0px 0px;
+    top: 4px;
+    left: 1px;
+}
+
+#footer .links {
+    margin-bottom: 31px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 19px;
+}
+
+#footer .links a {
+    color: #ffffff;
+}
+
+#footer .links a:hover {
+    text-decoration: none;
+}
+
+#footer .links > * {
+    margin: 0 10px;
+}
+
+#footer .links span > a {
+    text-decoration: none;
+}
+
+#footer .links span > a:hover {
+    text-decoration: underline;
+}
+
+#footer .info {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
 /*============================================================================*/
 
 #course_page {
+    position: relative;
     width: 1920px;
     margin: 0 auto;
     padding-top: 156px;
-    padding-bottom: 60px;
     background: #16142a url("../img/block11-bg.jpg") repeat-y center top;
+    padding-bottom: 80px;
+    margin-bottom: 120px;
+}
+
+#course_page .background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+#course_page .background:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 104px;
+    bottom: -103px;
+    left: 0px;
+    right: 0px;
+    background: url("../img/block7-bottom.png") no-repeat top center;
 }
 
 #course_page .course_cards { 

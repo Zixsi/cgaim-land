@@ -39,7 +39,7 @@
                                     class="mdi mdi-information-outline tooltip-btn" 
                                     data-toggle="tooltip" 
                                     data-placement="bottom" 
-                                    data-original-title=""
+                                    data-original-title="Расширение png. Разрешение 630x805. Размер не более 1мб."
                                 ></span>
                             </label>
                             <input type="file" name="img_big" class="file-upload-default">
@@ -57,7 +57,7 @@
                                     class="mdi mdi-information-outline tooltip-btn" 
                                     data-toggle="tooltip" 
                                     data-placement="bottom" 
-                                    data-original-title=""
+                                    data-original-title="Расширение png. Разрешение 350x350. Размер не более 512кб."
                                 ></span>
                             </label>
                             <input type="file" name="img_small" class="file-upload-default">
@@ -296,7 +296,7 @@
                                             class="mdi mdi-information-outline tooltip-btn" 
                                             data-toggle="tooltip" 
                                             data-placement="bottom" 
-                                            data-original-title="Расширение png. Разрешение 580x325. Размер не более 256кб."
+                                            data-original-title="Расширение png. Разрешение 870x860. Размер не более 512кб."
                                         ></span>
                                     </label>
                                     <input type="file" name="module_1_img" class="file-upload-default">
@@ -375,7 +375,7 @@
                                             class="mdi mdi-information-outline tooltip-btn" 
                                             data-toggle="tooltip" 
                                             data-placement="bottom" 
-                                            data-original-title="Расширение png. Разрешение 580x325. Размер не более 256кб."
+                                            data-original-title="Расширение png. Разрешение 775x865. Размер не более 512кб."
                                         ></span>
                                     </label>
                                     <input type="file" name="module_2_img" class="file-upload-default">
@@ -438,7 +438,7 @@
                                             class="mdi mdi-information-outline tooltip-btn" 
                                             data-toggle="tooltip" 
                                             data-placement="bottom" 
-                                            data-original-title="Расширение png. Разрешение 580x325. Размер не более 256кб."
+                                            data-original-title="Расширение png. Разрешение 835x600. Размер не более 512кб."
                                         ></span>
                                     </label>
                                     <input type="file" name="module_3_img" class="file-upload-default">

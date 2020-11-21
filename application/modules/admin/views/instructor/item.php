@@ -35,7 +35,8 @@
                                 <span class="mdi mdi-information-outline" title="" style="font-size: 16px; cursor: pointer;"
                                     data-toggle="tooltip" 
                                     data-placement="bottom" 
-                                    data-original-title=""></span>
+                                    data-original-title="Расширение png. Разрешение 425x615. Размер не более 1мб."
+                                ></span>
                             </label>
                             <input type="file" name="photo_big" class="file-upload-default">
                             <div class="input-group">
@@ -51,7 +52,8 @@
                                 <span class="mdi mdi-information-outline" title="" style="font-size: 16px; cursor: pointer;"
                                     data-toggle="tooltip" 
                                     data-placement="bottom" 
-                                    data-original-title=""></span>
+                                    data-original-title="Расширение png, jpg, jpeg. Разрешение 128x128. Размер не более 256кб."
+                                ></span>
                             </label>
                             <input type="file" name="photo_small" class="file-upload-default">
                             <div class="input-group">

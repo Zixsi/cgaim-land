@@ -20,7 +20,7 @@
             <div class="buttons">
                 <a href="#packages" class="btn btn-pink btn-xl">Записаться</a>
                 <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>
-                <?php if(empty($item['start_date'])): ?>
+                <?php if(empty($item['start_date']) === false): ?>
                     <span class="date">Старт <?=$item['start_date_formated']?></span>
                 <?php endif; ?>
                     
@@ -426,7 +426,7 @@
                 <div class="card-content">
                     <div class="title">Стандарт</div>
                     <div class="price"><?=number_format($item['packages']['standart']['partial_price'], 0, '.', ' ')?> Р</div>
-                    <div class="period">помесячно <br>3 месяца</div>
+                    <div class="period">помесячно <br><?=count($lectures)?> месяца</div>
                     <?php if((int) $item['packages']['standart']['available'] === 1): ?>
                         <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
                     <?php endif;?>
@@ -436,7 +436,7 @@
                 <div class="card-content">
                     <div class="title">Расширеный</div>
                     <div class="price"><?=number_format($item['packages']['advanced']['partial_price'], 0, '.', ' ')?> Р</div>
-                    <div class="period">помесячно <br>3 месяца</div>
+                    <div class="period">помесячно <br><?=count($lectures)?> месяца</div>
                     <?php if((int) $item['packages']['advanced']['available'] === 1): ?>
                         <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
                     <?php endif;?>
@@ -446,7 +446,7 @@
                 <div class="card-content">
                     <div class="title">Премиум</div>
                     <div class="price"><?=number_format($item['packages']['vip']['partial_price'], 0, '.', ' ')?> Р</div>
-                    <div class="period">помесячно <br>3 месяца</div>
+                    <div class="period">помесячно <br><?=count($lectures)?> месяца</div>
                     <?php if((int) $item['packages']['vip']['available'] === 1): ?>
                         <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
                     <?php endif;?>
@@ -508,21 +508,29 @@
 <div id="reviews">
     <div class="content">
         <div class="block-title">Отзывы</div>
-        <div class="control-reviews">
-            <button type="button" class="btn btn-pink btn-md btn-exo">Текстовые отзывы</button>
-            <button type="button" class="btn btn-pink btn-md btn-exo">Видео отзывы</button>
-        </div>
-        <div class="slider">
-            <div class="item">
-                <img src="" alt="">
+        <?php if(count($reviews)): ?>
+            <div class="slider-wrap">
+                <div class="slider" id="review-slider">
+                    <?php for($i = 0; $i < 2; $i++): ?>
+                        <?php foreach ($reviews as $row): ?>
+                            <div class="item">
+                                <div class="item-content">
+                                    <?php if($row['type'] === 'IMG'): ?>
+                                        <img src="<?=$row['source']?>" alt="">
+                                    <?php else: ?>
+                                        <iframe width="350" height="600" src="<?=$row['source']?>?enablejsapi=1&version=3" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <?php endif;?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endfor; ?>
+                </div>
+                <div class="slider-btns">
+                    <button class="btn btn-pink btn-round btn-slider-nav prev" id="review-prev-btn" data-controls="prev"><span></span></button>
+                    <button class="btn btn-pink btn-round btn-slider-nav next" id="review-next-btn" data-controls="next"><span></span></button>
+                </div>
             </div>
-            <div class="item">
-                <img src="" alt="">
-            </div>
-            <div class="item">
-                <img src="" alt="">
-            </div>
-        </div>
+        <?php endif;?>
     </div>
 </div>
 
@@ -544,7 +552,8 @@
     </div>
 </div>
 
-<div id="courses" class="courses_main">
+<div id="courses" class="courses_main other">
+    <div class="background"></div>
     <div class="content">
         <div class="block-title">Другие наши курсы</div>
         <div class="course_cards mobile" id="courses-slider">

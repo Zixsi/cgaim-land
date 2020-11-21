@@ -136,6 +136,41 @@ function handleSliders() {
             }
         }); 
     }
+    
+    if (document.getElementById('review-slider') !== null) {
+        var reviewSliderElement = document.getElementById('review-slider');
+        
+        let reviewSlider = tns({
+            "container": "#review-slider",
+            "autoWidth": false,
+            "items": 3,
+            "slideBy": 1,
+            "mouseDrag": false,
+            "swipeAngle": false,
+            "nav": false,
+            "speed": 400,
+            "prevButton": document.getElementById('review-prev-btn'),
+            "nextButton": document.getElementById('review-next-btn'),
+        });
+        
+        changeReviewSlide();
+        reviewSlider.events.on('indexChanged', () => {changeReviewSlide();});
+        
+        function changeReviewSlide()
+        {
+            let list = reviewSliderElement.querySelectorAll('.tns-slide-active');
+            
+            list.forEach((e, i) => {
+                e.classList.remove('center');
+                toggleYoutubeVideo(e);
+                
+                if (i === 1) {
+                    e.classList.add('center');
+                }
+            });
+        }
+    }
+    
 }
 
 function handleAccordion() {
@@ -169,4 +204,16 @@ function handleAccordion() {
             parent.classList.toggle('active');
         });
     }
+}
+
+function toggleYoutubeVideo(container) {
+    var videos = container.querySelectorAll('iframe, video');
+    Array.prototype.forEach.call(videos, function (video) {
+        if (video.tagName.toLowerCase() === 'video') {
+            video.pause();
+        } else {
+            var src = video.src;
+            video.src = src;
+        }
+    });
 }

@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
     <link rel="shortcut icon" href="<?=TEMPLATE_DIR?>/land/favicon.ico" type="image/x-icon">
-    <title>Главная</title>
+    <title>CGAim</title>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,800;0,900;1,300;1,400;1,500;1,600;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/land/vendor/tiny-slider/tiny-slider.css">
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/land/css/styles.css?v=<?=VERSION?>">
+    <?php require_once 'inc_analytics.php';?>
 </head>
 <body>
     <div id="top-panel">
@@ -20,26 +21,26 @@
             </label>
             <input type="checkbox" value="1" id="menu-trigger">
             <ul id="main-menu">
-                <li>
+                <li <?php if(isActiveMenuItem('maincontroller')):?>class="active"<?php endif;?> >
                     <a href="/">Главная</a>
                 </li>
                 <li>
-                    <a href="#">Блог</a>
+                    <a href="http://blog.cgaim.ru/">Блог</a>
                 </li>
-                <li>
+                <li <?php if(isActiveMenuItem('coursecontroller')):?>class="active"<?php endif;?>>
                     <a href="/courses/">Курсы</a>
                 </li>
-                <li>
+                <li <?php if(isActiveMenuItem('workshopcontroller')):?>class="active"<?php endif;?>>
                     <a href="/workshop/">Мастерская</a>
                 </li>
                 <li>
-                    <a href="#">О школе</a>
+                    <a href="/#about">О школе</a>
                 </li>
                 <li>
-                    <a href="#">Отзывы</a>
+                    <a href="/#reviews">Отзывы</a>
                 </li>
                 <li>
-                    <a href="#">Контакты</a>
+                    <a href="/#contacts">Контакты</a>
                 </li>
             </ul>
             <a href="#" class="btn btn-pink login-btn">Войти</a>
@@ -51,10 +52,10 @@
     <div id="footer">
         <div class="content" id="contacts">
             <div class="nav-panel">
-                <a href="/"><img src="<?= TEMPLATE_DIR ?>/main_v2/img/logo.png" alt="" class="logo"></a>
+                <a href="/"><span class="logo"></span></a>
                 <ul class="nav main-menu">
                     <li <?if(isActiveMenuItem('maincontroller')):?>class="active"<?endif;?>><a href="/">Главная</a></li>
-                    <li><a href="https://blog.cgaim.ru/">Блог</a></li>
+                    <li><a href="http://blog.cgaim.ru/">Блог</a></li>
                     <li <?if(isActiveMenuItem('coursecontroller')):?>class="active"<?endif;?>><a href="/courses/">Курсы</a></li>
                     <li <?if(isActiveMenuItem('workshopcontroller')):?>class="active"<?endif;?>><a href="/workshop/">Мастерская</a></li>
                     <li><a href="/#about">О школе</a></li>

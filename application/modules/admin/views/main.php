@@ -65,6 +65,12 @@ $CI = &get_instance();
                             <span class="menu-title">Курсы</span>
                         </a>
                     </li>
+                    <li class="nav-item <?=is_active_menu_item('workshop')?'active':''?>">
+                        <a class="nav-link" href="/admin/workshop/">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Мастерская</span>
+                        </a>
+                    </li>
                     <li class="nav-item <?=is_active_menu_item('block')?'active':''?>">
                         <a class="nav-link" href="/admin/block/">
                             <i class="mdi mdi-view-headline menu-icon"></i>
@@ -97,8 +103,14 @@ $CI = &get_instance();
                     </li>
                     <li class="nav-item <?=is_active_menu_item('faq')?'active':''?>">
                         <a class="nav-link" href="/admin/faq/">
-                            <i class="mdi mdi-comment-question-outline menu-icon"></i>
+                            <i class="mdi mdi-view-headline menu-icon"></i>
                             <span class="menu-title">FAQ</span>
+                        </a>
+                    </li>
+                    <li class="nav-item <?=is_active_menu_item('review')?'active':''?>">
+                        <a class="nav-link" href="/admin/review/">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Отзывы</span>
                         </a>
                     </li>
                 </ul>

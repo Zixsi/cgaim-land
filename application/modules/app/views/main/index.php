@@ -180,128 +180,62 @@
     <div class="content">
         <div class="block-title">Мастерская</div>
         <div class="course_cards mobile" id="workshop-slider">
-
-            <div class="card">
-                <div class="card_head">
-                    <div class="header">Начало обучения</div>
-                    <div class="date">1 ноября</div>
-                    <span class="badge">
-                        <span class="badge_big_text">5</span>
-                        <span class="badge_small_text">класс</span>
-                    </span>
-                </div>
-                <div class="card_content">
-                    <div class="img">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/course-img.png" alt="" class="img_big">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/hero1.png" alt="" class="img_small">
+            
+            <?php foreach($workshop as $row): ?>
+                <div class="card">
+                    <div class="card_head">
+                        <div class="header">Начало обучения</div>
+                        <div class="date"><?=$row['start_date_formated']?></div>
+                        <?php if($row['note']): ?>
+                            <span class="badge">
+                                <span class="badge_big_text"><?=$row['note'][0]?></span>
+                                <?php if(empty($row['note'][1]) === false): ?>
+                                    <span class="badge_small_text"><?=$row['note'][1]?></span>
+                                <?php endif;?>
+                            </span>
+                        <?php endif; ?>
                     </div>
-                    <div class="text_wrap">
-                        <div class="title">Быстрый старт в 3D анимацию</div>
-                        <div class="description">Вы с нуля сделаете первые 30 000 рублей на анимации, уделяя работе всего 4 часа в день.</div>
-                    </div>
-                    <div class="info">
-                        <div class="start">
-                            <div class="header">Начало обучения</div>
-                            <div class="date">1 ноября</div>
+                    <div class="card_content">
+                        <div class="img">
+                            <img src="<?=$row['img_big']?>" alt="<?=$row['title']?>" class="img_big">
+                            <img src="<?=$row['img_small']?>" alt="<?=$row['title']?>" class="img_small">
                         </div>
-                        <div class="instructor">
-                            <img src="<?=TEMPLATE_DIR?>/land/images/instructor.png" alt="">
-                            <div class="header">Автор курса</div>
-                            <div class="fio">Александр Серебряков</div>
+                        <div class="text_wrap">
+                            <div class="title"><?=$row['title']?></div>
+                            <div class="description"><?=$row['description']?></div>
                         </div>
-                    </div>
-                </div>
-                <div class="card_footer">
-                    <a href="" class="btn btn-pink btn-md">Подробнее</a>
-                    <span class="badge">
-                        <span class="badge_big_text">1</span>
-                        <span class="badge_small_text">класс</span>
-                    </span>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card_head">
-                    <div class="header">Начало обучения</div>
-                    <div class="date">1 ноября</div>
-                    <span class="badge">
-                        <span class="badge_big_text">5</span>
-                        <span class="badge_small_text">класс</span>
-                    </span>
-                </div>
-                <div class="card_content">
-                    <div class="img">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/course-img.png" alt="" class="img_big">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/hero1.png" alt="" class="img_small">
-                    </div>
-                    <div class="text_wrap">
-                        <div class="title">Быстрый старт в 3D анимацию</div>
-                        <div class="description">Вы с нуля сделаете первые 30 000 рублей на анимации, уделяя работе всего 4 часа в день.</div>
-                    </div>
-                    <div class="info">
-                        <div class="start">
-                            <div class="header">Начало обучения</div>
-                            <div class="date">1 ноября</div>
-                        </div>
-                        <div class="instructor">
-                            <img src="<?=TEMPLATE_DIR?>/land/images/instructor.png" alt="">
-                            <div class="header">Автор курса</div>
-                            <div class="fio">Александр Серебряков</div>
+                        <div class="info">
+                            <div class="start">
+                                <div class="header">Начало обучения</div>
+                                <div class="date"><?=$row['start_date_formated']?></div>
+                            </div>
+                            <div class="instructor">
+                                <img src="<?=$instructors[$row['instructor']]['photo_small']?>" alt="">
+                                <div class="header">Автор курса</div>
+                                <div class="fio"><?=$instructors[$row['instructor']]['first_name']?> <?=$instructors[$row['instructor']]['last_name']?></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card_footer">
-                    <a href="" class="btn btn-pink btn-md">Подробнее</a>
-                    <span class="badge">
-                        <span class="badge_big_text">1</span>
-                        <span class="badge_small_text">класс</span>
-                    </span>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card_head">
-                    <div class="header">Начало обучения</div>
-                    <div class="date">1 ноября</div>
-                    <span class="badge">
-                        <span class="badge_big_text">5</span>
-                        <span class="badge_small_text">класс</span>
-                    </span>
-                </div>
-                <div class="card_content">
-                    <div class="img">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/course-img.png" alt="" class="img_big">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/hero1.png" alt="" class="img_small">
-                    </div>
-                    <div class="text_wrap">
-                        <div class="title">Быстрый старт в 3D анимацию</div>
-                        <div class="description">Вы с нуля сделаете первые 30 000 рублей на анимации, уделяя работе всего 4 часа в день.</div>
-                    </div>
-                    <div class="info">
-                        <div class="start">
-                            <div class="header">Начало обучения</div>
-                            <div class="date">1 ноября</div>
-                        </div>
-                        <div class="instructor">
-                            <img src="<?=TEMPLATE_DIR?>/land/images/instructor.png" alt="">
-                            <div class="header">Автор курса</div>
-                            <div class="fio">Александр Серебряков</div>
-                        </div>
+                    <div class="card_footer">
+                        <a href="/workshop/<?=$row['code']?>/" class="btn btn-pink btn-md">Подробнее</a>
+                        <?php if($row['note']): ?>
+                            <span class="badge">
+                                <span class="badge_big_text"><?=$row['note'][0]?></span>
+                                <?php if(empty($row['note'][1]) === false): ?>
+                                    <span class="badge_small_text"><?=$row['note'][1]?></span>
+                                <?php endif;?>
+                            </span>
+                        <?php endif; ?>
                     </div>
                 </div>
-                <div class="card_footer">
-                    <a href="" class="btn btn-pink btn-md">Подробнее</a>
-                    <span class="badge">
-                        <span class="badge_big_text">1</span>
-                        <span class="badge_small_text">класс</span>
-                    </span>
-                </div>
-            </div>
+            <?php endforeach; ?>
 
         </div>
         <div class="workshop-slider-controls">
             <div id="workshop-slider-nav" class="slider-dot-nav">
-                <button type="button" class="btn"></button>
-                <button type="button" class="btn"></button>
-                <button type="button" class="btn"></button>
+                <?php foreach($workshop as $row): ?>
+                    <button type="button" class="btn"></button>
+                <?php endforeach; ?>
             </div>
             <div id="workshop-slider-btns">
                 <button class="btn btn-pink btn-round btn-slider-nav prev" id="workshop-prev-btn" data-controls="prev"><span></span></button>
@@ -324,17 +258,29 @@
 <div id="reviews">
     <div class="content">
         <div class="block-title">Отзывы</div>
-        <div class="slider">
-            <div class="item">
-                <img src="" alt="">
+        <?php if(count($reviews)): ?>
+            <div class="slider-wrap">
+                <div class="slider" id="review-slider">
+                    <?php for($i = 0; $i < 2; $i++): ?>
+                        <?php foreach ($reviews as $row): ?>
+                            <div class="item">
+                                <div class="item-content">
+                                    <?php if($row['type'] === 'IMG'): ?>
+                                        <img src="<?=$row['source']?>" alt="">
+                                    <?php else: ?>
+                                        <iframe width="350" height="600" src="<?=$row['source']?>?enablejsapi=1&version=3" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <?php endif;?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endfor; ?>
+                </div>
+                <div class="slider-btns">
+                    <button class="btn btn-pink btn-round btn-slider-nav prev" id="review-prev-btn" data-controls="prev"><span></span></button>
+                    <button class="btn btn-pink btn-round btn-slider-nav next" id="review-next-btn" data-controls="next"><span></span></button>
+                </div>
             </div>
-            <div class="item">
-                <img src="" alt="">
-            </div>
-            <div class="item">
-                <img src="" alt="">
-            </div>
-        </div>
+        <?php endif;?>
     </div>
 </div>
 
