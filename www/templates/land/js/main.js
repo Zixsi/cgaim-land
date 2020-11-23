@@ -151,6 +151,16 @@ function handleSliders() {
             "speed": 400,
             "prevButton": document.getElementById('review-prev-btn'),
             "nextButton": document.getElementById('review-next-btn'),
+            responsive: {
+                320: {
+                  "items": 1,
+                  "autoWidth": true,
+                },
+                769: {
+                  "items": 3,
+                  "autoWidth": false,
+                }
+            }
         });
         
         changeReviewSlide();

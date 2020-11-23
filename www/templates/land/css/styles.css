@@ -2970,6 +2970,10 @@ body {
         width: 80px;
     }
     
+    #header .price {
+        text-align: center;
+    }
+    
     #header .buttons {
         text-align: center;
         margin-top: 26px;
@@ -2982,6 +2986,7 @@ body {
     
     #header .buttons .btn-xl:nth-child(2) {
         margin-left: 0px;
+        font-size: 1.2rem;
     }
     
     #header .buttons .date {
@@ -3877,5 +3882,28 @@ body {
     
     #course_page {
         padding-top: 80px;
+    }
+    
+    #reviews .slider-wrap {
+        padding: 0px 45px;
+    }
+    
+    #reviews .slider .item {
+        height: 650px;
+        width: 300px;
+        opacity: 1;
+        padding: 0;
+    }
+    
+    #reviews .btn.btn-slider-nav.prev {
+        left: 0px;
+    }
+    
+    #reviews .btn.btn-slider-nav.next {
+        right: 0px;
+    }
+    
+    #courses.other .background {
+        width: auto;
     }
 }
