@@ -437,7 +437,7 @@
             </div>
             <div class="card">
                 <div class="card-content">
-                    <div class="title">Расширеный</div>
+                    <div class="title">Расширенный</div>
                     <div class="price"><?=number_format($item['packages']['advanced']['partial_price'], 0, '.', ' ')?> Р</div>
                     <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
                     <?php if((int) $item['packages']['advanced']['available'] === 1): ?>
