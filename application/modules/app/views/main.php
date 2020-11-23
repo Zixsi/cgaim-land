@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/land/vendor/tiny-slider/tiny-slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/land/css/styles.css?v=<?=VERSION?>">
-    <?php //require_once 'inc_analytics.php';?>
+    <?php require_once 'inc_analytics.php';?>
 </head>
 <body>
     <div id="top-panel">
