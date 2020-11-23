@@ -330,11 +330,11 @@
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Вступительный текст</label>
-                                    <textarea name="program[module_1_short_description]" class="form-control" rows="5"><?=($item['program']['module_1_short_description'] ?? '')?></textarea>
+                                    <textarea name="program[module_1_short_description]" class="form-control" id="simple-editor1" rows="5"><?=($item['program']['module_1_short_description'] ?? '')?></textarea>
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Описание <i class="req-field">*</i></label>
-                                    <textarea name="program[module_1_description]" class="form-control" rows="5"><?=($item['program']['module_1_description'] ?? '')?></textarea>
+                                    <textarea name="program[module_1_description]" class="form-control" id="simple-editor2" rows="5"><?=($item['program']['module_1_description'] ?? '')?></textarea>
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Навыки <i class="req-field">*</i></label>
@@ -397,7 +397,7 @@
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Описание <i class="req-field">*</i></label>
-                                    <textarea name="program[module_2_description]" class="form-control" rows="5"><?=($item['program']['module_2_description'] ?? '')?></textarea>
+                                    <textarea name="program[module_2_description]" class="form-control" id="simple-editor3" rows="5"><?=($item['program']['module_2_description'] ?? '')?></textarea>
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Навыки <i class="req-field">*</i></label>
@@ -460,7 +460,7 @@
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Описание <i class="req-field">*</i></label>
-                                    <textarea name="program[module_3_description]" class="form-control" rows="5"><?=($item['program']['module_3_description'] ?? '')?></textarea>
+                                    <textarea name="program[module_3_description]" class="form-control" id="simple-editor4" rows="5"><?=($item['program']['module_3_description'] ?? '')?></textarea>
                                 </div>
                                 <div class="form-group col-12">
                                     <label>Навыки <i class="req-field">*</i></label>

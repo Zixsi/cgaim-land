@@ -158,6 +158,7 @@
         <div class="course_cards mobile" id="courses-slider">
             <?php foreach($courses as $row): ?>
                 <div class="card">
+                    <a href="/workshop/<?=$row['code']?>/" class="link"></a>
                     <div class="card_head">
                         <div class="header">Начало обучения</div>
                         <div class="date"><?=$row['start_date_formated']?></div>

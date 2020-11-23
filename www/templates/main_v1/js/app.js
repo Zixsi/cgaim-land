@@ -172,6 +172,26 @@ function textEditor()
             allowedTags: ['br', 'span', 'a', 'b', 'strong', 'i', 'strike', 'u', 'p']
         });
     }
+    
+    for (let i = 1; i <= 10; i++) {
+        startSimpleEditor(i);
+    }
+}
+
+function startSimpleEditor(number)
+{
+    if($('#simple-editor' + number).length === 0) {
+        return;
+    }
+    
+    var editor = new Simditor({
+        id: 'simple-editor' + number,
+        textarea: $('#simple-editor' + number),
+        toolbar: ['bold','italic','underline'],
+        pasteImage: false,
+        cleanPaste: true,
+        allowedTags: ['br', 'span', 'a', 'b', 'strong', 'i', 'strike', 'u', 'p']
+    });
 }
 
 function ajaxQuery(url, params, callback)

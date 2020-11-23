@@ -173,7 +173,7 @@
                 </div>
                 <?php endif; ?>
                 <div class="description"><?=$item['program']['module_1_description']?></div>
-                <span class="figure-mouse"></span>
+                <span class="figure-mouse" style="background-image: url('<?=$item['program']['module_1_img']?>');"></span>
             </div>
             <div class="skills">
                 <div class="title">В этой части вы научитесь:</div>
@@ -199,7 +199,7 @@
             <div class="block-title-2">Модуль 2: <?=$item['program']['module_2_title']?></div>
             <div class="description">
                 <div class="text-wrap"><?=$item['program']['module_2_description']?></div>
-                <span class="figure-sculpture"></span>
+                <span class="figure-sculpture" style="background-image: url('<?=$item['program']['module_2_img']?>');"></span>
             </div>
             <div class="skills">
                 <div class="title">В этой части вы научитесь:</div>
@@ -225,7 +225,7 @@
             <div class="block-title-2">Модуль 3: <?=$item['program']['module_3_title']?></div>
             <div class="description">
                 <div class="text-wrap"><?=$item['program']['module_3_description']?></div>
-                <span class="figure-box"></span>
+                <span class="figure-box" style="background-image: url('<?=$item['program']['module_3_img']?>');"></span>
             </div>
             <div class="skills">
                 <div class="title">В этой части вы научитесь:</div>
@@ -257,6 +257,9 @@
                         <?php endforeach;?>
                     </div>
                     <div class="lectures-block" id="lectures-slider">
+                        <?php
+                        $lectureNumber = 0;
+                        ?>
                         <?php foreach($lectures as $row): ?>
                             <div class="item">
                                 <div class="img-wrap">
@@ -265,7 +268,7 @@
                                 <div class="list">
                                     <?php foreach($row['items'] as $lectureKey => $lectureRow):?>
                                         <div class="row">
-                                            <div class="title">Лекция <?= makeLectureNumber($row['month'], $lectureKey)?>: <span><?=$lectureRow['title']?></span></div> 
+                                            <div class="title">Лекция <?= makeLectureNumber(1, ($lectureNumber++))?>: <span><?=$lectureRow['title']?></span></div> 
                                             <div class="text"><?=$lectureRow['description']?></div>
                                         </div>
                                     <?php endforeach; ?>
@@ -366,7 +369,7 @@
                     <div class="date"><?=$item['start_date_formated']?></div>
                 </div>
                 <div class="card-content">
-                    <div class="title">Расширеный</div>
+                    <div class="title">Расширенный</div>
                     <ul class="list">
                         <li>Доступ к лекции каждую неделю</li>
                         <li>Проверка домашних работ</li>
@@ -559,6 +562,7 @@
         <div class="course_cards mobile" id="courses-slider">
             <?php foreach($courses as $row): ?>
                 <div class="card">
+                    <a href="/courses/<?=$row['code']?>/" class="link"></a>
                     <div class="card_head">
                         <div class="header">Начало обучения</div>
                         <div class="date"><?=$row['start_date_formated']?></div>

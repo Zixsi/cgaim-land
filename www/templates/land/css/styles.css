@@ -83,6 +83,7 @@ body {
     background: linear-gradient(90deg, #ee2d7f, #d420c4);
     border-radius: 100px;
     box-shadow: inset 0px 1px 3px #ffffff;
+    letter-spacing: 1.5px;
 }
 
 .btn.btn-exo {
@@ -584,6 +585,10 @@ body {
     right: -276px;
 }
 
+#header.main .img {
+    top: 50px;
+}
+
 #header-classroom {
     background: url('../img/dashed-class.png') no-repeat center center;
     display: flex;
@@ -724,11 +729,11 @@ body {
 
 #purpose .figure-rocket {
     position: absolute;
-    top: 152px;
-    left: -79px;
-    background: url(../img/rocket.png) no-repeat center center;
-    width: 522px;
-    height: 668px;
+    top: 200px;
+    left: -12px;
+    background: url(../img/rocket.png?v=1) no-repeat center center;
+    width: 393px;
+    height: 646px;
 }
 
 #purpose .description {
@@ -1150,6 +1155,7 @@ body {
     height: 308px;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center bottom;
 }
 
 #program .animation-law  {
@@ -1171,7 +1177,7 @@ body {
     right: -309px;
     width: 870px;
     height: 858px;
-    background: url("../img/mouse.png") no-repeat center center;
+    /*background: url("../img/mouse.png") no-repeat center center;*/
 }
 
 .skills {
@@ -1201,6 +1207,8 @@ body {
     letter-spacing: -0.2px;
     font-style: italic;
     text-align: center;
+    width: 70%;
+    margin: 0 auto;
 }
 
 .skills .cards .card {
@@ -1245,7 +1253,7 @@ body {
     top: -218px;
     right: -741px;
     z-index: 1;
-    background: url("../img/figure-sculpture.png") no-repeat center center;
+    /*background: url("../img/figure-sculpture.png") no-repeat center center;*/
 }
 
 #program .figure-box {
@@ -1255,7 +1263,7 @@ body {
     top: -109px;
     right: -852px;
     z-index: 1;
-    background: url("../img/box.png") no-repeat center center;
+    /*background: url("../img/box.png") no-repeat center center;*/
 }
 
 #program .module-block.module4 .background {
@@ -1526,7 +1534,7 @@ body {
 }
 
 #packages .card .card-head {
-    background-color: #110f24;
+    background-color: #171a39;
     height: 100px;
     text-align: center;
     padding: 23px 20px;
@@ -1603,6 +1611,7 @@ body {
 #installment-plan .cards .card {
     width: 350px;
     background-color: #110f24;
+    outline: none;
 }
 
 #installment-plan .card .card-content {
@@ -2081,21 +2090,22 @@ body {
 
 #about {
     margin-top: -340px;
+    background: url(../img/block3-1-bg.png) no-repeat top center;
 }
 
 #about .content {
-    min-height: 900px;
+    min-height: 920px;
     position: relative;
     padding-bottom: 50px;
 }
 
 #about .figure-rocket {
     position: absolute;
-    top: 152px;
-    left: -79px;
-    background: url(../img/rocket.png) no-repeat center center;
-    width: 522px;
-    height: 668px;
+    top: 200px;
+    left: -12px;
+    background: url(../img/rocket.png?v=1) no-repeat center center;
+    width: 393px;
+    height: 646px;
 }
 
 #about .description {
@@ -2347,6 +2357,15 @@ body {
     margin-top: 0px;
 }
 
+.course_cards .card a.link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
 .course_cards .card .badge {
     position: absolute;
     background: url('../img/dashed-class.png') no-repeat center center;
@@ -2411,7 +2430,7 @@ body {
     position: absolute;
     top: 0px;
     left: 0px;
-    right: 0px;
+    right: 80px;
     bottom: 0px;
     text-align: right;
 }
@@ -2456,6 +2475,7 @@ body {
     padding-top: 7px;
     padding-bottom: 7px;
     border-right: 3px solid #ffffff;
+    margin-right: 30px;
 }
 
 .course_cards .card_content .start .header {
@@ -2472,7 +2492,6 @@ body {
 
 .course_cards .card_content .instructor {
     position: relative;
-    margin-left: 30px;
     padding-left: 70px;
 }
 
@@ -2506,6 +2525,8 @@ body {
 
 .course_cards .card_footer .btn {
     line-height: 2rem;
+    position: relative;
+    z-index: 4;
 }
 
 .course_cards .card_footer .badge {
@@ -2542,6 +2563,7 @@ body {
 .course_cards.mobile .card_content .img {
     z-index: 0;
     bottom: 75px;
+    right: 0px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -2743,8 +2765,16 @@ body {
         width: 320px;
     }
     
+    #header.main .img {
+        display: none;
+    }
+    
     #header .content-wrap {
         margin-top: 353px;
+    }
+    
+    #header.main .content-wrap {
+        margin-top: 30px;
     }
     
     #header .title {
@@ -3076,6 +3106,7 @@ body {
     .skills .afterword {
         font-size: 1.2rem;
         line-height: 1.6rem;
+        width: 100%;
     }
     
     .skills .afterword br {
@@ -3632,6 +3663,7 @@ body {
     .course_cards .card_content .img {
         z-index: 0;
         bottom: 75px;
+        right: 0px;
         display: flex;
         justify-content: center;
         align-items: flex-end;

@@ -8,7 +8,7 @@
                 <span class="change">Выбрать курс</span>
             </div>
         </div>
-        <img src="<?=TEMPLATE_DIR?>/land/images/course-img.png" class="img">
+        <img src="<?=TEMPLATE_DIR?>/land/images/main-header-img.png" class="img">
     </div>
 </div>
 
@@ -33,6 +33,7 @@
         <div class="course_cards mobile" id="courses-slider">
             <?php foreach($courses as $row): ?>
                 <div class="card">
+                    <a href="/courses/<?=$row['code']?>/" class="link"></a>
                     <div class="card_head">
                         <div class="header">Начало обучения</div>
                         <div class="date"><?=$row['start_date_formated']?></div>
@@ -183,9 +184,8 @@
             
             <?php foreach($workshop as $row): ?>
                 <div class="card">
+                    <a href="/workshop/<?=$row['code']?>/" class="link"></a>
                     <div class="card_head">
-                        <div class="header">Начало обучения</div>
-                        <div class="date"><?=$row['start_date_formated']?></div>
                         <?php if($row['note']): ?>
                             <span class="badge">
                                 <span class="badge_big_text"><?=$row['note'][0]?></span>
@@ -205,10 +205,6 @@
                             <div class="description"><?=$row['description']?></div>
                         </div>
                         <div class="info">
-                            <div class="start">
-                                <div class="header">Начало обучения</div>
-                                <div class="date"><?=$row['start_date_formated']?></div>
-                            </div>
                             <div class="instructor">
                                 <img src="<?=$instructors[$row['instructor']]['photo_small']?>" alt="">
                                 <div class="header">Автор курса</div>

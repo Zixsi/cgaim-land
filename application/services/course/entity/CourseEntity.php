@@ -86,7 +86,7 @@ class CourseEntity extends Entity
      */
     private $packagesMap = [
         'standart' => ['name' => 'Стандарт', 'code' => 'standart'],
-        'advanced' => ['name' => 'Расширеный', 'code' => 'advanced'],
+        'advanced' => ['name' => 'Расширенный', 'code' => 'advanced'],
         'vip' => ['name' => 'Премиум', 'code' => 'vip']
     ];
     

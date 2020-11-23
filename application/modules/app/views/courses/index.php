@@ -7,6 +7,7 @@
         <div class="course_cards">
             <?php foreach($items as $item): ?>
                 <div class="card">
+                    <a href="/courses/<?=$item['code']?>/" class="link"></a>
                     <div class="card_head">
                         <div class="header">Начало обучения</div>
                         <div class="date"><?=$item['start_date_formated']?></div>

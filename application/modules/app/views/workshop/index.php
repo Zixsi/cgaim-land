@@ -5,11 +5,10 @@
         <div class="block-title-course">Мастерская</div>
 
         <div class="course_cards">
-            <?php foreach($items as $item): ?>
+            <?php foreach($items as $item): ?>    
                 <div class="card">
+                    <a href="/workshop/<?=$item['code']?>/" class="link"></a>
                     <div class="card_head">
-                        <div class="header">Начало обучения</div>
-                        <div class="date"><?=$item['start_date_formated']?></div>
                         <?php if($item['note']): ?>
                             <span class="badge">
                                 <span class="badge_big_text"><?=$item['note'][0]?></span>
@@ -29,10 +28,6 @@
                             <div class="description"><?=$item['description']?></div>
                         </div>
                         <div class="info">
-                            <div class="start">
-                                <div class="header">Начало обучения</div>
-                                <div class="date"><?=$item['start_date_formated']?></div>
-                            </div>
                             <div class="instructor">
                                 <img src="<?=$instructors[$item['instructor']]['photo_small']?>" alt="">
                                 <div class="header">Автор курса</div>
