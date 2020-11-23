@@ -134,8 +134,12 @@
 </div>
 
 <div id="questions">
+    <div class="background"></div>
     <div class="content">
         <div class="block-title">Появились вопросы<span class="symbol">?</span></div>
+        <div class="page-center-btn">
+            <a href="javascript: void(0);" onclick="jivo_api.open(); return false;" class="btn btn-pink btn-xl">Задать вопрос</a>
+        </div>
     </div>
 </div>
 
@@ -281,6 +285,7 @@
 </div>
 
 <div id="knowledge">
+    <div class="background"></div>
     <div class="content">
         <div class="block-title">Где применять знания<span class="symbol">?</span></div>
         <div class="skills">

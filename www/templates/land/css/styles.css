@@ -2316,6 +2316,88 @@ body {
     line-height: 2rem;
 }
 
+#knowledge {
+    width: 1920px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 0px;
+    position: relative;
+    margin-bottom: 120px;
+}
+
+#knowledge .background {
+    position: absolute;
+    top: 185px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #16142a;
+}
+
+#knowledge .background:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 185px;
+    top: -155px;
+    left: 0px;
+    right: 0px;
+    background: url('../img/block11-top.png') no-repeat center center;
+}
+
+#knowledge .background:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 104px;
+    bottom: -103px;
+    left: 0px;
+    right: 0px;
+    background: url("../img/block7-bottom.png") no-repeat top center;
+}
+
+
+
+#questions {
+    width: 1920px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 0px;
+    position: relative;
+    margin-bottom: 120px;
+}
+
+#questions .background {
+    position: absolute;
+    top: 185px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #16142a;
+}
+
+#questions .background:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 185px;
+    top: -155px;
+    left: 0px;
+    right: 0px;
+    background: url('../img/block11-top.png') no-repeat center center;
+}
+
+#questions .background:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 104px;
+    bottom: -103px;
+    left: 0px;
+    right: 0px;
+    background: url("../img/block7-bottom.png") no-repeat top center;
+}
+
 /*============================================================================*/
 
 #course_page {
