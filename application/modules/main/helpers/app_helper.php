@@ -232,12 +232,12 @@ function getPayCourse($code, $date, $type, $full = true)
     $ci = & get_instance();
     
     return sprintf(
-        '%s/external/pay/?code=%s&group=%s&type=%s&period=$s',
+        '%s/external/pay/?code=%s&group=%s&type=%s&period=%s',
         getSchoolUrl(),
         $code,
         date('d.m.Y', strtotime($date)),
         $type,
-        ($full?'full':'month')
+        (($full)?'full':'month')
     );
 }
 
