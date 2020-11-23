@@ -44,7 +44,7 @@
                     <a href="/#contacts">Контакты</a>
                 </li>
             </ul>
-            <a href="#" class="btn btn-pink login-btn">Войти</a>
+            <a href="<?=getSchoolUrl()?>" class="btn btn-pink login-btn" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Войти</a>
         </div>
     </div>
     

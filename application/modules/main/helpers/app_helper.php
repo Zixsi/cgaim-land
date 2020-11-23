@@ -203,3 +203,48 @@ function getStringNumber($value)
     
     return isset($map[(int) $value])?$map[(int) $value]:'???';
 }
+
+
+/**
+ * @param string $code
+ * @return string
+ */
+function getPayWorkshop($code)
+{
+    $ci = & get_instance();
+    
+    return sprintf(
+        '%s/external/pay/?code=%s&target=workshop',
+        getSchoolUrl(),
+        $code
+    );
+}
+
+/**
+ * @param string $code
+ * @param string $date
+ * @param string $type
+ * @param bool $full
+ * @return string
+ */
+function getPayCourse($code, $date, $type, $full = true)
+{
+    $ci = & get_instance();
+    
+    return sprintf(
+        '%s/external/pay/?code=%s&group=%s&type=%s&period=$s',
+        getSchoolUrl(),
+        $code,
+        date('d.m.Y', strtotime($date)),
+        $type,
+        ($full?'full':'month')
+    );
+}
+
+/**
+ * @return string
+ */
+function getSchoolUrl()
+{
+    return get_instance()->config->item('school_url');
+}

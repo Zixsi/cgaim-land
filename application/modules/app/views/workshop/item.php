@@ -11,7 +11,7 @@
                 <?php endif; ?>
             </div>
             <div class="buttons">
-                <a href="#" class="btn btn-pink btn-xl">Купить</a>
+                <a href="<?=getPayWorkshop($item['code'])?>" class="btn btn-pink btn-xl" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</a>
                 <?php if(empty($item['note']) === false): ?>
                     <span id="header-classroom">
                         <?= var_dump($item['note'])?>
@@ -92,9 +92,9 @@
                 <div class="fio"><?=$instructor['first_name']?> <br><?=$instructor['last_name']?></div>
             </div>
             <div class="quote"><?= htmlspecialchars_decode($instructor['quote'])?></div>
-            <div class="text-center">
+<!--            <div class="text-center">
                 <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>

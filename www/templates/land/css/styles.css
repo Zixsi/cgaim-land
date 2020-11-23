@@ -2711,7 +2711,7 @@ body {
 
 .course_cards.mobile .card_content .img {
     z-index: 0;
-    bottom: 75px;
+    bottom: 30px;
     right: 0px;
     display: flex;
     justify-content: center;
