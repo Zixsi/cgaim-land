@@ -7,6 +7,7 @@
     <title>CGAim</title>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,800;0,900;1,300;1,400;1,500;1,600;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/land/vendor/tiny-slider/tiny-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/land/css/styles.css?v=<?=VERSION?>">
     <?php require_once 'inc_analytics.php';?>
 </head>
@@ -77,7 +78,9 @@
         </div>
     </div>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script type="text/javascript" src="<?=TEMPLATE_DIR?>/land/vendor/tiny-slider/tiny-slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script type="text/javascript" src="<?=TEMPLATE_DIR?>/land/js/main.js?v=<?=VERSION?>"></script>
 </body>
 </html>

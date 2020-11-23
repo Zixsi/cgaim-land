@@ -6,14 +6,17 @@
             
             <?php if(empty($item['video']) === false): ?>
                 <div class="interactive">
-                    <span class="round"></span>
-                    <span class="round"></span>
-                    <a href="<?=$item['video']?>" target="_blank">
+                    <span class="round round-1"></span>
+                    <span class="round round-2"></span>
+                    <a href="#course-video-modal" rel="modal:open">
                         <button type="button" class="btn btn-pink btn-round btn-play">
                             <span></span>
                         </button>
                     </a>
                     <span class="text">Просмотрите <br>Промо - видео</span>
+                </div>
+                <div id="course-video-modal" class="modal video-modal">
+                    <iframe width="560" height="315" src="<?=$item['video']?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             <?php endif; ?>
             
@@ -112,12 +115,18 @@
             <div class="interactive">
                 <?php if(empty($instructor['video_link']) === false): ?>
                     <div class="demo">
+                        <span class="round round-1"></span>
+                        <span class="round round-2"></span>
                         <button type="button" class="btn btn-pink btn-round btn-play">
                             <span></span>
                         </button>
                         <span class="arrow"></span>
                         <span class="text">Деморил<br>преподавателя</span>
-                        <a href="<?=$instructor['video_link']?>" target="_blank"></a>
+                        <a href="#instructor-video-modal" rel="modal:open"></a>
+                    </div>
+                    
+                    <div id="instructor-video-modal" class="modal video-modal">
+                        <iframe width="560" height="315" src="<?=$instructor['video_link']?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 <?php endif;?>
                 <div class="fio"><?=$instructor['first_name']?> <br><?=$instructor['last_name']?></div>
