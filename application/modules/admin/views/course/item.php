@@ -497,6 +497,28 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
+                                 <div class="form-group col-12">
+                                    <label>Месяцы</label>
+                                    <input 
+                                        type="text" 
+                                        name="program[module_4_months]" 
+                                        class="form-control" 
+                                        value="<?=($item['program']['module_4_months'] ?? 0)?>"
+                                    >
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>Тип</label>
+                                    <select class="form-control" name="program[module_4_type]">
+                                        <option 
+                                            value="MONTH" 
+                                            <?=((($item['program']['module_4_type'] ?? 'MONTH') === 'MONTH')?'selected="true"':'')?>
+                                        >Месяц</option>
+                                        <option 
+                                            value="SEMESTER" 
+                                            <?=((($item['program']['module_4_type'] ?? 'MONTH') === 'SEMESTER')?'selected="true"':'')?>
+                                        >Cеместр</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         

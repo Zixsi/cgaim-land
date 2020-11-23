@@ -3,7 +3,13 @@
         <div class="content-wrap">
             <h1 class="title"><?=$item['title']?></h1>
             <div class="description"><?=$item['description']?></div>
-            
+            <div class="price">
+                <?php if((int) $item['packages']['standart']['price'] > 0): ?>
+                    <?=number_format($item['packages']['standart']['price'], 0, '.', ' ')?> Р
+                <?php else: ?>
+                    FREE
+                <?php endif; ?>
+            </div>
             <div class="buttons">
                 <a href="#" class="btn btn-pink btn-xl">Купить</a>
                 <?php if(empty($item['note']) === false): ?>
@@ -73,7 +79,7 @@
                 </div>
             </div>
             <div class="interactive">
-                <?php if(empty($instructor['video_link'])): ?>
+                <?php if(empty($instructor['video_link']) === false): ?>
                     <div class="demo">
                         <button type="button" class="btn btn-pink btn-round btn-play">
                             <span></span>

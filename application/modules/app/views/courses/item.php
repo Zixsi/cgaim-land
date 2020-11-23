@@ -110,7 +110,7 @@
                 </div>
             </div>
             <div class="interactive">
-                <?php if(empty($instructor['video_link'])): ?>
+                <?php if(empty($instructor['video_link']) === false): ?>
                     <div class="demo">
                         <button type="button" class="btn btn-pink btn-round btn-play">
                             <span></span>
@@ -248,12 +248,12 @@
         <div class="module-block module4">
             <div class="background"></div>
             <span class="figure figure2-6"></span>
-            <div class="block-title-2">Практическая часть</div>
+            <div class="block-title-2">Практическая часть: <?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
             <div class="box">
                 <div class="box-content">
                     <div class="buttons" id="lectures-slider-nav">
                         <?php foreach($lectures as $row): ?>
-                        <button type="button" class="btn btn-pink btn-md btn-exo"><?= getStringNumber($row['month'])?> месяц</button>   
+                        <button type="button" class="btn btn-pink btn-md btn-exo"><?= getStringNumber($row['month'])?> <?=(($item['program']['module_4_type'] ?? 'MONTH') === 'MONTH')?'месяц':'семестр'?></button>   
                         <?php endforeach;?>
                     </div>
                     <div class="lectures-block" id="lectures-slider">
@@ -429,7 +429,7 @@
                 <div class="card-content">
                     <div class="title">Стандарт</div>
                     <div class="price"><?=number_format($item['packages']['standart']['partial_price'], 0, '.', ' ')?> Р</div>
-                    <div class="period">помесячно <br><?=count($lectures)?> месяца</div>
+                    <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
                     <?php if((int) $item['packages']['standart']['available'] === 1): ?>
                         <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
                     <?php endif;?>
@@ -439,7 +439,7 @@
                 <div class="card-content">
                     <div class="title">Расширеный</div>
                     <div class="price"><?=number_format($item['packages']['advanced']['partial_price'], 0, '.', ' ')?> Р</div>
-                    <div class="period">помесячно <br><?=count($lectures)?> месяца</div>
+                    <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
                     <?php if((int) $item['packages']['advanced']['available'] === 1): ?>
                         <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
                     <?php endif;?>
@@ -449,7 +449,7 @@
                 <div class="card-content">
                     <div class="title">Премиум</div>
                     <div class="price"><?=number_format($item['packages']['vip']['partial_price'], 0, '.', ' ')?> Р</div>
-                    <div class="period">помесячно <br><?=count($lectures)?> месяца</div>
+                    <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
                     <?php if((int) $item['packages']['vip']['available'] === 1): ?>
                         <a href="#" class="btn btn-pink btn-md btn-exo">Записаться на курс</a>
                     <?php endif;?>

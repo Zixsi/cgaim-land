@@ -95,6 +95,16 @@ class Program implements \JsonSerializable
     private $module4Apps = [];
     
     /**
+     * @var int
+     */
+    private $module4Months = 0;
+    
+    /**
+     * @var string
+     */
+    private $module4Type = 'MONTH';
+    
+    /**
      * @param array $data
      */
     public function __construct($data = [])
@@ -325,6 +335,28 @@ class Program implements \JsonSerializable
     }
     
     /**
+     * @param int $value
+     * @return $this
+     */
+    public function setModule4Months($value)
+    {
+        $this->module4Months = (int) $value;
+        
+        return $this;
+    }
+    
+    /**
+     * @param string $value
+     * @return $this
+     */
+    public function setModule4Type($value)
+    {
+        $this->module4Type = $value;
+        
+        return $this;
+    }
+    
+    /**
      * @return array
      */
     public function toArray()
@@ -347,7 +379,9 @@ class Program implements \JsonSerializable
             'module_3_description' => $this->module3Description,
             'module_3_skills' => $this->module3Skills,
             'module_3_skills_description' => $this->module3SkillsDescription,
-            'module_4_apps' => $this->module4Apps
+            'module_4_apps' => $this->module4Apps,
+            'module_4_months' => $this->module4Months,
+            'module_4_type' => $this->module4Type,
         ];
     }
     

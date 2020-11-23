@@ -589,6 +589,11 @@ body {
     top: 50px;
 }
 
+#header .price {
+    font-size: 2.7rem;
+    margin-bottom: 25px;
+}
+
 #header-classroom {
     background: url('../img/dashed-class.png') no-repeat center center;
     display: flex;
