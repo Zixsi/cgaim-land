@@ -39,7 +39,7 @@
                                         <span class="mdi mdi-information-outline" title="" style="font-size: 16px; cursor: pointer;"
                                             data-toggle="tooltip" 
                                             data-placement="bottom" 
-                                            data-original-title="Расширение jpg, jpeg. Разрешение 1052x2160. Размер не более 1мб."
+                                            data-original-title="Расширение jpg, jpeg. Разрешение 1920x1080. Размер не более 1мб."
                                         ></span>
                                     </label>
                                     <input type="file" name="img" class="file-upload-default">

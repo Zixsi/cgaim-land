@@ -1,5 +1,6 @@
 <div style="margin-top: 100px;">
 	<div class="content">
+                <div style="text-align: right">15.01.2020</div>
 		<h3>Политика конфиденциальности</h3>
 
 		<p>Общие положения</p>
