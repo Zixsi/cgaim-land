@@ -161,3 +161,13 @@ $config['review_img'] = [
     'encrypt_name' => true,
     'remove_spaces' => true
 ];
+
+$config['works_img'] = [
+    'upload_path' => UPLOADS_PATH,
+    'allowed_types' => 'jpg|jpeg',
+    'max_size' => 1024,
+    'max_width' => 1920,
+    'max_height' => 1080,
+    'encrypt_name' => true,
+    'remove_spaces' => true
+];

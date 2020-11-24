@@ -313,6 +313,39 @@
 
     </div>
 </div>
+
+<div id="examples">
+    <div class="content">
+        <div class="block-title">Работы студентов</div>
+        <div id="works-slider">
+            <?php foreach($works as $row): ?>
+                <div class="item">
+                    <div class="item-content">
+                        <?php if($row['type'] === 'IMG'): ?>
+                            <img src="<?=$row['source']?>" alt="">
+                        <?php else: ?>
+                            <iframe width="100%" height="600" src="<?=$row['source']?>?enablejsapi=1&version=3" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <?php endif;?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="works-slider-controls">
+            <div id="works-slider-nav" class="slider-dot-nav">
+                <?php foreach($works as $row): ?>
+                    <button type="button" class="btn"></button>
+                <?php endforeach; ?>
+            </div>
+            <div id="works-slider-btns">
+                <button class="btn btn-pink btn-round btn-slider-nav prev" id="works-prev-btn" data-controls="prev"><span></span></button>
+                <button class="btn btn-pink btn-round btn-slider-nav next" id="works-next-btn" data-controls="next"><span></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div id="training">
     <div class="content">
         <div class="block-title">Как проходит обучение</div>

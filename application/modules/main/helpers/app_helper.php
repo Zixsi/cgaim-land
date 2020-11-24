@@ -248,3 +248,29 @@ function getSchoolUrl()
 {
     return get_instance()->config->item('school_url');
 }
+
+/**
+ * @param array $item
+ * @return string
+ */
+function getMetaKeywords($item = [])
+{
+    if (isset($item['page_keywords']) && empty($item['page_keywords']) === false) {
+        return $item['page_keywords'];
+    }
+    
+    return META_KEYWORDS;
+}
+
+/**
+ * @param array $item
+ * @return string
+ */
+function getMetaDescription($item = [])
+{
+    if (isset($item['page_description']) && empty($item['page_description']) === false) {
+        return $item['page_description'];
+    }
+    
+    return META_DESCRIPTION;
+}

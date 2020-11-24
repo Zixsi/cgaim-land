@@ -20,6 +20,8 @@ use App\libraries\Entity;
  * @property string $forWhom
  * @property array $program
  * @property string $bonuses
+ * @property string $pageDescription
+ * @property string $pageKeywords
  */
 class WorkshopEntity extends Entity
 {
@@ -43,7 +45,9 @@ class WorkshopEntity extends Entity
         'imgSmall' => null,
         'forWhom' => '',
         'program' => null,
-        'bonuses' => ''
+        'bonuses' => '',
+        'pageDescription' => null,
+        'pageKeywords' => null,
     ];
     
     /**
@@ -66,7 +70,9 @@ class WorkshopEntity extends Entity
         'imgSmall' => 'string',
         'forWhom' => 'string',
         'program' => 'json-array',
-        'bonuses' => 'string'
+        'bonuses' => 'string',
+        'pageDescription' => 'string',
+        'pageKeywords' => 'string'
     ];
     
     
@@ -78,7 +84,9 @@ class WorkshopEntity extends Entity
         'start_date_disable' => 'startDateDisable',
         'img_big' => 'imgBig',
         'img_small' => 'imgSmall',
-        'for_whom' => 'forWhom'
+        'for_whom' => 'forWhom',
+        'page_description' => 'pageDescription',
+        'page_keywords' => 'pageKeywords'
     ];
     
     /**

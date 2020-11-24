@@ -20,6 +20,8 @@ use App\libraries\Entity;
  * @property array $forWhom
  * @property array $program
  * @property array $bonuses
+ * @property string $pageDescription
+ * @property string $pageKeywords
  */
 class CourseEntity extends Entity
 {
@@ -43,7 +45,9 @@ class CourseEntity extends Entity
         'imgSmall' => null,
         'forWhom' => null,
         'program' => null,
-        'bonuses' => null
+        'bonuses' => null,
+        'pageDescription' => null,
+        'pageKeywords' => null,
     ];
     
     /**
@@ -66,7 +70,9 @@ class CourseEntity extends Entity
         'imgSmall' => 'string',
         'forWhom' => 'json-array',
         'program' => 'json-array',
-        'bonuses' => 'json-array'
+        'bonuses' => 'json-array',
+        'pageDescription' => 'string',
+        'pageKeywords' => 'string'
     ];
     
     
@@ -78,7 +84,9 @@ class CourseEntity extends Entity
         'start_date_disable' => 'startDateDisable',
         'img_big' => 'imgBig',
         'img_small' => 'imgSmall',
-        'for_whom' => 'forWhom'
+        'for_whom' => 'forWhom',
+        'page_description' => 'pageDescription',
+        'page_keywords' => 'pageKeywords'
     ];
     
     /**

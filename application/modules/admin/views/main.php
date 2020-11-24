@@ -113,6 +113,12 @@ $CI = &get_instance();
                             <span class="menu-title">Отзывы</span>
                         </a>
                     </li>
+                    <li class="nav-item <?=is_active_menu_item('works')?'active':''?>">
+                        <a class="nav-link" href="/admin/works/">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Работы студентов</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="main-panel">

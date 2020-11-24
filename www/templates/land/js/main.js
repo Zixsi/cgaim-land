@@ -181,6 +181,38 @@ function handleSliders() {
         }
     }
     
+    if (document.getElementById('works-slider') !== null) { 
+        var worksSliderElement = document.getElementById('works-slider');
+        
+        let worksSlider = tns({
+            "container": "#works-slider",
+            "autoWidth": true,
+            "gutter": 30,
+            "items": 1,
+            "center": true,
+            "slideBy": 1,
+            "mouseDrag": false,
+            "swipeAngle": false,
+            "nav": true,
+            "navContainer": "#works-slider-nav",
+            "speed": 400,
+            "prevButton": document.getElementById('works-prev-btn'),
+            "nextButton": document.getElementById('works-next-btn'),
+        });
+        
+//        changeWorksSlide();
+        worksSlider.events.on('indexChanged', () => {changeWorksSlide();});
+//        worksSlider.events.on('transitionEnd', () => {changeWorksSlide();});
+//        
+        function changeWorksSlide()
+        {
+            let list = worksSliderElement.querySelectorAll('.tns-slide-active');
+            
+            list.forEach((e, i) => {
+                toggleYoutubeVideo(e);
+            });
+        }
+    }
 }
 
 function handleAccordion() {

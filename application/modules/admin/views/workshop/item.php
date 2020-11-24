@@ -156,6 +156,16 @@
                             <textarea name="purpose" class="form-control" id="editor1" rows="10"><?= htmlspecialchars_decode($item['purpose'] ?? '')?></textarea>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label>Meta description</label>
+                            <textarea name="page_description" class="form-control" rows="3"><?=($item['page_description'] ?? '')?></textarea>
+                        </div>
+                        <div class="form-group col-6">
+                            <label>Meta keywords</label>
+                            <textarea name="page_keywords" class="form-control" rows="3"><?=($item['page_keywords'] ?? '')?></textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
             

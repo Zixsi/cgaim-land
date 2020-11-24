@@ -9,6 +9,7 @@ use App\services\instructor\Instructor;
 use App\services\lecture\Lecture;
 use App\services\review\Review;
 use App\services\skill\Skill;
+use App\services\works\Works;
 
 class CourseController extends APP_Controller
 {
@@ -42,7 +43,8 @@ class CourseController extends APP_Controller
             'moduleInfoBlock' => Block::get()->getModel()->getById(($item['program']['module_1_info'] ?? 0)),
             'courses' => Course::get()->getOther(3, $item['id']),
             'instructors' => Instructor::get()->getModel()->getListMap(),
-            'reviews' => Review::get()->getModel()->getListByCourse($item['id'])
+            'reviews' => Review::get()->getModel()->getListByCourse($item['id']),
+            'works' => Works::get()->getModel()->getListByCourse($item['id'])
         ];
         
 //        debug($data['moduleInfoBlock']); die();

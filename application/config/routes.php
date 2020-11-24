@@ -60,3 +60,9 @@ $route['admin/review/(:num)'] = 'admin/ReviewController/index/$1';
 $route['admin/review/add'] = 'admin/ReviewController/add';
 $route['admin/review/add/(:num)'] = 'admin/ReviewController/add/$1';
 $route['admin/review/edit/(:num)'] = 'admin/ReviewController/edit/$1';
+
+$route['admin/works'] = 'admin/WorksController/index';
+$route['admin/works/(:num)'] = 'admin/WorksController/index/$1';
+$route['admin/works/add'] = 'admin/WorksController/add';
+$route['admin/works/add/(:num)'] = 'admin/WorksController/add/$1';
+$route['admin/works/edit/(:num)'] = 'admin/WorksController/edit/$1';
