@@ -314,6 +314,7 @@
     </div>
 </div>
 
+<?php if (count($works)): ?>
 <div id="examples">
     <div class="content">
         <div class="block-title">Работы студентов</div>
@@ -344,7 +345,7 @@
         </div>
     </div>
 </div>
-
+<?php endif;?>
 
 <div id="training">
     <div class="content">
