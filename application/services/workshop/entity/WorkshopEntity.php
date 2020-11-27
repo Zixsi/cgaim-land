@@ -6,6 +6,7 @@ use App\libraries\Entity;
 
 /**
  * @property int $id
+ * @property int $sort
  * @property string $title
  * @property string $type
  * @property string $code
@@ -30,6 +31,7 @@ class WorkshopEntity extends Entity
      */
     protected $attributes = [
         'id' => 0,
+        'sort' => 500,
         'title' => null,
         'code' => null,
         'type' => 'COURSE',
@@ -55,6 +57,7 @@ class WorkshopEntity extends Entity
      */
     protected $casts = [
         'id' => 'int',
+        'sort' => 'int',
         'title' => 'string',
         'type' => 'string',
         'code' => 'string',

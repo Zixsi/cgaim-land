@@ -105,6 +105,7 @@ class WorkshopModel extends \APP_Model
                 type = 'WORKSHOP'
                 AND published = 1
             ORDER BY 
+                sort DESC, 
                 id DESC
             LIMIT %d", 
             self::TABLE,

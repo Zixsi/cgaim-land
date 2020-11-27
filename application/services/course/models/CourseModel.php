@@ -105,6 +105,7 @@ class CourseModel extends \APP_Model
                 type = 'COURSE'
                 AND published = 1
             ORDER BY 
+                sort DESC, 
                 id DESC
             LIMIT %d", 
             self::TABLE,

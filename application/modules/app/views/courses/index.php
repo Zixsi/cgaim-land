@@ -11,7 +11,7 @@
                     <div class="card_head">
                         <div class="header">Начало обучения</div>
                         <div class="date"><?=$item['start_date_formated']?></div>
-                        <?php if($item['note']): ?>
+                        <?php if($item['note'] && empty($item['note'][0]) === false): ?>
                             <span class="badge">
                                 <span class="badge_big_text"><?=$item['note'][0]?></span>
                                 <?php if(empty($item['note'][1]) === false): ?>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="card_footer">
                         <a href="/courses/<?=$item['code']?>/" class="btn btn-pink btn-md">Подробнее</a>
-                        <?php if($item['note']): ?>
+                        <?php if($item['note'] && empty($item['note'][0]) === false): ?>
                             <span class="badge">
                                 <span class="badge_big_text"><?=$item['note'][0]?></span>
                                 <?php if(empty($item['note'][1]) === false): ?>

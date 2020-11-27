@@ -74,7 +74,11 @@
                             <label>Название <i class="req-field">*</i></label>
                             <input type="text" name="title" class="form-control" value="<?=($item['title'] ?? '')?>">
                         </div>
-                        <div class="form-group col-6">
+                        <div class="form-group col-2">
+                            <label>Сортировка</label>
+                            <input type="number" name="sort" min="0" max="65535" step="1" class="form-control" value="<?=($item['sort'] ?? 500)?>">
+                        </div>
+                        <div class="form-group col-4">
                             <label>
                                 Код <i class="req-field">*</i>
                                 <span 

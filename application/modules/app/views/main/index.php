@@ -35,7 +35,7 @@
                     <div class="card_head">
                         <div class="header">Начало обучения</div>
                         <div class="date"><?=$row['start_date_formated']?></div>
-                        <?php if($row['note']): ?>
+                        <?php if($row['note'] && empty($row['note'][0]) === false): ?>
                             <span class="badge">
                                 <span class="badge_big_text"><?=$row['note'][0]?></span>
                                 <?php if(empty($row['note'][1]) === false): ?>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="card_footer">
                         <a href="/courses/<?=$row['code']?>/" class="btn btn-pink btn-md">Подробнее</a>
-                        <?php if($row['note']): ?>
+                        <?php if($row['note'] && empty($row['note'][0]) === false): ?>
                             <span class="badge">
                                 <span class="badge_big_text"><?=$row['note'][0]?></span>
                                 <?php if(empty($row['note'][1]) === false): ?>
@@ -188,7 +188,7 @@
                 <div class="card">
                     <a href="/workshop/<?=$row['code']?>/" class="link"></a>
                     <div class="card_head">
-                        <?php if($row['note']): ?>
+                        <?php if($row['note'] && empty($row['note'][0]) === false): ?>
                             <span class="badge">
                                 <span class="badge_big_text"><?=$row['note'][0]?></span>
                                 <?php if(empty($row['note'][1]) === false): ?>
@@ -216,7 +216,7 @@
                     </div>
                     <div class="card_footer">
                         <a href="/workshop/<?=$row['code']?>/" class="btn btn-pink btn-md">Подробнее</a>
-                        <?php if($row['note']): ?>
+                        <?php if($row['note'] && empty($row['note'][0]) === false): ?>
                             <span class="badge">
                                 <span class="badge_big_text"><?=$row['note'][0]?></span>
                                 <?php if(empty($row['note'][1]) === false): ?>
@@ -317,7 +317,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="img-wrap">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/s1.png" alt="">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/sm1.png" alt="" width="150" height="150">
                     </div>
                     <div class="description-wrap">
                         <div class="description">— Мультипликация<br>Разработай дизайн персонажа и создай 3D- анимацию для собственного ролика или работай в анимационной студии</div>
@@ -325,7 +325,7 @@
                 </div>
                 <div class="card">
                     <div class="img-wrap">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/s2.png" alt="">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/sm2.png" alt="" width="130" height="130">
                     </div>
                     <div class="description-wrap">
                         <div class="description">— YouTube<br>Используй навыки для создания дизайна канала, интегрируй 3D в видео и освежи взгляд на подачу материала.</div>
@@ -333,7 +333,7 @@
                 </div>
                 <div class="card">
                     <div class="img-wrap">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/s3.png" alt="">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/sm3.png" alt="" width="130" height="130">
                     </div>
                     <div class="description-wrap">
                         <div class="description">— Реклама<br>Создавай персонажей и визуализируй собственные решения для рекламы продуктов и брендов</div>
@@ -341,7 +341,7 @@
                 </div>
                 <div class="card">
                     <div class="img-wrap">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/s4.png" alt="">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/sm4.png" alt="" width="130" height="130">
                     </div>
                     <div class="description-wrap">
                         <div class="description">— Веб-дизайн<br>Придумывай макеты сайтов, не трать время на поиск и адаптацию чужой графики</div>
@@ -349,7 +349,7 @@
                 </div>
                 <div class="card">
                     <div class="img-wrap">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/s1.png" alt="">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/sm5.png" alt="" width="170" height="170">
                     </div>
                     <div class="description-wrap">
                         <div class="description">— Кинематограф<br>Работайте со спецэффектами и сложными 3D- визуализациями, которые станут частью видеоролика или фильма</div>
@@ -357,7 +357,7 @@
                 </div>
                 <div class="card">
                     <div class="img-wrap">
-                        <img src="<?=TEMPLATE_DIR?>/land/images/s2.png" alt="">
+                        <img src="<?=TEMPLATE_DIR?>/land/images/sm6.png" alt="" width="130" height="130">
                     </div>
                     <div class="description-wrap">
                         <div class="description">— Разработка игр<br>Создавай окружение, персонажей и анимацию для игр от минималистичных до гиперреалистичных RPG</div>

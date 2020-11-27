@@ -12,9 +12,8 @@
             </div>
             <div class="buttons">
                 <a href="<?=getPayWorkshop($item['code'])?>" class="btn btn-pink btn-xl" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</a>
-                <?php if(empty($item['note']) === false): ?>
+                <?php if($item['note'] && empty($item['note'][0]) === false): ?>
                     <span id="header-classroom">
-                        <?= var_dump($item['note'])?>
                         <span class="number"><?=$item['note'][0]?></span>
                         <?php if(empty($item['note'][1]) === false): ?>
                             <span class="text"><?=$item['note'][1]?></span>

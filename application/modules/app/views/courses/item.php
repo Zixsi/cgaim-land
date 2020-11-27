@@ -27,7 +27,7 @@
                     <span class="date">Старт <?=$item['start_date_formated']?></span>
                 <?php endif; ?>
                     
-                <?php if($item['note']): ?>
+                <?php if($item['note'] && empty($item['note'][0]) === false): ?>
                     <span id="header-classroom">
                         <span class="number"><?=$item['note'][0]?></span>
                         <?php if(empty($item['note'][1]) === false): ?>

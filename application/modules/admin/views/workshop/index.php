@@ -17,6 +17,7 @@
                             <tr>
                                 <th width="70">Id</th>
                                 <th>Название</th>
+                                <th width="100">Сортировка</th>
                                 <th width="70">Статус</th>
                                 <th width="70" class="text-right">Действия</th>
                             </tr>
@@ -29,6 +30,7 @@
                                     <td>
                                         <a href="./edit/<?= $item['id'] ?>"><?=$item['title']?></a>
                                     </td>
+                                    <td><?=$item['sort']?></td>
                                     <td>
                                         <?php if((int) $item['published'] === 0): ?>
                                             <a href="./publish/<?= $item['id'] ?>/1" class="badge badge-danger">Неопубликован</a>
