@@ -11,8 +11,8 @@ class MainController extends APP_Controller
     public function index()
     {
         $data = [
-            'courses' => Course::get()->getListPublished(3),
-            'workshop' => Workshop::get()->getListPublished(3),
+            'courses' => Course::get()->getListPublishedRandom(3),
+            'workshop' => Workshop::get()->getListPublishedRandom(3),
             'instructors' => Instructor::get()->getModel()->getListMap(),
             'reviews' => Review::get()->getModel()->getListByCourse(0),
             'works' => Works::get()->getModel()->getListByCourse(0),

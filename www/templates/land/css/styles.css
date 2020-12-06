@@ -1365,6 +1365,7 @@ body {
 #program .module-block.module4 .box-content .buttons .btn {
     margin: 0px 13px;
     min-width: 210px;
+    margin-bottom: 10px;
 }
 
 #program .module-block.module4 .lectures-block {

@@ -121,6 +121,21 @@ class Workshop
     
     /**
      * @param int $limit
+     * @return array
+     */
+    public function getListPublishedRandom($limit = 10)
+    {
+        $items = $this->getModel()->getListPublishedRandom($limit);
+        
+        foreach ($items as &$row) {
+            $row = $this->prepareItem($row);
+        }
+        
+        return $items;
+    }
+    
+    /**
+     * @param int $limit
      * @param int $ignore
      * @return array
      */
@@ -181,6 +196,11 @@ class Workshop
             }
             
             $item['note'] = $note;
+        }
+        
+        if (isset($item['title'])) {            
+            $item['title_splited'] = str_replace('#', '<br>', $item['title']);
+            $item['title'] = str_replace('#', '', $item['title']);
         }
         
         return $item;

@@ -119,6 +119,44 @@ class WorkshopModel extends \APP_Model
 
         return [];
     }
+    
+    /**
+     * @param int $limit
+     * @return array
+     */
+    public function getListPublishedRandom($limit)
+    {
+        $sql = sprintf(
+            "SELECT 
+                id,
+                title,
+                code,
+                start_date,
+                start_date_disable,
+                instructor,
+                note,
+                description,
+                img_big,
+                img_small
+            FROM 
+                %s 
+            WHERE 
+                type = 'WORKSHOP'
+                AND published = 1
+            ORDER BY 
+                RAND() 
+            LIMIT %d", 
+            self::TABLE,
+            $limit
+        );
+        $res = $this->query($sql);
+        
+        if (($row = $res->result_array())) {
+            return $row;
+        }
+
+        return [];
+    }
 
     /**
      * @param int $limit

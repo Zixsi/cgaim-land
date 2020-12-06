@@ -1,7 +1,7 @@
 <div id="header" class="workshop">
     <div class="content">
         <div class="content-wrap">
-            <h1 class="title"><?=$item['title']?></h1>
+            <h1 class="title"><?=$item['title_splited']?></h1>
             <div class="description"><?=$item['description']?></div>
             <div class="price">
                 <?php if((int) $item['packages']['standart']['price'] > 0): ?>
@@ -80,15 +80,21 @@
             <div class="interactive">
                 <?php if(empty($instructor['video_link']) === false): ?>
                     <div class="demo">
+                        <span class="round round-1"></span>
+                        <span class="round round-2"></span>
                         <button type="button" class="btn btn-pink btn-round btn-play">
                             <span></span>
                         </button>
                         <span class="arrow"></span>
                         <span class="text">Деморил<br>преподавателя</span>
-                        <a href="<?=$instructor['video_link']?>" target="_blank"></a>
+                        <a href="#instructor-video-modal" rel="modal:open"></a>
+                    </div>
+                    
+                    <div id="instructor-video-modal" class="modal video-modal">
+                        <iframe width="560" height="315" src="<?=$instructor['video_link']?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 <?php endif;?>
-                <div class="fio"><?=$instructor['first_name']?> <br><?=$instructor['last_name']?></div>
+                <!--<div class="fio"><?=$instructor['first_name']?> <br><?=$instructor['last_name']?></div>-->
             </div>
             <div class="quote"><?= htmlspecialchars_decode($instructor['quote'])?></div>
 <!--            <div class="text-center">
@@ -165,8 +171,6 @@
                 <div class="card">
                     <a href="/workshop/<?=$row['code']?>/" class="link"></a>
                     <div class="card_head">
-                        <div class="header">Начало обучения</div>
-                        <div class="date"><?=$row['start_date_formated']?></div>
                         <?php if($row['note']): ?>
                             <span class="badge">
                                 <span class="badge_big_text"><?=$row['note'][0]?></span>

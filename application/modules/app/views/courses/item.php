@@ -1,7 +1,7 @@
 <div id="header">
     <div class="content">
         <div class="content-wrap">
-            <h1 class="title"><?=$item['title']?></h1>
+            <h1 class="title"><?=$item['title_splited']?></h1>
             <div class="description"><?=$item['description']?></div>
             
             <?php if(empty($item['video']) === false): ?>
@@ -129,7 +129,7 @@
                         <iframe width="560" height="315" src="<?=$instructor['video_link']?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 <?php endif;?>
-                <div class="fio"><?=$instructor['first_name']?> <br><?=$instructor['last_name']?></div>
+                <!--<div class="fio"><?=$instructor['first_name']?> <br><?=$instructor['last_name']?></div>-->
             </div>
             <div class="quote"><?= htmlspecialchars_decode($instructor['quote'])?></div>
             <div class="text-center">
@@ -277,7 +277,11 @@
                                 <div class="list">
                                     <?php foreach($row['items'] as $lectureKey => $lectureRow):?>
                                         <div class="row">
-                                            <div class="title">Лекция <?= makeLectureNumber(1, ($lectureNumber++))?>: <span><?=$lectureRow['title']?></span></div> 
+                                            <div class="title">
+                                                <?=(($item['program']['module_4_type'] ?? 'MONTH') === 'MONTH')?'Лекция':'Месяц'?>
+                                                &nbsp;
+                                                <?= makeLectureNumber(1, ($lectureNumber++))?>: <span><?=$lectureRow['title']?></span>
+                                            </div> 
                                             <div class="text"><?=$lectureRow['description']?></div>
                                         </div>
                                     <?php endforeach; ?>
@@ -609,7 +613,7 @@
                     <div class="card_head">
                         <div class="header">Начало обучения</div>
                         <div class="date"><?=$row['start_date_formated']?></div>
-                        <?php if($row['note']): ?>
+                        <?php if($row['note'] && empty($row['note'][0]) === false): ?>
                             <span class="badge">
                                 <span class="badge_big_text"><?=$row['note'][0]?></span>
                                 <?php if(empty($row['note'][1]) === false): ?>
