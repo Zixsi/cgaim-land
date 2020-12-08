@@ -1,29 +1,60 @@
-<div id="course-block" class="list">
+<div id="course_page">
+    <div class="background"></div>
     <div class="content">
-        <div class="card-list">
-            <?if($courses):?>
-            <?foreach($courses as $course):?>
-            <div class="card-wrap">
+
+        <div class="block-title-course">Курсы</div>
+
+        <div class="course_cards">
+            <?php foreach($items as $item): ?>
                 <div class="card">
-                    <a href="/courses/<?= $course['code'] ?>"></a>
-                    <div class="card-body" style="background-image: url('<?= $course['img'] ?>');">
-                        <div class="info">
-                            <div class="title"><?= $course['name'] ?></div>
-                            <div class="description"><?= $course['description'] ?></div>
-                            <ul class="nav">
-                                <li><span><?= (int) $course['lectures_count'] ?></span>Недель <br>обучения</li>
-                                <li><span><?= ceil((int) $course['lectures_count'] * 3.5) ?></span>Часа <br>занятий</li>
-                                <li><span><?= (int) ($course['lectures_count'] * 2) ?></span>Насыщеных <br>задания</li>
-                            </ul>
+                    <a href="/courses/<?=$item['code']?>/" class="link"></a>
+                    <div class="card_head">
+                        <div class="header">Начало обучения</div>
+                        <div class="date"><?=$item['start_date_formated']?></div>
+                        <?php if($item['note'] && empty($item['note'][0]) === false): ?>
+                            <span class="badge">
+                                <span class="badge_big_text"><?=$item['note'][0]?></span>
+                                <?php if(empty($item['note'][1]) === false): ?>
+                                    <span class="badge_small_text"><?=$item['note'][1]?></span>
+                                <?php endif;?>
+                            </span>
+                        <?php endif; ?>
+                    </div>
+                    <div class="card_content">
+                        <div class="img">
+                            <img src="<?=$item['img_big']?>" alt="" class="img_big">
+                            <img src="<?=$item['img_small']?>" alt="" class="img_small">
                         </div>
-                        <div class="more">
-                            <a href="/courses/<?= $course['code'] ?>" class="btn btn-pink">Подробнее</a>
+                        <div class="text_wrap">
+                            <div class="title"><?=$item['title']?></div>
+                            <div class="description"><?=$item['description']?></div>
+                        </div>
+                        <div class="info">
+                            <div class="start">
+                                <div class="header">Начало обучения</div>
+                                <div class="date"><?=$item['start_date_formated']?></div>
+                            </div>
+                            <div class="instructor">
+                                <img src="<?=$instructors[$item['instructor']]['photo_small']?>" alt="">
+                                <div class="header">Автор курса</div>
+                                <div class="fio"><?=$instructors[$item['instructor']]['first_name']?> <?=$instructors[$item['instructor']]['last_name']?></div>
+                            </div>     
                         </div>
                     </div>
+                    <div class="card_footer">
+                        <a href="/courses/<?=$item['code']?>/" class="btn btn-pink btn-md">Подробнее</a>
+                        <?php if($item['note'] && empty($item['note'][0]) === false): ?>
+                            <span class="badge">
+                                <span class="badge_big_text"><?=$item['note'][0]?></span>
+                                <?php if(empty($item['note'][1]) === false): ?>
+                                    <span class="badge_small_text"><?=$item['note'][1]?></span>
+                                <?php endif;?>
+                            </span>
+                        <?php endif; ?>
+                    </div>
                 </div>
-            </div>
-            <?endforeach;?>
-            <?endif;?>
+            <?php endforeach;?>
         </div>
+        
     </div>
 </div>

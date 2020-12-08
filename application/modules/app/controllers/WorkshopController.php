@@ -1,39 +1,52 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+use App\services\apps\Apps;
+use App\services\block\Block;
+use App\services\bonus\Bonus;
+use App\services\faq\Faq;
+use App\services\instructor\Instructor;
+use App\services\lecture\Lecture;
+use App\services\review\Review;
+use App\services\skill\Skill;
+use App\services\workshop\Workshop;
 
 class WorkshopController extends APP_Controller
 {
-	public function index()
-	{
-		$data = [];
-		$data['items'] = $this->workshop->getList(['status' => true]);
-		$data['page_header_title'] = 'Мастерская';
-		$data['page_header_text'] = 'В этом разделе коллекции видео, вебинары, референсы, для помощи в развитии ваших навыков.';
 
-		$this->load->layout = 'list';
-		$this->load->lview('workshop/index', $data);
-	}
+    public function index()
+    {
+        $data = [
+            'items' => Workshop::get()->getListPublished(1000),
+            'instructors' => Instructor::get()->getModel()->getListMap()
+        ];
+        
+        $this->load->lview('workshop/index', $data);
+    }
 
-	public function item($code)
-	{
-		$data = [];
-		if(empty($data['item'] = $this->workshop->getItemByCode($code)))
-			header('Location: ../');
+    public function item($code)
+    {
+        $item = Workshop::get()->getByCode($code);
+        
+        if (empty($item)) {
+            header('Location: /workshop/');
+        }
+        
+        $data = [
+            'item' => $item,
+            'instructor' => Instructor::get()->getItem($item['instructor']),
+            'skills' => Skill::get()->getModel()->getListMap(),
+            'apps' => Apps::get()->getModel()->getListMap(),
+            'bonuses' => Bonus::get()->getModel()->getListMap(),
+            'lectures' => Lecture::get()->getCourseLectures($item['id']),
+            'faq' => Faq::get()->getModel()->getListPublished(10),
+            'moduleInfoBlock' => Block::get()->getModel()->getById(($item['program']['module_1_info'] ?? 0)),
+            'courses' => Workshop::get()->getOther(3, $item['id']),
+            'instructors' => Instructor::get()->getModel()->getListMap(),
+            'reviews' => Review::get()->getModel()->getListByCourse($item['id'])
+        ];
+        
+//        debug($data['moduleInfoBlock']); die();
+        $this->load->lview('workshop/item', $data);
+    }
 
-		$data['pageMetaKeyword'] = ($data['item']['meta_keyword'] ?? '');
-		$data['pageMetaDescription'] = ($data['item']['meta_description'] ?? '');
-
-		$data['schoolUrl'] = $this->config->item('school_url');
-		$data['teacher'] = $this->UserModel->getByID($data['item']['teacher']);
-		$data['videos'] = [];
-		if ($data['item']['type'] === 'collection') {
-			$data['videos'] = $this->VideoModel->getList(['source_id' => $data['item']['id'], 'source_type' => 'workshop']);
-			$this->VideoHelper->prepareVideoList($data['videos']);
-			$data['videos'] = array_chunk($data['videos'], ceil(count($data['videos']) / 2));
-		}
-		
-		// debug($data['videos']); die();
-		$this->load->layout = 'item';
-		$this->load->lview('workshop/item', $data);
-	}
 }

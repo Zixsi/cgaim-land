@@ -1,0 +1,1 @@
+ALTER TABLE `courses` ADD `sort` SMALLINT UNSIGNED NOT NULL DEFAULT '500' AFTER `page_keywords`, ADD INDEX (`sort`);

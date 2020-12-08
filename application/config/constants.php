@@ -96,3 +96,9 @@ defined('DATE_FORMAT_DB_FULL') OR define('DATE_FORMAT_DB_FULL', 'Y-m-d H:i:s');
 defined('IMG_DEFAULT_300_300') OR define('IMG_DEFAULT_300_300', TEMPLATE_DIR.'/assets/img_default_300x300.jpg');
 defined('IMG_DEFAULT_300_200') OR define('IMG_DEFAULT_300_200', TEMPLATE_DIR.'/assets/img_default_300x200.jpg');
 defined('IMG_DEFAULT_16_9') OR define('IMG_DEFAULT_16_9', TEMPLATE_DIR.'/assets/img_default_16x9.jpg');
+
+defined('UPLOADS_PATH') OR define('UPLOADS_PATH', FCPATH . 'uploads/');
+defined('UPLOADS_PATH_PUBLIC') OR define('UPLOADS_PATH_PUBLIC', '/uploads/');
+
+defined('META_KEYWORDS') OR define('META_KEYWORDS', 'анимация, клуб аниматоров, аниматоры в россии, фриланс, анимационная студия, уроки по анимации, портфолио, персонаж, тайминг, блокинг, короткометражка, фильм, мульт, перекладка, 2D,3D, animator, animations, дорогов, школа анимации, референс, pixar, scream school, animation, blocking, animation mentor, maya, 3d max, key, character, rig, rigging, blender, setup, timing, movie, tooon, cartoon, anime, reference, short, showreel, demoreel, сообщество по анимации ищу аниматора, вакансии, флеш аниматор, работа аниматорам, фриланс, курсы режиссуры, школа анимации, живопись, рисование, мультфильм, Сериал, Буквальные истории, Авторская анимация, Федор Хитрук,wizartschool, wizart, school, wizart animation, школа компьютерной графики, школа кино индустрия, концепт-арт, иллюстрация, 3D моделирование, 3D скульптинг, курсы Zbrush, курсы 3ds max, курсы maya, cg, gamedev, курсы adobe photoshop');
+defined('META_DESCRIPTION') OR define('META_DESCRIPTION', 'Профессиональные онлайн курсы  - 3D анимация, 3D моделирование, скульптинг, рисование, спецэффекты, композиция, концепт-арт, разработка игр и другие курсы дистанционного обучения. Успей записаться, скоро стартует учебный месяц!');

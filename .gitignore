@@ -2,6 +2,7 @@
 
 application/config/app.php
 application/config/database.php
+application/config/config.php
 
 application/cache/*
 !application/cache/index.html
@@ -10,7 +11,8 @@ application/logs/*
 !application/logs/index.html
 !application/*/.htaccess
 
-data/*
+www/uploads/*
+!www/uploads/index.html
 !data/index.html
 
 www/data/*
@@ -29,3 +31,4 @@ www/data/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+/www/templates/cgaim-land/nbproject/private/
