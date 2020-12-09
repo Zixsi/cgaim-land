@@ -3169,13 +3169,22 @@ body {
         height: auto;
     }
     
-    #curse-instructor .quote, 
     #curse-instructor > .text-center {
         display: none;
     }
     
+    #curse-instructor .quote {
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
+    
     #curse-instructor .interactive {
-        display: none;
+        bottom: auto;
+        top: -40px;
+        right: 40px;
     }
     
     #instructor .content {
