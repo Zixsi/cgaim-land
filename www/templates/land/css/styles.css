@@ -8,14 +8,13 @@ html {
 html, body  {
     margin: 0;
     padding: 0;
+    /*overflow-x: hidden;*/
 }
 
 body {
     font-family: 'Exo 2', sans-serif;
-    min-width: 1920px;
+    min-width: 1400px;
     min-height: 100%;
-    display: flex;
-    flex-direction: column;
     background-color: #110f24;
     color: #fbfcfc;
     overflow-x: hidden;
@@ -471,6 +470,7 @@ body {
 #header {
     background: url('../img/block1-bg.jpg') no-repeat top center;
     padding-bottom: 340px;
+    overflow-x: hidden;
 }
 
 #header.workshop {
@@ -652,6 +652,7 @@ body {
     position: relative;
     /*background: url('../img/block2-bg.jpg') no-repeat center center;*/
     margin-top: -340px;
+    overflow-x: hidden;
 }
 
 #for-whom .content {
@@ -776,7 +777,7 @@ body {
 }
 
 #instructor {
-    width: 1920px;
+    width: 100%;
     margin: 0 auto;
     background: #161429 url('../img/block4-bg.jpg') no-repeat top center;
     margin-top: -50px;
@@ -1033,6 +1034,7 @@ body {
     padding-top: 143px;
     background: url("../img/block5-bg.jpg") no-repeat top center;
     margin-top: -34px;
+    overflow-x: hidden;
 }
 
 #program .module-block {
@@ -1468,6 +1470,7 @@ body {
     padding-bottom: 60px;
     margin-top: -26px;
     background: url("../img/block10-bg.jpg") no-repeat top center;
+    overflow-x: hidden;
 }
 
 #training .cards {
@@ -1556,7 +1559,7 @@ body {
 
 #packages {
     position: relative;
-    width: 1920px;
+    width: 100%;
     margin: 0 auto;
     padding-top: 83px;
     padding-bottom: 65px;
@@ -1666,7 +1669,7 @@ body {
 #installment-plan {
     padding-top: 77px;
     padding-bottom: 50px;
-    width: 1920px;
+    width: 100%;
     margin: 0 auto;
     background: linear-gradient(#16142a 80%, #120f24);
 }
@@ -1741,6 +1744,10 @@ body {
 
 #bonuses > .content {
     position: relative;
+}
+
+#bonuses .block-title {
+    margin-top: 40px;
 }
 
 #bonuses .slider-wrap {
@@ -1972,12 +1979,13 @@ body {
 }
 
 #faq {
-    width: 1920px;
+    width: 100%;
     margin: 0 auto;
     padding-top: 99px;
     padding-bottom: 80px;
     position: relative;
     margin-bottom: 120px;
+    overflow: hidden;
 }
 
 #faq .background {
@@ -2095,6 +2103,7 @@ body {
 
 #courses.other {
     position: relative;
+    overflow-x: hidden;
 }
 
 #courses.other .background {
@@ -2196,7 +2205,7 @@ body {
 
 .courses_main {
     position: relative;
-    width: 1920px;
+    width: 100%;
     margin: 0 auto;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -2372,7 +2381,7 @@ body {
 }
 
 #knowledge {
-    width: 1920px;
+    width: 100%;
     margin: 0 auto;
     padding-top: 50px;
     padding-bottom: 0px;
@@ -2414,7 +2423,7 @@ body {
 
 
 #questions {
-    width: 1920px;
+    width: 100%;
     margin: 0 auto;
     padding-top: 50px;
     padding-bottom: 0px;
@@ -2494,7 +2503,7 @@ body {
 
 #course_page {
     position: relative;
-    width: 1920px;
+    width: 100%;
     margin: 0 auto;
     padding-top: 156px;
     background: #16142a url("../img/block11-bg.jpg") repeat-y center top;
@@ -2805,60 +2814,85 @@ body {
     display: none;
 }
 
-@media (max-width: 768px) {
-/*@media (max-width: 4096px) {*/
-    
+@media (max-width: 1400px) {
     body {
-        min-width: 420px;
-    }
-    
-    body > div {
-        width: auto !important;
-        max-width: 420px;
-        margin: 0 auto;
-    }
-
-    .content {
-        width: 420px;
-        overflow-x: hidden;
-    }
-    
-    .block-title {
-        font-size: 1.9rem;
-        margin-top: 10px;
-        letter-spacing: 0.8px;
-        padding-left: 0px;
-        text-align: center;
-    }
-    
-    .block-title:before {
-        display: none;
-    }
-    
-    .block-title-2 {
-        font-size: 1.3rem;
-        margin-top: 11px;
-        padding-left: 5px;
-    }
-    
-    .block-title .symbol {
-        font-size: 2.1rem;
-    }
-    
-    .figure {
-        display: none;
-    }
-    
-    .number-img {
-        background-size: contain !important;
-        width: 100px;
-        height: 100px;
+        overflow-x: auto;
     }
     
     #top-panel {
+        left: 0%;
+        margin-left: auto;
+        width: 100%;
+    }
+    
+    #top-panel .logo {
+        left: 10px;
+    }
+    
+    #top-panel .login-btn {
+        right: 10px;
+    }
+    
+    
+    #top-panel .content {
+       width: 100%;
+    }
+    
+    #main-menu {
+        padding-left: 170px;
+        padding-right: 170px;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    #main-menu li {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 1400px) {
+    body {
+        overflow-x: auto;
+    }
+    
+    #top-panel {
+        left: 0%;
+        margin-left: auto;
+        width: 100%;
+    }
+    
+    #top-panel .logo {
+        left: 10px;
+    }
+    
+    #top-panel .login-btn {
+        right: 10px;
+    }
+    
+    
+    #top-panel .content {
+       width: 100%;
+    }
+    
+    #main-menu {
+        padding-left: 170px;
+        padding-right: 170px;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    #main-menu li {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    #top-panel {
         display: block;
-        margin-left: -210px;
+        margin-left: 0px;
         background: #19172d;
+        width: 100% !important;
+        max-width: 100% !important;
     }
     #top-panel > .content {
         padding-top: 15px;
@@ -2937,6 +2971,60 @@ body {
         padding-top: 7px;
         padding-bottom: 8px;
     }
+}
+
+@media (max-width: 768px) {
+/*@media (max-width: 4096px) {*/
+    
+    body {
+        min-width: 420px;
+        overflow-x: hidden;
+    }
+    
+    body > div {
+        width: auto !important;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .content {
+        width: 420px;
+        overflow-x: hidden;
+    }
+    
+    .block-title {
+        font-size: 1.9rem;
+        margin-top: 10px;
+        letter-spacing: 0.8px;
+        padding-left: 0px;
+        text-align: center;
+    }
+    
+    .block-title:before {
+        display: none;
+    }
+    
+    .block-title-2 {
+        font-size: 1.3rem;
+        margin-top: 11px;
+        padding-left: 5px;
+    }
+    
+    .block-title .symbol {
+        font-size: 2.1rem;
+    }
+    
+    .figure {
+        display: none;
+    }
+    
+    .number-img {
+        background-size: contain !important;
+        width: 100px;
+        height: 100px;
+    }
+    
+    
     
     #header {
         padding-bottom: 19px;
@@ -4006,4 +4094,14 @@ body {
         height: 100px;
     }
     
+}
+
+@media (max-width: 420px) {
+    body {
+        overflow-x: auto;
+    }
+    
+    #top-panel .logo {
+        left: 80px;
+    }
 }
