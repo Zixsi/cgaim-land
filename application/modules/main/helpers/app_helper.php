@@ -214,7 +214,7 @@ function getPayWorkshop($code)
     $ci = & get_instance();
     
     return sprintf(
-        '%s/external/pay/?code=%s&target=workshop',
+        '%sexternal/pay/?code=%s&target=workshop',
         getSchoolUrl(),
         $code
     );
@@ -232,7 +232,7 @@ function getPayCourse($code, $date, $type, $full = true)
     $ci = & get_instance();
     
     return sprintf(
-        '%s/external/pay/?code=%s&group=%s&type=%s&period=%s',
+        '%sexternal/pay/?code=%s&group=%s&type=%s&period=%s',
         getSchoolUrl(),
         $code,
         date('d.m.Y', strtotime($date)),
