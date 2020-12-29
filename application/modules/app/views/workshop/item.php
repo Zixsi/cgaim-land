@@ -11,7 +11,13 @@
                 <?php endif; ?>
             </div>
             <div class="buttons">
-                <a href="<?=getPayWorkshop($item['code'])?>" class="btn btn-pink btn-xl" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</a>
+                
+                <?php if(PAYMENT): ?>
+                    <a href="<?=getPayWorkshop($item['code'])?>" class="btn btn-pink btn-xl" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Купить</a>
+                <?php else: ?>
+                    <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-xl">Записаться</a>
+                <?php endif; ?>
+                    
                 <?php if($item['note'] && empty($item['note'][0]) === false): ?>
                     <span id="header-classroom">
                         <span class="number"><?=$item['note'][0]?></span>

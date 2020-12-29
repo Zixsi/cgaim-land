@@ -119,6 +119,12 @@ $CI = &get_instance();
                             <span class="menu-title">Работы студентов</span>
                         </a>
                     </li>
+                    <li class="nav-item <?=is_active_menu_item('subscription')?'active':''?>">
+                        <a class="nav-link" href="/admin/subscription/">
+                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <span class="menu-title">Подписки</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="main-panel">

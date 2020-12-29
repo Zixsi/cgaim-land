@@ -13,6 +13,7 @@ $route['workshop'] = 'app/WorkshopController/index';
 $route['workshop/(:any)'] = 'app/WorkshopController/item/$1';
 $route['terms'] = 'app/MainController/terms';
 $route['policy'] = 'app/MainController/privacyPolicy';
+$route['ajax/subscription'] = 'app/AjaxController/subscription';
 
 $route['admin'] = 'admin/MainController/index';
 $route['admin/login'] = 'admin/LoginController/index';
@@ -66,3 +67,6 @@ $route['admin/works/(:num)'] = 'admin/WorksController/index/$1';
 $route['admin/works/add'] = 'admin/WorksController/add';
 $route['admin/works/add/(:num)'] = 'admin/WorksController/add/$1';
 $route['admin/works/edit/(:num)'] = 'admin/WorksController/edit/$1';
+
+$route['admin/subscription'] = 'admin/SubscriptionController/index';
+$route['admin/subscription/edit/(:num)'] = 'admin/SubscriptionController/edit/$1';

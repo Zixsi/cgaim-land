@@ -349,6 +349,75 @@ body {
     background-color: #161429;
 }
 
+.callback-modal {
+    background-color: #161429;
+}
+
+.callback-modal .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.callback-modal .row {
+    margin-top: 20px;
+}
+
+.callback-modal label {
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.callback-modal .form-control {
+    padding: 10px 10px;
+    font-size: 1.4rem;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.callback-modal .title {
+    margin-top: 20px;
+}
+
+.callback-modal .btn {
+    margin-bottom: 20px;
+}
+
+.callback-modal .alert {
+    display: none;
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    font-size: 1.1rem;
+}
+
+.alert-success {
+    color: #006400;
+    background-color: #BCF5BC;
+    border-color: #7CDD77;
+}
+
+.alert-danger {
+    color: #fff;
+    background-color: #F77975;
+    border-color: #CD4945;
+}
+
+#callback-form-success--modal {
+    color: #006400;
+    background-color: #BCF5BC;
+    border-color: #7CDD77;
+    font-size: 1.6rem;
+    text-align: center;
+}
 /*================================================================================*/
 
 .logo {
