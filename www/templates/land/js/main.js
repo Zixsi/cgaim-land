@@ -234,6 +234,7 @@ function handleSliders() {
                     });
                     $('#callback-form--modal').modal('hide');
                     $('#callback-form-success--modal').modal('show');
+                    ym(51851432,'reachGoal','zayavka');
                 } else {
                     $('#callback-form--modal').find('.alert').text(res.error).show();
                 }
