@@ -51,6 +51,7 @@
         </div>
     </div>
     
+    <?php require_once 'inc_callback_form.php';?>
     <?php $this->content()?>
     
     <div id="footer">

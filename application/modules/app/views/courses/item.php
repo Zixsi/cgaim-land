@@ -21,7 +21,12 @@
             <?php endif; ?>
             
             <div class="buttons">
-                <a href="#packages" class="btn btn-pink btn-xl">Записаться</a>
+                <?php if(PAYMENT): ?>
+                    <a href="#packages" class="btn btn-pink btn-xl">Записаться</a>
+                <?php else: ?>
+                    <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-xl">Записаться</a>
+                <?php endif; ?>
+                    
                 <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>
                 <?php if(empty($item['start_date']) === false): ?>
                     <span class="date">Старт <?=$item['start_date_formated']?></span>
@@ -406,7 +411,11 @@
                     </ul>
                     <div class="price"><?=number_format($item['packages']['standart']['price'], 0, '.', ' ')?> Р</div>
                     <?php if((int) $item['packages']['standart']['available'] === 1): ?>
-                    <a href="<?= getPayCourse($item['code'], $item['start_date'], 'standart', true)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php if(PAYMENT): ?>
+                            <a href="<?= getPayCourse($item['code'], $item['start_date'], 'standart', true)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php else: ?>
+                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                        <?php endif; ?>
                     <?php endif;?>
                 </div>
             </div>
@@ -427,7 +436,11 @@
                     </ul>
                     <div class="price"><?=number_format($item['packages']['advanced']['price'], 0, '.', ' ')?> Р</div>
                     <?php if((int) $item['packages']['advanced']['available'] === 1): ?>
-                        <a href="<?= getPayCourse($item['code'], $item['start_date'], 'advanced', true)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php if(PAYMENT): ?>
+                            <a href="<?= getPayCourse($item['code'], $item['start_date'], 'advanced', true)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php else: ?>
+                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                        <?php endif; ?>
                     <?php endif;?>
                 </div>
             </div>
@@ -449,7 +462,11 @@
                     </ul>
                     <div class="price"><?=number_format($item['packages']['vip']['price'], 0, '.', ' ')?> Р</div>
                     <?php if((int) $item['packages']['vip']['available'] === 1): ?>
-                        <a href="<?= getPayCourse($item['code'], $item['start_date'], 'vip', true)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php if(PAYMENT): ?>
+                            <a href="<?= getPayCourse($item['code'], $item['start_date'], 'vip', true)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php else: ?>
+                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                        <?php endif; ?>
                     <?php endif;?>
                 </div>
             </div>
@@ -478,7 +495,11 @@
                     <div class="price"><?=number_format($item['packages']['standart']['partial_price'], 0, '.', ' ')?> Р</div>
                     <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
                     <?php if((int) $item['packages']['standart']['available'] === 1): ?>
-                        <a href="<?= getPayCourse($item['code'], $item['start_date'], 'standart', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php if(PAYMENT): ?>
+                            <a href="<?= getPayCourse($item['code'], $item['start_date'], 'standart', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php else: ?>
+                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                        <?php endif; ?>
                     <?php endif;?>
                 </div>
             </div>
@@ -488,7 +509,11 @@
                     <div class="price"><?=number_format($item['packages']['advanced']['partial_price'], 0, '.', ' ')?> Р</div>
                     <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
                     <?php if((int) $item['packages']['advanced']['available'] === 1): ?>
-                        <a href="<?= getPayCourse($item['code'], $item['start_date'], 'advanced', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php if(PAYMENT): ?>
+                            <a href="<?= getPayCourse($item['code'], $item['start_date'], 'advanced', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php else: ?>
+                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                        <?php endif; ?>
                     <?php endif;?>
                 </div>
             </div>
@@ -498,7 +523,11 @@
                     <div class="price"><?=number_format($item['packages']['vip']['partial_price'], 0, '.', ' ')?> Р</div>
                     <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
                     <?php if((int) $item['packages']['vip']['available'] === 1): ?>
-                        <a href="<?= getPayCourse($item['code'], $item['start_date'], 'vip', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php if(PAYMENT): ?>
+                            <a href="<?= getPayCourse($item['code'], $item['start_date'], 'vip', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
+                        <?php else: ?>
+                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                        <?php endif; ?>
                     <?php endif;?>
                 </div>
             </div>
