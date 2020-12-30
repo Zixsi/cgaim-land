@@ -1,7 +1,7 @@
 <div id="callback-form--modal" class="modal callback-modal">
     <form class="form" id="callback-form">
         <input type="hidden" name="title" value="<?= htmlspecialchars($item['title'] ?? '')?>">
-        <div class="title">Нужен совет</div>
+        <div class="title">Записаться на курс</div>
         <div class="alert alert-danger"></div>
         <div class="row">
             <div class="col-12">
