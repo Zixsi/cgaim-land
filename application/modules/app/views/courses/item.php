@@ -27,7 +27,7 @@
                     <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-xl">Записаться</a>
                 <?php endif; ?>
                     
-                <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>
+<!--                <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>-->
                 <?php if(empty($item['start_date']) === false): ?>
                     <span class="date">Старт <?=$item['start_date_formated']?></span>
                 <?php endif; ?>
@@ -138,7 +138,7 @@
             </div>
             <div class="quote"><?= htmlspecialchars_decode($instructor['quote'])?></div>
             <div class="text-center">
-                <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>
+                <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-xl">Задать вопрос</a>
             </div>
         </div>
     </div>
@@ -397,6 +397,7 @@
     <div class="background"></div>
     <div class="content">
         <div class="block-title">Пакеты</div>
+        <div class="text-center" style="margin-top: 25px; font-size: 1.6rem;">Действует помесячная оплата (см. ниже)</div>
         <div class="cards" id="package-slider">
             <div class="card">
                 <div class="card-head">
@@ -487,7 +488,7 @@
 
 <div id="installment-plan">
     <div class="content">
-        <div class="block-title">Действует рассрочка</div>
+        <div class="block-title">Помесячная оплата</div>
         <div class="cards" id="installment-plan-slider">
             <div class="card">
                 <div class="card-content">

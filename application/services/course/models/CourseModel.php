@@ -143,12 +143,13 @@ class CourseModel extends \APP_Model
             WHERE 
                 type = 'COURSE'
                 AND published = 1
-            ORDER BY 
-                RAND() 
             LIMIT %d", 
             self::TABLE,
             $limit
         );
+        
+//        ORDER BY 
+//                RAND() 
         $res = $this->query($sql);
         
         if (($row = $res->result_array())) {
