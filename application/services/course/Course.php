@@ -172,7 +172,7 @@ class Course
      */
     private function prepareItem($item)
     {
-        $item['start_date_formated'] = '';
+        $item['start_date_formated'] = 'сразу';
         
         if ((int) $item['start_date_disable'] === 1) {
             $item['start_date'] = '';

@@ -274,3 +274,39 @@ function getMetaDescription($item = [])
     
     return META_DESCRIPTION;
 }
+
+/**
+ * @param int $count
+ * @return string
+ */
+function pluralCategory($count)
+{
+    $mod10  = $count % 10;
+    $mod100 = $count % 100;
+
+    if (is_int($count) && $mod10 == 1 && $mod100 != 11) {
+      return 'one';
+    } elseif (($mod10 > 1 && $mod10 < 5) && ($mod100 < 12 || $mod100 > 14)) {
+      return 'few';
+    } elseif ($mod10 == 0 || ($mod10 > 4 && $mod10 < 10) || ($mod100 > 10 && $mod100 < 15)) {
+      return 'many';
+    } else {
+      return 'other';
+    }
+}
+
+/**
+ * @param int $count
+ * @return string
+ */
+function pluralMonth($count)
+{
+    $map = [
+        'one' => 'месяц',
+        'few' => 'месяца',
+        'many' => 'месяцев',
+        'other' => 'месяцев',
+    ];
+    
+    return $map[pluralCategory($count)];
+}

@@ -30,6 +30,8 @@
 <!--                <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>-->
                 <?php if(empty($item['start_date']) === false): ?>
                     <span class="date">Старт <?=$item['start_date_formated']?></span>
+                <?php else: ?>
+                    <span class="date">Старт сразу&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 <?php endif; ?>
                     
                 <?php if($item['note'] && empty($item['note'][0]) === false): ?>
@@ -148,7 +150,7 @@
         <span class="figure figure1-2"></span>
         <div class="block-title">Программа курса</div>
         <div class="module-block module1">
-            <div class="block-title-2">Модуль 1: <?=$item['program']['module_1_title']?></div>
+            <div class="block-title-2">Модуль 1 - <?=$item['program']['module_1_title']?></div>
             
             <?php if(empty($item['program']['module_1_short_description']) === false): ?>
                 <div class="description"><?=$item['program']['module_1_short_description']?></div>
@@ -210,7 +212,7 @@
         <div class="module-block module2">
             <div class="background"></div>
             <span class="figure figure1-6"></span>
-            <div class="block-title-2">Модуль 2: <?=$item['program']['module_2_title']?></div>
+            <div class="block-title-2">Модуль 2 - <?=$item['program']['module_2_title']?></div>
             <div class="description">
                 <div class="text-wrap"><?=$item['program']['module_2_description']?></div>
                 <span class="figure-sculpture" style="background-image: url('<?=$item['program']['module_2_img']?>');"></span>
@@ -236,7 +238,7 @@
         <div class="module-block module3">
             <span class="figure figure2-1"></span>
             <span class="figure figure1-3"></span>
-            <div class="block-title-2">Модуль 3: <?=$item['program']['module_3_title']?></div>
+            <div class="block-title-2">Модуль 3 - <?=$item['program']['module_3_title']?></div>
             <div class="description">
                 <div class="text-wrap"><?=$item['program']['module_3_description']?></div>
                 <span class="figure-box" style="background-image: url('<?=$item['program']['module_3_img']?>');"></span>
@@ -262,7 +264,7 @@
         <div class="module-block module4">
             <div class="background"></div>
             <span class="figure figure2-6"></span>
-            <div class="block-title-2">Практическая часть: <?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
+            <div class="block-title-2">Практическая часть - <?=($item['program']['module_4_months'] ?? 0)?> <?=pluralMonth(($item['program']['module_4_months'] ?? 0))?></div>
             <div class="box">
                 <div class="box-content">
                     <div class="buttons" id="lectures-slider-nav">
@@ -494,7 +496,7 @@
                 <div class="card-content">
                     <div class="title">Стандарт</div>
                     <div class="price"><?=number_format($item['packages']['standart']['partial_price'], 0, '.', ' ')?> Р</div>
-                    <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
+                    <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> <?= pluralMonth(($item['program']['module_4_months'] ?? 0))?></div>
                     <?php if((int) $item['packages']['standart']['available'] === 1): ?>
                         <?php if(PAYMENT): ?>
                             <a href="<?= getPayCourse($item['code'], $item['start_date'], 'standart', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
@@ -508,7 +510,7 @@
                 <div class="card-content">
                     <div class="title">Расширенный</div>
                     <div class="price"><?=number_format($item['packages']['advanced']['partial_price'], 0, '.', ' ')?> Р</div>
-                    <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
+                    <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> <?= pluralMonth(($item['program']['module_4_months'] ?? 0))?></div>
                     <?php if((int) $item['packages']['advanced']['available'] === 1): ?>
                         <?php if(PAYMENT): ?>
                             <a href="<?= getPayCourse($item['code'], $item['start_date'], 'advanced', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
@@ -522,7 +524,7 @@
                 <div class="card-content">
                     <div class="title">Премиум</div>
                     <div class="price"><?=number_format($item['packages']['vip']['partial_price'], 0, '.', ' ')?> Р</div>
-                    <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> месяца</div>
+                    <div class="period">помесячно <br><?=($item['program']['module_4_months'] ?? 0)?> <?= pluralMonth(($item['program']['module_4_months'] ?? 0))?></div>
                     <?php if((int) $item['packages']['vip']['available'] === 1): ?>
                         <?php if(PAYMENT): ?>
                             <a href="<?= getPayCourse($item['code'], $item['start_date'], 'vip', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>

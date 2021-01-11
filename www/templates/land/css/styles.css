@@ -1652,7 +1652,7 @@ body {
     top: -155px;
     left: 0px;
     right: 0px;
-    background: url('../img/block11-top.png') no-repeat center center;
+    background: url('../img/block11-top.png') repeat-x center center;
 }
 
 #packages .cards {
@@ -2051,10 +2051,8 @@ body {
     width: 100%;
     margin: 0 auto;
     padding-top: 99px;
-    padding-bottom: 80px;
     position: relative;
     margin-bottom: 120px;
-    overflow: hidden;
 }
 
 #faq .background {
@@ -2074,7 +2072,7 @@ body {
     top: -155px;
     left: 0px;
     right: 0px;
-    background: url('../img/block11-top.png') no-repeat center center;
+    background: url('../img/block11-top.png') repeat-x center center;
 }
 
 #faq .background:after {
@@ -2085,7 +2083,7 @@ body {
     bottom: -103px;
     left: 0px;
     right: 0px;
-    background: url("../img/block7-bottom.png") no-repeat top center;
+    background: url("../img/block7-bottom.png") repeat-x top center;
 }
 
 #faq .accordion {
@@ -2164,21 +2162,20 @@ body {
 
 #faq .figure2-5 {
     top: -247px;
-    left: -360px;	
-    background-position: -1367px -287px;
-    width: 160px;
+    left: -400px;	
+    background-position: -1328px -287px;
+    width: 200px;
     height: 235px;
 }
 
 #courses.other {
     position: relative;
-    overflow-x: hidden;
+    padding-top: 155px;
 }
 
 #courses.other .background {
     position: absolute;
-    width: 1920px;
-    top: 0px;
+    top: 155px;
     bottom: 103px;
     min-height: 300px;
     background: #16142a;
@@ -2192,7 +2189,7 @@ body {
     bottom: -103px;
     left: 0px;
     right: 0px;
-    background: url("../img/block7-bottom.png") no-repeat top center;
+    background: url("../img/block7-bottom.png") repeat-x top center;
 }
 
 /*============================================================================*/
@@ -2297,7 +2294,7 @@ body {
     top: -155px;
     left: 0px;
     right: 0px;
-    background: url('../img/block11-top.png') no-repeat center center;
+    background: url('../img/block11-top.png') repeat-x center center;
 }
 
 .courses_main .background:after {
@@ -2308,7 +2305,7 @@ body {
     bottom: -103px;
     left: 0px;
     right: 0px;
-    background: url("../img/block7-bottom.png") no-repeat top center;
+    background: url("../img/block7-bottom.png") repeat-x top center;
 }
 
 .page-center-btn {
@@ -2475,7 +2472,7 @@ body {
     top: -155px;
     left: 0px;
     right: 0px;
-    background: url('../img/block11-top.png') no-repeat center center;
+    background: url('../img/block11-top.png') repeat-x center center;
 }
 
 #knowledge .background:after {
@@ -2486,7 +2483,7 @@ body {
     bottom: -103px;
     left: 0px;
     right: 0px;
-    background: url("../img/block7-bottom.png") no-repeat top center;
+    background: url("../img/block7-bottom.png") repeat-x top center;
 }
 
 
@@ -2517,7 +2514,7 @@ body {
     top: -155px;
     left: 0px;
     right: 0px;
-    background: url('../img/block11-top.png') no-repeat center center;
+    background: url('../img/block11-top.png') repeat-x center center;
 }
 
 #questions .background:after {
@@ -2528,7 +2525,7 @@ body {
     bottom: -103px;
     left: 0px;
     right: 0px;
-    background: url("../img/block7-bottom.png") no-repeat top center;
+    background: url("../img/block7-bottom.png") repeat-x top center;
 }
 
 
@@ -2596,7 +2593,7 @@ body {
     bottom: -103px;
     left: 0px;
     right: 0px;
-    background: url("../img/block7-bottom.png") no-repeat top center;
+    background: url("../img/block7-bottom.png") repeat-x top center;
 }
 
 #course_page .course_cards { 
