@@ -248,6 +248,15 @@ function handleSliders() {
         
         return false;
     });
+    
+    var callbackFormModal = $('#callback-form--modal');
+    
+    $('.callback-from-show-btn').on('click', function() {
+        callbackFormModal
+                .find('#callback-form-link').attr('href', $(this).data('link'))
+                .end().find('input[name="main"]').val($(this).data('type'))
+                .end().modal('show');
+    });
 }
 
 function handleAccordion() {

@@ -1,0 +1,1 @@
+ALTER TABLE `subscription` ADD `main` TINYINT UNSIGNED NOT NULL DEFAULT '0' AFTER `title`;

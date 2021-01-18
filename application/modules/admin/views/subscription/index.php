@@ -16,6 +16,7 @@
                                 <th width="70">Имя</th>
                                 <th width="70">Телефон</th>
                                 <th>Курс</th>
+                                <th>Главная?</th>
                                 <th>Комментарий</th>
                                 <th width="70" class="text-right">Действия</th>
                             </tr>
@@ -28,6 +29,7 @@
                                     <td><?= htmlspecialchars($item['name'])?></td>
                                     <td><?= htmlspecialchars($item['phone'])?></td>
                                     <td><?= htmlspecialchars(($item['title'] ?? '---'))?></td>
+                                    <td><?= ((int) ($item['main'] ?? 0))?'Yes':'No'?></td>
                                     <td><?= htmlspecialchars(($item['comment'] ?? '---'))?></td>
                                     <td class="text-right">
                                         <div class="btn-group">

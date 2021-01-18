@@ -7,6 +7,7 @@ use App\libraries\Entity;
 /**
  * @property int $id
  * @property string $title
+ * @property int $main
  * @property string $name
  * @property string $phone
  * @property array $comment
@@ -20,6 +21,7 @@ class SubscriptionEntity extends Entity
     protected $attributes = [
         'id' => 0,
         'title' => null,
+        'main' => 0,
         'name' => null,
         'phone' => null,
         'comment' => null
@@ -31,6 +33,7 @@ class SubscriptionEntity extends Entity
     protected $casts = [
         'id' => 'int',
         'title' => '?string',
+        'main' => 'int',
         'name' => 'string',
         'phone' => 'string',
         'comment' => '?string',

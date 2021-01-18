@@ -24,7 +24,7 @@
                 <?php if(PAYMENT): ?>
                     <a href="#packages" class="btn btn-pink btn-xl">Записаться</a>
                 <?php else: ?>
-                    <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-xl">Записаться</a>
+                    <a href="javascript:void(0);" class="btn btn-pink btn-xl callback-from-show-btn" data-link="<?= getPayCourse($item['code'], $item['start_date'], 'advanced', true)?>" data-type="1">Записаться</a>
                 <?php endif; ?>
                     
 <!--                <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>-->
@@ -417,7 +417,7 @@
                         <?php if(PAYMENT): ?>
                             <a href="<?= getPayCourse($item['code'], $item['start_date'], 'standart', true)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
                         <?php else: ?>
-                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                            <a href="javascript:void(0);" class="btn btn-pink btn-md btn-exo callback-from-show-btn" data-link="<?= getPayCourse($item['code'], $item['start_date'], 'standart', true)?>" data-type="0">Записаться</a>
                         <?php endif; ?>
                     <?php endif;?>
                 </div>
@@ -442,7 +442,7 @@
                         <?php if(PAYMENT): ?>
                             <a href="<?= getPayCourse($item['code'], $item['start_date'], 'advanced', true)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
                         <?php else: ?>
-                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                            <a href="javascript:void(0);" class="btn btn-pink btn-md btn-exo callback-from-show-btn" data-link="<?= getPayCourse($item['code'], $item['start_date'], 'advanced', true)?>" data-type="0">Записаться</a>
                         <?php endif; ?>
                     <?php endif;?>
                 </div>
@@ -468,7 +468,7 @@
                         <?php if(PAYMENT): ?>
                             <a href="<?= getPayCourse($item['code'], $item['start_date'], 'vip', true)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
                         <?php else: ?>
-                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                            <a href="javascript:void(0);" class="btn btn-pink btn-md btn-exo callback-from-show-btn" data-link="<?= getPayCourse($item['code'], $item['start_date'], 'vip', true)?>" data-type="0">Записаться</a>
                         <?php endif; ?>
                     <?php endif;?>
                 </div>
@@ -501,7 +501,7 @@
                         <?php if(PAYMENT): ?>
                             <a href="<?= getPayCourse($item['code'], $item['start_date'], 'standart', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
                         <?php else: ?>
-                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                            <a href="javascript:void(0);" class="btn btn-pink btn-md btn-exo callback-from-show-btn" data-link="<?= getPayCourse($item['code'], $item['start_date'], 'standart', false)?>" data-type="0">Записаться</a>
                         <?php endif; ?>
                     <?php endif;?>
                 </div>
@@ -515,7 +515,7 @@
                         <?php if(PAYMENT): ?>
                             <a href="<?= getPayCourse($item['code'], $item['start_date'], 'advanced', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
                         <?php else: ?>
-                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                            <a href="javascript:void(0);" class="btn btn-pink btn-md btn-exo callback-from-show-btn" data-link="<?= getPayCourse($item['code'], $item['start_date'], 'advanced', false)?>" data-type="0">Записаться</a>
                         <?php endif; ?>
                     <?php endif;?>
                 </div>
@@ -529,7 +529,7 @@
                         <?php if(PAYMENT): ?>
                             <a href="<?= getPayCourse($item['code'], $item['start_date'], 'vip', false)?>" class="btn btn-pink btn-md btn-exo" onclick="ym(51851432, 'reachGoal', 'Registration'); return true;">Записаться на курс</a>
                         <?php else: ?>
-                            <a href="#callback-form--modal" rel="modal:open" class="btn btn-pink btn-md btn-exo">Записаться</a>
+                            <a href="javascript:void(0);" class="btn btn-pink btn-md btn-exo callback-from-show-btn" data-link="<?= getPayCourse($item['code'], $item['start_date'], 'vip', false)?>" data-type="0">Записаться</a>
                         <?php endif; ?>
                     <?php endif;?>
                 </div>
