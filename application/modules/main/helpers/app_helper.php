@@ -147,9 +147,22 @@ function getDateStartFormated($date)
         11 => 'ноября',
         12 => 'декабря'
     ];
+    
     $ts = strtotime($date);
     
     return sprintf('%s %s', date('d', $ts), $monthsMap[date('n', $ts)]);
+}
+
+/**
+ * @param string $date
+ * @return string
+ */
+function getEndDateRecruit($date)
+{
+    $datetime = new DateTime($date);
+    $datetime->modify('+7 day');
+    
+    return getDateStartFormated($datetime->format('Y-m-d'));
 }
 
 function clear_array(array $data = [])

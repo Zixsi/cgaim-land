@@ -30,6 +30,8 @@
 <!--                <a href="#program" class="btn btn-pink btn-xl">Смотреть программу</a>-->
                 <?php if(empty($item['start_date']) === false): ?>
                     <span class="date">Старт <?=$item['start_date_formated']?></span>
+                    <span class="date_info">(набор в группу до <?=getEndDateRecruit($item['start_date'])?>)</span>
+                    
                 <?php else: ?>
                     <span class="date">Старт сразу&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 <?php endif; ?>
@@ -426,6 +428,9 @@
                 <div class="card-head">
                     <div class="title">Старт</div>
                     <div class="date"><?=$item['start_date_formated']?></div>
+                    <?php if(empty($item['start_date']) === false): ?>
+                        <div class="date_info">(набор в группу до <?=getEndDateRecruit($item['start_date'])?>)</div>
+                    <?php endif;?>
                 </div>
                 <div class="card-content">
                     <div class="title">Расширенный</div>

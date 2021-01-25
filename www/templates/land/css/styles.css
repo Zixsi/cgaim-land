@@ -670,6 +670,17 @@ body {
     left: 0px;
 }
 
+#header .buttons .date_info {
+    display: inline-block;
+    position: absolute;
+    top: 165px;
+    left: 155px;
+    font-size: 1.2rem;
+    min-width: 210px;
+    text-align: right;
+    padding-bottom: 6px;
+}
+
 #header .img {
     position: absolute;
     top: 133px;
@@ -1689,6 +1700,11 @@ body {
 
 #packages .card .card-head .date {
     font-size: 1.4rem;
+}
+
+#packages .card .card-head .date_info {
+    font-size: 1.0rem;
+    margin-top: 3px;
 }
 
 #packages .card .card-content {
@@ -3194,6 +3210,15 @@ body {
     #header .buttons .date:before, 
     #header .buttons .date:after {
         display: none;
+    }
+    
+    #header .buttons .date_info {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        text-align: center;
+        padding-top: 5px;
     }
     
     #header-classroom {
