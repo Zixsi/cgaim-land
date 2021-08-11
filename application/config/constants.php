@@ -104,4 +104,4 @@ defined('META_KEYWORDS') OR define('META_KEYWORDS', 'анимация, клуб 
 defined('META_DESCRIPTION') OR define('META_DESCRIPTION', 'Профессиональные онлайн курсы  - 3D анимация, 3D моделирование, скульптинг, рисование, спецэффекты, композиция, концепт-арт, разработка игр и другие курсы дистанционного обучения. Успей записаться, скоро стартует учебный месяц!');
 
 
-defined('PAYMENT') OR define('PAYMENT', false);
+defined('PAYMENT') OR define('PAYMENT', true);
