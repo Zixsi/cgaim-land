@@ -28,7 +28,7 @@ class CourseController extends APP_Controller
     {
         $item = Course::get()->getByCode($code);
         
-        if (empty($item)) {
+        if (empty($item) || (int) $item['published'] === 0) {
             header('Location: /courses/');
         }
         
