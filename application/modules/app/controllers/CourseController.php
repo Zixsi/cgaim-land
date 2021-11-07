@@ -28,8 +28,8 @@ class CourseController extends APP_Controller
     {
         $item = Course::get()->getByCode($code);
         
-        if (empty($item) || (int) $item['published'] === 0) {
-            header('Location: /courses/');
+        if (empty($item) || ((int) $item['published'] === 0 && ((bool) $_GET['preview'] ?? false) === false)) {
+		header('Location: /courses/');
         }
         
         $data = [

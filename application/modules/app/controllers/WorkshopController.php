@@ -27,7 +27,7 @@ class WorkshopController extends APP_Controller
     {
         $item = Workshop::get()->getByCode($code);
         
-        if (empty($item) || (int) $item['published'] === 0) {
+        if (empty($item) || ((int) $item['published'] === 0 && ((bool) $_GET['preview'] ?? false) === false)) {
             header('Location: /workshop/');
         }
         

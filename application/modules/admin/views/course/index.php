@@ -45,7 +45,7 @@
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-right navbar-dropdown">
                                                 <li class="dropdown-item">
-                                                    <a href="/courses/<?= $item['code'] ?>/" target="_blank">Просмотр</a>
+                                                    <a href="/courses/<?= $item['code'] ?>/?preview=1" target="_blank">Просмотр</a>
                                                 </li>
                                                 <li class="dropdown-item">
                                                     <a href="./edit/<?= $item['id'] ?>">Редактировать</a>
