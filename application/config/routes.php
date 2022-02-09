@@ -7,6 +7,11 @@ $route['default_controller'] = 'app/MainController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['doc'] = 'app/DocController/index';
+$route['doc/tables/analiz'] = 'app/DocController/tableAnaliz';
+$route['doc/tables/byudzhet'] = 'app/DocController/tableByudzhet';
+$route['doc/tables/mediaplan'] = 'app/DocController/tableMediaplan';
+
 $route['courses'] = 'app/CourseController/index';
 $route['courses/(:any)'] = 'app/CourseController/item/$1';
 $route['workshop'] = 'app/WorkshopController/index';
