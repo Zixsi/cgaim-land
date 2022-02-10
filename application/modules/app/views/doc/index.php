@@ -26,6 +26,9 @@
 		<div>
 			<a href="/doc/tables/mediaplan/"  target="_blank">Медиаплан (таблицы)</a>
 		</div>
+		<div>
+			<a href="/doc/tables/planrk/"  target="_blank">План РК и бюджет (таблицы)</a>
+		</div>
         </div>
 
     </div>

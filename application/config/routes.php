@@ -11,6 +11,7 @@ $route['doc'] = 'app/DocController/index';
 $route['doc/tables/analiz'] = 'app/DocController/tableAnaliz';
 $route['doc/tables/byudzhet'] = 'app/DocController/tableByudzhet';
 $route['doc/tables/mediaplan'] = 'app/DocController/tableMediaplan';
+$route['doc/tables/planrk'] = 'app/DocController/tablePlanRk';
 
 $route['courses'] = 'app/CourseController/index';
 $route['courses/(:any)'] = 'app/CourseController/item/$1';

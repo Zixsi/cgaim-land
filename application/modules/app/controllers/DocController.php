@@ -23,4 +23,8 @@ class DocController extends APP_Controller
 		$this->load->lview('doc/tableMediaplan');
 	}
 	
+	public function tablePlanRk()
+	{
+		$this->load->lview('doc/tablePlanRk');
+	}
 }
